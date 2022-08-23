@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\OrderItemController;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('checkout', [
+        'menus' => Menu::all()
+    ]);
 });
+Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');
