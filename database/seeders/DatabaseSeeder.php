@@ -16,9 +16,15 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Menu::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\Order::factory()->create([
+            'quantity' => 0,
+            'total' => 0,
+            'customer_id' => 1
+        ]);
+
+        \App\Models\Customer::factory()->create([
+            'name' => 'Fanny Maulana',
+            'order_id' => 1
+        ]);
     }
 }

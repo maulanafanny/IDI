@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('quantity');
             $table->integer('total');
-            $table->string('seat');
-            $table->string('code');
+            $table->string('seat')->nullable();
+            $table->string('code')->nullable();
             $table->foreignId('customer_id');
             $table->timestamps();
         });
