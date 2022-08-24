@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('checkout', [
-        'menus' => Menu::all()
+    return view('menu', [
+        'menus' => Menu::paginate(6),
     ]);
 });
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');

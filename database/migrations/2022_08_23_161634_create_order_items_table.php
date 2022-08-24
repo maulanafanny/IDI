@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('menu_id');
             $table->integer('quantity');
             $table->integer('total');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #CDDFDA;
 }
 
 .image-menu {
@@ -20,4 +21,12 @@ body {
     border-width: 3.5px;
     border-radius: 30px;
     padding: 3% 4%;
+}
+
+.bg-decor {
+    background-color: #066047;
+}
+
+.main-content {
+    margin-top: -400px;
 }
