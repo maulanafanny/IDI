@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Menu List')
 
 @section('content')
     <div class="container py-5">
@@ -29,7 +29,7 @@
                                                     <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                 </div>
                                                 <div class="col-6">
-                                                    <h3 class="text-capitalize">{{ $menu->name }}</h3>
+                                                    <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
                                                     <p class="text-desc">
                                                         Lorem Ipsum refers to a dummy block of text that is often
                                                     </p>

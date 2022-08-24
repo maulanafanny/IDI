@@ -20,4 +20,11 @@ Route::get('/', function () {
         'menus' => Menu::paginate(6),
     ]);
 });
+
+Route::get('/checkout', function () {
+    return view('checkout', [
+        'menus' => Menu::all()
+    ]);
+});
+
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');

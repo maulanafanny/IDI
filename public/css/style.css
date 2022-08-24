@@ -49,3 +49,12 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 }
+
+.title-menu {
+    font-family: 'Besley', serif;
+    font-weight: 500;
+}
+
+.text-green-regular {
+    color: var(--green-regular);
+}
