@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root {
+    --green-dark: #066047;
+    --green-regular: #599584;
+    --green-light: #CDDFDA;
+}
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #CDDFDA;
+    background-color: var(--green-light);
 }
 
 .image-menu {
@@ -24,9 +28,24 @@ body {
 }
 
 .bg-decor {
-    background-color: #066047;
+    background-color: var(--green-dark);
 }
 
 .main-content {
     margin-top: -400px;
+}
+
+.btn-green {
+    background-color: var(--green-light)!important;
+    font-family: 'Besley', serif!important;
+    color: var(--green-dark)!important;
+}
+
+.btn-green.active {
+    background-color: white!important;
+}
+
+.text-desc {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }

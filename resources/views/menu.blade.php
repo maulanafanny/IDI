@@ -8,11 +8,11 @@
             <div class="card-body px-5">
 
                 <div class="py-5">
-                    <a href="#" class="btn rounded-pill btn-lg btn-outline-success px-4 mx-3">Coffee</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-success px-4 mx-3">Non-Coffee</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-success px-4 mx-3">Milk</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-success px-4 mx-3">Snack</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-success px-4 mx-3">Main Course</a>
+                    <a href="#" class="btn rounded-pill btn-lg btn-green active px-4 mx-3">Coffee</a>
+                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Non-Coffee</a>
+                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Milk</a>
+                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Snack</a>
+                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Main Course</a>
                 </div>
 
                 <div class="row">
@@ -30,7 +30,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h3 class="text-capitalize">{{ $menu->name }}</h3>
-                                                    <p class="fw-light">
+                                                    <p class="text-desc">
                                                         Lorem Ipsum refers to a dummy block of text that is often
                                                     </p>
                                                     <p class="fw-semibold fs-5"><small>Rp{{ number_format($menu->price, 2, ',', '.') }}</small></p>
@@ -53,7 +53,7 @@
                                                                 <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                             </div>
                                                             <div class="col-6">
-                                                                <p class="fw-light">
+                                                                <p class="text-desc">
                                                                     {{ $menu->desc }}
                                                                 </p>
                                                                 <div class="">
@@ -82,8 +82,9 @@
                     @endforeach
                 </div>
                 <div class="mb-5">
-                    <a class="btn btn-success rounded-pill float-end py-2 px-3"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
+                    <a class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
                 </div>
+                <br>
                 <br>
             </div>
         </div>
