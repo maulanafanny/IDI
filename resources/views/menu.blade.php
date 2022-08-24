@@ -90,22 +90,3 @@
         </div>
     </div>
 @endsection
-
-
-<script>
-    $('.submit').click(function(e) {
-        const menu = this.previousElementSibling.value;
-        const quantity = this.closest('.modal-footer').previousElementSibling.querySelector('.menu_quantity').innerText;
-        $.ajax({
-            url: "/add",
-            type: "get",
-            data: {
-                menu_id: menu,
-                quantity: quantity
-            },
-            success: function() {
-                alert(menu + ' ' + quantity);
-            }
-        });
-    });
-</script>
