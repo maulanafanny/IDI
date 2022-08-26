@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\OrderItemController;
 use App\Models\Menu;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('menu', [
-        'menus' => Menu::paginate(6),
+        'menus' => Menu::all(),
     ]);
 });
 
 Route::get('/checkout', function () {
+    $data = Customer::find(1)->with('order.orderItem.menu')->first();
     return view('checkout', [
-        'menus' => Menu::all()
+        'orders' => $data->order->orderItem,
+        'order_customer' => $data->order,
+        'payments' => $data->order->orderItem->groupBy('menu.category')
     ]);
 });
 

@@ -26,4 +26,11 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+
+    function addTotal($price)
+    {
+        $total = Order::first()->total + $price;
+
+        Order::first()->update(['total' => $total]);
+    }
 }

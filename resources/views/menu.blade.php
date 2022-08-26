@@ -4,7 +4,7 @@
 @section('content')
     <div class="container py-5">
 
-        <div class="card shadow">
+        <div class="card shadows bg-back-white">
             <div class="card-body px-5">
 
                 <div class="py-5">
@@ -18,7 +18,7 @@
                 <div class="row">
                     @foreach ($menus as $menu)
                         <div class="col-4 mb-5 px-4">
-                            <div class="card shadow">
+                            <div class="card shadows">
 
                                 <div class="card-body">
                                     <form action="/" method="get">
@@ -82,7 +82,7 @@
                     @endforeach
                 </div>
                 <div class="mb-5">
-                    <a class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
+                    <a href="/checkout" class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
                 </div>
                 <br>
                 <br>

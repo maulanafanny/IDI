@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--green-light);
+    background-color: var(--green-light)!important;
 }
 
 .image-menu {
@@ -57,4 +57,12 @@ body {
 
 .text-green-regular {
     color: var(--green-regular);
+}
+
+.shadows {
+    box-shadow: 0px 4px 4px 0px #00000008!important;
+}
+
+.bg-back-white {
+    background-color: #F8F8F8!important;
 }
