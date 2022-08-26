@@ -2,6 +2,9 @@
 @section('title', 'Check Out')
 
 @section('content')
+
+    {{ Breadcrumbs::render('cart') }}
+
     <div class="container py-5">
 
         <div class="card shadows bg-back-white">

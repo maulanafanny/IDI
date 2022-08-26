@@ -2,7 +2,10 @@
 @section('title', 'Menu List')
 
 @section('content')
+
     <div class="container py-5">
+
+        {{ Breadcrumbs::render('menu') }}
 
         <div class="card shadows bg-back-white">
             <div class="card-body px-5">
@@ -82,7 +85,7 @@
                     @endforeach
                 </div>
                 <div class="mb-5">
-                    <a href="/checkout" class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
+                    <a href="/cart" class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
                 </div>
                 <br>
                 <br>
