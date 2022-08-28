@@ -30,4 +30,24 @@ $(document).ready(function () {
             }
         });
     });
+
+    $('.btn-seat').click(function (e) { 
+        e.preventDefault();
+        $(this).toggleClass('bg-lightgreen text-dark');
+        $(this).toggleClass('bg-decor text-light');
+
+        let selected = $('.btn-seat.bg-decor');
+        let text = $('#seat-choice').text();
+
+        $.each(selected, function (index, value) {
+            if (index == 0) {
+                text = '';
+            }
+            text += ' ' + value.innerText;
+        });
+
+        $('#seat-choice').text(text);
+    });
+
+    
 });

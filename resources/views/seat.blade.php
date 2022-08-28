@@ -37,29 +37,29 @@
                     <div class="col-6">
 
                         <div class="row mb-4">
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A2</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A3</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A4</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A5</button>
 
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B2</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B3</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B4</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B5</button>
 
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C2</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C3</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C4</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C5</button>
 
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D2</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D3</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D4</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D5</button>
                         </div>
 
                     </div>
@@ -81,7 +81,7 @@
 
                         <div>
                             <h3 class="title-menu fs-3">Your Choice</h3>
-                            <p class="fs-3 fw-light">A1</p>
+                            <p class="fs-3 fw-light" id="seat-choice"></p>
                         </div>
                     </div>
                 </div>
