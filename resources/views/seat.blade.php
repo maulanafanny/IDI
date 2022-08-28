@@ -37,34 +37,33 @@
                     <div class="col-6">
 
                         <div class="row mb-4">
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
+                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px; width:90px">A1</button>
                         </div>
-                        <div class="row mb-4">
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                        </div>
-                        <div class="row mb-4">
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                        </div>
-                        <div class="row mb-4">
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                            <button class="btn col btn-success text-serif bg-lightgreen mx-3 rounded text-dark fs-4" style="height:90px">A1</button>
-                        </div>
+
                     </div>
+                    
                     <div class="col-4 offset-1">
                         <div class="mb-3">
                             <div class="btn col btn-success bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Non-Available</span>
