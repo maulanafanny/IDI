@@ -2,11 +2,12 @@
     --green-dark: #066047;
     --green-regular: #599584;
     --green-light: #CDDFDA;
+    --brown-light: #9F7E69;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--green-light)!important;
+    background-color: var(--green-light) !important;
 }
 
 .image-menu {
@@ -22,13 +23,17 @@ body {
 }
 
 .btn-range {
-    border-width: 3.5px!important;
-    border-radius: 30px!important;
-    padding: 3% 4%!important;
+    border-width: 2.8px !important;
+    border-radius: 30px !important;
 }
 
 .bg-decor {
-    background-color: var(--green-dark);
+    background-color: var(--green-dark) !important;
+}
+
+.bg-lightbrown {
+    background-color: var(--brown-light) !important;
+    border-color: var(--brown-light) !important;
 }
 
 .main-content {
@@ -36,23 +41,33 @@ body {
 }
 
 .btn-green {
-    background-color: var(--green-light)!important;
-    font-family: 'Besley', serif!important;
-    color: var(--green-dark)!important;
+    background-color: var(--green-light) !important;
+    font-family: 'Besley', serif !important;
+    color: var(--green-dark) !important;
 }
 
 .btn-green.active {
-    background-color: white!important;
+    background-color: white !important;
 }
 
 .text-desc {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    font-size: 1rem;
+}
+
+.title-medium {
+    font-size: 1.125rem;
 }
 
 .title-menu {
     font-family: 'Besley', serif;
     font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.text-serif {
+    font-family: 'Besley', serif !important;
 }
 
 .text-green-regular {
@@ -60,9 +75,34 @@ body {
 }
 
 .shadows {
-    box-shadow: 0px 4px 4px 0px #00000008!important;
+    box-shadow: 0px 4px 4px 0px #00000008 !important;
 }
 
 .bg-back-white {
-    background-color: #F8F8F8!important;
+    background-color: #F8F8F8 !important;
+}
+
+.bg-lightgreen {
+    background-color: var(--green-light) !important;
+    border-color: var(--green-light) !important;
+}
+
+.title-breadcrumb {
+    font-family: 'Besley', serif;
+    font-weight: 400;
+}
+
+.breadcrumb-item.active {
+    background-color: white;
+    color: black !important;
+}
+
+.breadcrumb-item {
+    padding: 0.7rem !important;
+    background-color: var(--green-dark);
+    width: 150px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px white solid;
+    z-index: 1;
 }

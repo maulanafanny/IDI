@@ -5,7 +5,7 @@
 
     <div class="container py-5">
 
-        {{ Breadcrumbs::render('menu') }}
+        {{ Breadcrumbs::render('main') }}
 
         <div class="card shadows bg-back-white">
             <div class="card-body px-5">
@@ -32,11 +32,9 @@
                                                     <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                 </div>
                                                 <div class="col-6">
-                                                    <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
-                                                    <p class="text-desc">
-                                                        Lorem Ipsum refers to a dummy block of text that is often
-                                                    </p>
-                                                    <p class="fw-semibold fs-5"><small>Rp{{ number_format($menu->price, 2, ',', '.') }}</small></p>
+                                                    <h3 class="text-capitalize title-menu text-truncate">{{ $menu->name }}</h3>
+                                                    <p class="text-desc mb-2">Lorem Ipsum refers to a dummy block of text that is often</p>
+                                                    <p class="fw-semibold title-medium">Rp{{ number_format($menu->price, 2, ',', '.') }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,13 +54,11 @@
                                                                 <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                             </div>
                                                             <div class="col-6">
-                                                                <p class="text-desc">
-                                                                    {{ $menu->desc }}
-                                                                </p>
-                                                                <div class="">
-                                                                    <a class="btn btn-min btn-range btn-outline-success"><i class="fa-solid fs-4 fa-minus align-middle"></i></a>
-                                                                    <span class="mx-4 menu_quantity fs-4 fw-semibold align-middle">1</span>
-                                                                    <a class="btn btn-plus btn-range btn-outline-success"><i class="fa-solid fs-4 fa-plus align-middle"></i></a>
+                                                                <p class="text-desc">{{ $menu->desc }}</p>
+                                                                <div style="width: 180px" class="text-center align-middle">
+                                                                    <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
+                                                                    <span class="menu_quantity fs-4 fw-semibold">1</span>
+                                                                    <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 pt-3">
@@ -78,6 +74,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {{-- Modal End --}}
+
                                     </form>
                                 </div>
                             </div>

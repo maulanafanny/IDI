@@ -9,23 +9,31 @@ use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
 // Menu
+Breadcrumbs::for('main', function (BreadcrumbTrail $trail) {
+    $trail->push('Menu', route('menu'));
+    $trail->push('Cart', route('cart'));
+    $trail->push('Seat', route('seat'));
+    $trail->push('Payment', route('payment'));
+});
+
+// Home
 Breadcrumbs::for('menu', function (BreadcrumbTrail $trail) {
     $trail->push('Menu', route('menu'));
 });
 
-// Home > Checkout
+// Home > Cart
 Breadcrumbs::for('cart', function (BreadcrumbTrail $trail) {
     $trail->parent('menu');
     $trail->push('Cart', route('cart'));
 });
 
-// Home > Checkout > Seat
+// Home > Cart > Seat
 Breadcrumbs::for('seat', function (BreadcrumbTrail $trail) {
     $trail->parent('cart');
     $trail->push('Seat', route('seat'));
 });
 
-// Home > Checkout > Seat > Payment
+// Home > Cart > Seat > Payment
 Breadcrumbs::for('payment', function (BreadcrumbTrail $trail) {
     $trail->parent('seat');
     $trail->push('Payment', route('payment'));

@@ -1,15 +1,15 @@
 @unless ($breadcrumbs->isEmpty())
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <div class="breadcrumb title-breadcrumb fs-4 justify-content-center mb-5">
             @foreach ($breadcrumbs as $breadcrumb)
 
-                @if ($breadcrumb->url && !$loop->last)
-                    <li class="breadcrumb-item"><a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
+                @if ($breadcrumb != Breadcrumbs::current())
+                    <a class="breadcrumb-item mx-5 text-decoration-none text-light" href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a>
                 @else
-                    <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb->title }}</li>
+                    <div class="breadcrumb-item active mx-5" aria-current="page">{{ $breadcrumb->title }}</div>
                 @endif
 
             @endforeach
-        </ol>
+        </div>
     </nav>
 @endunless

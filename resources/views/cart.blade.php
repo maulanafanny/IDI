@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title', 'Check Out')
+@section('title', 'Cart')
 
 @section('content')
 
-    {{ Breadcrumbs::render('cart') }}
-
     <div class="container py-5">
+
+        {{ Breadcrumbs::render('main') }}
 
         <div class="card shadows bg-back-white">
             <div class="card-body p-5">
@@ -24,10 +24,12 @@
                                         <div class="col-6">
                                             <div class="">
                                                 <h3 class="text-capitalize title-menu">{{ $order->menu->name }}</h3>
-                                                <p class="fs-5"><small>Rp{{ number_format($order->menu->price, 2, ',', '.') }}</small></p>
-                                                <a class="btn btn-min btn-range btn-outline-success"><i class="fa-solid fs-4 fa-minus align-middle"></i></a>
-                                                <span class="mx-4 menu_quantity fs-4 fw-semibold align-middle">{{ $order->quantity }}</span>
-                                                <a class="btn btn-plus btn-range btn-outline-success"><i class="fa-solid fs-4 fa-plus align-middle"></i></a>
+                                                <p class="title-medium">Rp{{ number_format($order->menu->price, 2, ',', '.') }}</p>
+                                                <div style="width: 160px" class="text-center align-middle m-0">
+                                                    <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
+                                                    <span class="menu_quantity fs-4 fw-semibold">{{ $order->quantity }}</span>
+                                                    <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -52,7 +54,7 @@
                                             @endforeach
                                         @endforeach
                                     </div>
-                                    <h4 class="fw-semibold">Subtotal<span class="float-end fs-5">Rp{{ number_format($order_customer->total, 2, ',', '.') }}</span></h4>
+                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">Rp{{ number_format($order_customer->total, 2, ',', '.') }}</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +62,9 @@
                 </div>
 
                 <div class="mb-4">
-                    <a href="/checkout" class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
+                    <a href="/seat" class="btn btn-success rounded-pill float-end py-3 px-4">
+                        <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
+                    </a>
                 </div>
             </div>
         </div>
