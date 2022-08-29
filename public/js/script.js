@@ -46,6 +46,10 @@ $(document).ready(function () {
             text += ' ' + value.innerText;
         });
 
+        if (selected[0] == undefined) {
+            text = '';
+        }
+
         $('#seat-choice').text(text);
         $('#seat-input').val(text);
     });

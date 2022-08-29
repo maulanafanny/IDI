@@ -50,14 +50,89 @@
                         <div class="card shadows">
                             <div class="card-body p-5">
                                 <h3 class="title-menu fs-3">Payment Method</h3>
+                                <br>
+                                <div class="col-9">
 
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2">
+                                            <img src="{{ asset('image/qris.png') }}" alt="qris" class="w-100">
+                                        </div>
+                                        <div class="text-serif fs-5 p-0 ms-3 col">Qris</div>
+                                        <button class="btn btn-payment col-2"><i class="fa-solid fa-check fs-3"></i></button>
+                                    </div>
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2"></div>
+                                        <hr class="ms-3 payment-line col m-0">
+                                        <div class="col-2"></div>
+                                    </div>
+                                    
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2">
+                                            <img src="{{ asset('image/dana.png') }}" alt="dana" class="w-100">
+                                        </div>
+                                        <div class="text-serif fs-5 p-0 ms-3 col">DANA</div>
+                                        <button class="btn btn-payment col-2"><i class="fa-solid fa-check fs-3"></i></button>
+                                    </div>
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2"></div>
+                                        <hr class="ms-3 payment-line col m-0">
+                                        <div class="col-2"></div>
+                                    </div>
+
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2">
+                                            <img src="{{ asset('image/ovo.png') }}" alt="ovo" class="w-100">
+                                        </div>
+                                        <div class="text-serif fs-5 p-0 ms-3 col">OVO</div>
+                                        <button class="btn btn-payment col-2"><i class="fa-solid fa-check fs-3"></i></button>
+                                    </div>
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2"></div>
+                                        <hr class="ms-3 payment-line col m-0">
+                                        <div class="col-2"></div>
+                                    </div>
+
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2">
+                                            <img src="{{ asset('image/gopay.png') }}" alt="gopay" class="w-100">
+                                        </div>
+                                        <div class="text-serif fs-5 p-0 ms-3 col">GO-PAY</div>
+                                        <button class="btn btn-payment col-2"><i class="fa-solid fa-check fs-3"></i></button>
+                                    </div>
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2"></div>
+                                        <hr class="ms-3 payment-line col m-0">
+                                        <div class="col-2"></div>
+                                    </div>
+
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2">
+                                            <img src="{{ asset('image/linkaja.png') }}" alt="linkaja" class="w-100">
+                                        </div>
+                                        <div class="text-serif fs-5 p-0 ms-3 col">Link Aja</div>
+                                        <button class="btn btn-payment col-2"><i class="fa-solid fa-check fs-3"></i></button>
+                                    </div>
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2"></div>
+                                        <hr class="ms-3 payment-line col m-0">
+                                        <div class="col-2"></div>
+                                    </div>
+
+                                    <div class="row mb-2 align-items-center">
+                                        <div class="col-2">
+                                            <img src="{{ asset('image/spay.png') }}" alt="spay" class="w-100">
+                                        </div>
+                                        <div class="text-serif fs-5 p-0 ms-3 col">ShopeePay</div>
+                                        <button class="btn btn-payment col-2"><i class="fa-solid fa-check fs-3"></i></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="mb-4">
-                    <a href="/seat" class="btn btn-success rounded-pill float-end py-3 px-4">
+                <div class="my-4">
+                    <a href="/seat" payment-line class="btn btn-success rounded-pill float-end py-3 px-4">
                         <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
                     </a>
                 </div>

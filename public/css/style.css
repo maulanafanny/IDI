@@ -108,6 +108,28 @@ body {
     z-index: 1;
 }
 
+/* Payment Style */
+.btn-payment {
+    color: var(--green-regular) !important;
+}
+
+.btn-payment:hover {
+    border-color: transparent !important;
+    color: var(--green-dark) !important;
+
+}
+
+.btn-payment.active {
+    border-color: transparent !important;
+    color: var(--green-dark) !important;
+}
+
+.payment-line {
+    border-width: 2.5px;
+    color: #BFBFBF;
+}
+
+
 /* Login Card Style */
 .form-check-input:checked {
     background-color: var(--green-dark) !important;

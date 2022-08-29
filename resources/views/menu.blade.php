@@ -63,13 +63,13 @@
                                                             </div>
                                                             <div class="col-12 pt-3">
                                                                 <div class="form-label fw-semibold text-secondary">Notes</div>
-                                                                <textarea name="notes" id="notes" class="form-control" rows="4"></textarea>
+                                                                <textarea name="notes" id="notes" class="form-control" style="resize: none" rows="4"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer border-0">
                                                         <input type="hidden" id="menu_id" value="{{ $menu->id }}">
-                                                        <input type="button" class="btn submit btn-success w-100 py-2" value="Add to Cart">
+                                                        <input type="button" class="btn submit btn-success w-100 py-2 fw-semibold" value="Add to Cart">
                                                     </div>
                                                 </div>
                                             </div>

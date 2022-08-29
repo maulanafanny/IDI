@@ -12,15 +12,15 @@ class OrderItemController extends Controller
     function addCart(Request $request, OrderItem $order)
     {
         if ($request->ajax()) {
-            if ( !empty($order->where('menu_id', '=', $request->menu_id)->first()) ) {
+            if (!empty($order->where('menu_id', '=', $request->menu_id)->first())) {
                 $item = $order->where('menu_id', '=', $request->menu_id)->first();
 
                 $orderClass = new Order;
-                $orderClass->addTotal($item->price * $request->quantity);
+                $orderClass->addTotal(Menu::where('id', '=', $request->menu_id)->first()->price * $request->quantity);
 
                 return $order->where('menu_id', '=', $request->menu_id)->update([
-                    'quantity' => $item->quantity+1,
-                    'total' => $item->menu->price * ($item->quantity+$request->quantity)
+                    'quantity' => $item->quantity + $request->quantity,
+                    'total' => $item->menu->price * ($item->quantity + $request->quantity)
                 ]);
             } else {
                 $item = Menu::where('id', '=', $request->menu_id)->first();

@@ -33,7 +33,10 @@ Route::get('/cart', function () {
 })->name('cart');
 
 Route::get('/seat', function () {
-    return view('seat');
+    $data = Customer::find(1)->with('order.orderItem.menu')->first();
+    return view('seat', [
+        'order_customer' => $data->order,
+    ]);
 })->name('seat');
 
 Route::get('/payment', function () {

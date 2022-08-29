@@ -49,7 +49,7 @@
                                             <p class="fs-5">{{ $order }}</p>
                                             @foreach ($value as $item)
                                                 <div class="sub-categories ms-4 text-green-regular">
-                                                    <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">Rp{{ number_format($item->menu->price, 2, ',', '.') }}</span></p>
+                                                    <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">Rp{{ number_format($item->menu->price * $item->quantity, 2, ',', '.') }}</span></p>
                                                 </div>
                                             @endforeach
                                         @endforeach
@@ -61,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
+                <div class="my-4">
                     <a href="/seat" class="btn btn-success rounded-pill float-end py-3 px-4">
                         <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
                     </a>

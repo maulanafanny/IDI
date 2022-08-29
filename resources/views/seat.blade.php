@@ -81,7 +81,7 @@
 
                         <div>
                             <h3 class="title-menu fs-3">Your Choice</h3>
-                            <p class="fs-3 fw-light" id="seat-choice"></p>
+                            <p class="fs-3 fw-light" id="seat-choice">{{ $order_customer->seat }}</p>
                         </div>
                     </div>
                 </div>
