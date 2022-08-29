@@ -63,7 +63,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="col-4 offset-1">
                         <div class="mb-3">
                             <div class="btn col btn-success bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Non-Available</span>
@@ -87,9 +87,13 @@
                 </div>
 
                 <div class="mb-4">
-                    <a href="/payment" class="btn btn-success rounded-pill float-end py-3 px-4">
-                        <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
-                    </a>
+                    <form action="/addseat/1" method="post">
+                        @csrf
+                        <input type="hidden" name="seat" id="seat-input" value="">
+                        <button type="submit" class="btn btn-success rounded-pill float-end py-3 px-4">
+                            <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
+                        </button>
+                    </form>
                 </div>
 
             </div>

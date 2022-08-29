@@ -3,6 +3,7 @@
     --green-regular: #599584;
     --green-light: #CDDFDA;
     --brown-light: #9F7E69;
+    --grey: #929291;
 }
 
 body {
@@ -105,4 +106,36 @@ body {
     text-align: center;
     border: 1px white solid;
     z-index: 1;
+}
+
+/* Login Card Style */
+.form-check-input:checked {
+    background-color: var(--green-dark) !important;
+    border-color: var(--green-dark) !important;
+}
+
+.form-label {
+    font-weight: 600 !important;
+    color: var(--grey) !important;
+}
+
+.form-check-label {
+    color: #51504E !important;
+}
+
+.form-control {
+    color: var(--grey);
+    padding: .75rem .75rem !important;
+    line-height: 1.5;
+    border: 1.75px solid var(--grey) !important;
+    appearance: none;
+    border-radius: 10px !important;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: var(--green-regular) !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--green-light) !important;
 }

@@ -32,7 +32,7 @@
                                                     <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                 </div>
                                                 <div class="col-6">
-                                                    <h3 class="text-capitalize title-menu text-truncate">{{ $menu->name }}</h3>
+                                                    <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
                                                     <p class="text-desc mb-2">Lorem Ipsum refers to a dummy block of text that is often</p>
                                                     <p class="fw-semibold title-medium">Rp{{ number_format($menu->price, 2, ',', '.') }}</p>
                                                 </div>

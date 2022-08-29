@@ -7,12 +7,9 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    function addCart(Request $request, Order $order)
+    function addSeat(Request $request, $id)
     {
-        if ($request->ajax()) {
-            return $order->create([
-                'menu_id' => $request->menu_id,
-            ]);
-        }
+        Order::where('id', '=', $id)->update(['seat' => $request->seat]);
+        return redirect('payment');
     }
 }

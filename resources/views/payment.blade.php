@@ -39,7 +39,7 @@
                         <div class="card shadows">
                             <div class="card-body px-5 py-3">
                                 <div class="col-11">
-                                    <h3 class="title-menu">Seat<span class="float-end">B4</span></h3>
+                                    <h3 class="title-menu my-2">Seat<span class="float-end">{{ $order_customer->seat }}</span></h3>
                                 </div>
                             </div>
                         </div>

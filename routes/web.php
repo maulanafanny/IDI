@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Models\Menu;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
@@ -43,4 +44,11 @@ Route::get('/payment', function () {
     ]);
 })->name('payment');
 
+Route::post('/addseat/{id}', [OrderController::class, 'addSeat'])->name('addSeat');
+
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');
+
+Route::get('/login', function ()
+{
+    return view('login');
+});

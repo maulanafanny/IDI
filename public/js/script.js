@@ -47,6 +47,7 @@ $(document).ready(function () {
         });
 
         $('#seat-choice').text(text);
+        $('#seat-input').val(text);
     });
 
     
