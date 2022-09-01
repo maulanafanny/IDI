@@ -38,3 +38,8 @@ Breadcrumbs::for('payment', function (BreadcrumbTrail $trail) {
     $trail->parent('seat');
     $trail->push('Payment', route('payment'));
 });
+
+// Home > Cart > Seat > Payment > Summary
+Breadcrumbs::for('summary', function (BreadcrumbTrail $trail) {
+    $trail->parent('payment');
+});

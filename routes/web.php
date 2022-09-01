@@ -47,6 +47,14 @@ Route::get('/payment', function () {
     ]);
 })->name('payment');
 
+Route::get('/summary', function () {
+    $data = Customer::find(1)->with('order.orderItem.menu')->first();
+    return view('summary', [
+        'order_customer' => $data->order,
+        'payments' => $data->order->orderItem->groupBy('menu.category')
+    ]);
+})->name('summary');
+
 Route::post('/addseat/{id}', [OrderController::class, 'addSeat'])->name('addSeat');
 
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');
