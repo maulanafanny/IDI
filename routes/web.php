@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\OrderController;
 use App\Models\Menu;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 
 /*
@@ -20,11 +22,12 @@ use App\Http\Controllers\OrderItemController;
 Route::get('/', function () {
     return view('menu', [
         'menus' => Menu::all(),
+        'session' => Session::get('customer')['order_id']
     ]);
 })->name('menu');
 
 Route::get('/cart', function () {
-    $data = Customer::find(1)->with('order.orderItem.menu')->first();
+    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
     return view('cart', [
         'orders' => $data->order->orderItem,
         'order_customer' => $data->order,
@@ -33,14 +36,14 @@ Route::get('/cart', function () {
 })->name('cart');
 
 Route::get('/seat', function () {
-    $data = Customer::find(1)->with('order.orderItem.menu')->first();
+    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
     return view('seat', [
         'order_customer' => $data->order,
     ]);
 })->name('seat');
 
 Route::get('/payment', function () {
-    $data = Customer::find(1)->with('order.orderItem.menu')->first();
+    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
     return view('payment', [
         'order_customer' => $data->order,
         'payments' => $data->order->orderItem->groupBy('menu.category')
@@ -48,7 +51,7 @@ Route::get('/payment', function () {
 })->name('payment');
 
 Route::get('/summary', function () {
-    $data = Customer::find(1)->with('order.orderItem.menu')->first();
+    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
     return view('summary', [
         'order_customer' => $data->order,
         'payments' => $data->order->orderItem->groupBy('menu.category')
@@ -63,3 +66,5 @@ Route::get('/login', function ()
 {
     return view('login');
 });
+
+Route::post('/sessionStore', [LoginController::class, 'loginCustomer'])->name('loginCustomer');

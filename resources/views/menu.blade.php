@@ -7,6 +7,8 @@
 
         {{ Breadcrumbs::render('main') }}
 
+        @dump($session)
+
         <div class="card shadows bg-back-white">
             <div class="card-body px-5">
 

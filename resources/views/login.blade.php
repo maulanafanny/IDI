@@ -20,7 +20,8 @@
         <div class="card">
             <div class="card-body p-5 mx-auto w-75">
                 <br>
-                <form action="/login" method="post">
+                <form action="/sessionStore" method="post">
+                    @csrf
                     <img src="{{ asset('image/login.png') }}" alt="login-illustration" class="img-fluid mb-4 px-4">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -31,11 +32,11 @@
                         <input type="text" class="form-control" name="phone" aria-label="phone">
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="seat-option">
+                        <input class="form-check-input" type="radio" value="take-away" name="seat_option">
                         <label class="form-check-label" for="take-away">Take-away</label>
                     </div>
                     <div class="form-check mb-5">
-                        <input class="form-check-input" type="radio" name="seat-option" checked>
+                        <input class="form-check-input" type="radio" value="dine-in" name="seat_option" checked>
                         <label class="form-check-label" for="dine-in">Dine-in</label>
                     </div>
                     <input type="submit" class="btn btn-success w-100 py-3 fw-semibold" value="Get Started">

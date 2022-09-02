@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Order extends Model
 {
@@ -29,8 +30,8 @@ class Order extends Model
 
     function addTotal($price)
     {
-        $total = Order::first()->total + $price;
+        $total = Order::where('id', Session::get('customer')['order_id'])->first()->total + $price;
 
-        Order::first()->update(['total' => $total]);
+        Order::where('id', Session::get('customer')['order_id'])->first()->update(['total' => $total]);
     }
 }
