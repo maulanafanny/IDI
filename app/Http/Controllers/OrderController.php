@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
-    function addSeat(Request $request, $id)
+    function addSeat(Request $request)
     {
-        Order::where('id', '=', $id)->update(['seat' => $request->seat]);
+        Session::put('order.seat', $request->seat);
         return redirect('payment');
     }
 }

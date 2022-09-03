@@ -20,34 +20,41 @@ use App\Http\Controllers\OrderItemController;
 */
 
 Route::get('/', function () {
+
     return view('menu', [
         'menus' => Menu::all(),
-        'session' => Session::get('customer')['order_id']
+        'session' => Session::all()
     ]);
+
 })->name('menu');
 
 Route::get('/cart', function () {
-    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
+    
     return view('cart', [
-        'orders' => $data->order->orderItem,
-        'order_customer' => $data->order,
-        'payments' => $data->order->orderItem->groupBy('menu.category')
+        'menu' => Menu::get(),
+        'item' => Session::get('order.item'),
+        'total' => Session::get('order.total'),
     ]);
+
 })->name('cart');
 
 Route::get('/seat', function () {
-    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
+
     return view('seat', [
-        'order_customer' => $data->order,
+        'seat' => Session::get('order.seat')
     ]);
+
 })->name('seat');
 
 Route::get('/payment', function () {
-    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
+
     return view('payment', [
-        'order_customer' => $data->order,
-        'payments' => $data->order->orderItem->groupBy('menu.category')
+        'menu' => Menu::get(),
+        'item' => Session::get('order.item'),
+        'total' => Session::get('order.total'),
+        'seat' => Session::get('order.seat')
     ]);
+
 })->name('payment');
 
 Route::get('/summary', function () {
