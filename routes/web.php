@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Menu;
-use App\Models\Customer;
+use App\Models\Seat;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\LoginController;
@@ -45,7 +45,8 @@ Route::get('/seat', function () {
     }
 
     return view('seat', [
-        'seat' => Session::get('customer.seat')
+        'choices' => explode(' ', Session::get('customer.seat')),
+        'seats' => Seat::all()
     ]);
 
 })->name('seat');

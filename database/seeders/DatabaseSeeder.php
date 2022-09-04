@@ -16,15 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Menu::factory(10)->create();
 
-        \App\Models\Order::factory()->create([
-            'quantity' => 0,
-            'total' => 0,
-            'customer_id' => 1
-        ]);
+        $seats = [];
 
-        \App\Models\Customer::factory()->create([
-            'name' => 'Fanny Maulana',
-            'order_id' => 1
-        ]);
+        for ($i=1; $i < 5; $i++) { 
+            for ($j=1; $j < 6; $j++) { 
+                array_push($seats, chr(0x40 + $i) . $j);
+            }
+        }
+
+        foreach ($seats as $seat) {
+            \App\Models\Seat::factory()->create(['seat' => $seat]);
+        }
     }
 }
