@@ -40,8 +40,12 @@ Route::get('/cart', function () {
 
 Route::get('/seat', function () {
 
+    if (Session::get('customer.seat') === 'take-away') {
+        return redirect('payment');
+    }
+
     return view('seat', [
-        'seat' => Session::get('order.seat')
+        'seat' => Session::get('customer.seat')
     ]);
 
 })->name('seat');
@@ -52,17 +56,20 @@ Route::get('/payment', function () {
         'menu' => Menu::get(),
         'item' => Session::get('order.item'),
         'total' => Session::get('order.total'),
-        'seat' => Session::get('order.seat')
+        'seat' => Session::get('customer.seat')
     ]);
 
 })->name('payment');
 
 Route::get('/summary', function () {
-    $data = Customer::where('id', Session::get('customer')['order_id'])->with('order.orderItem.menu')->first();
+
     return view('summary', [
-        'order_customer' => $data->order,
-        'payments' => $data->order->orderItem->groupBy('menu.category')
+        'menu' => Menu::get(),
+        'item' => Session::get('order.item'),
+        'total' => Session::get('order.total'),
+        'seat' => Session::get('customer.seat')
     ]);
+
 })->name('summary');
 
 Route::post('/addseat/{id}', [OrderController::class, 'addSeat'])->name('addSeat');

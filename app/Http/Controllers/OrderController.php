@@ -9,7 +9,7 @@ class OrderController extends Controller
 {
     function addSeat(Request $request)
     {
-        Session::put('order.seat', $request->seat);
+        Session::put('customer.seat', $request->seat);
         return redirect('payment');
     }
 }

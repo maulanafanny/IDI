@@ -11,13 +11,12 @@ class LoginController extends Controller
         $customer = [
             'name' => $request->name,
             'phone' => $request->phone,
-            'seat_option' => $request->seat_option
+            'seat' => $request->seat_option
         ];
 
         $order = [
             'item' => [],
             'total' => 0,
-            'qty' => 0,
         ];
 
         $request->session()->put('customer', $customer);
