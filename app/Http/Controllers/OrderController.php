@@ -12,4 +12,11 @@ class OrderController extends Controller
         Session::put('customer.seat', $request->seat);
         return redirect('payment');
     }
+
+    function store(Request $request)
+    {
+        
+
+        return redirect('success');
+    }
 }

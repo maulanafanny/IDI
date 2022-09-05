@@ -73,6 +73,12 @@ Route::get('/summary', function () {
 
 })->name('summary');
 
+Route::get('/success', function () {
+
+    return view('success');
+
+})->name('summary');
+
 Route::post('/addseat/{id}', [OrderController::class, 'addSeat'])->name('addSeat');
 
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');

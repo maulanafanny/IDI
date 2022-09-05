@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Cart')
+@section('title', 'Summary')
 
 @section('content')
     <div class="container py-5">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="my-4">
-                    <a href="/seat" payment-line class="btn btn-success rounded-pill float-end py-3 px-4">
+                    <a href="/success" class="btn btn-success rounded-pill float-end py-3 px-4">
                         <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
                     </a>
                 </div>
