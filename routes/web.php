@@ -73,11 +73,7 @@ Route::get('/summary', function () {
 
 })->name('summary');
 
-Route::get('/success', function () {
-
-    return view('success');
-
-})->name('summary');
+Route::get('/success', [OrderController::class, 'store'])->name('success');
 
 Route::post('/addseat/{id}', [OrderController::class, 'addSeat'])->name('addSeat');
 

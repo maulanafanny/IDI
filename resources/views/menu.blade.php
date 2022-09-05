@@ -65,7 +65,7 @@
                                                             </div>
                                                             <div class="col-12 pt-3">
                                                                 <div class="form-label fw-semibold text-secondary">Notes</div>
-                                                                <textarea name="notes" id="notes" class="form-control" style="resize: none" rows="4"></textarea>
+                                                                <textarea name="notes" class="form-control notes" style="resize: none" rows="4"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -12,18 +12,19 @@ class OrderItemController extends Controller
     {
         if ($request->ajax()) {
 
-            if (!empty( Session::get('order.item')[$request->menu_id])) {
+            if (!empty( Session::get("order.item.{$request->menu_id}"))) {
                 
-                Session::increment('order.item.' . $request->menu_id, $request->quantity);
+                Session::increment("order.item.{$request->menu_id}.qty", $request->quantity);
 
             } else {
 
-                Session::put('order.item.' . $request->menu_id, $request->quantity);
+                Session::put("order.item.{$request->menu_id}.qty", $request->quantity);
 
             }
 
             $price = Menu::find($request->menu_id)->price;
             Session::increment('order.total', $price * $request->quantity);
+            Session::put("order.item.{$request->menu_id}.notes", $request->notes);
         }
     }
 }

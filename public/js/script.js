@@ -18,15 +18,17 @@ $(document).ready(function () {
     $('.submit').click(function() {
         const menu = this.previousElementSibling.value;
         const quantity = this.closest('.modal-footer').previousElementSibling.querySelector('.menu_quantity').innerText;
+        const notes = this.closest('.modal-footer').previousElementSibling.querySelector('.notes').value;
         $.ajax({
             url: "/add",
             type: "get",
             data: {
                 menu_id: menu,
-                quantity: quantity
+                quantity: quantity,
+                notes: notes
             },
             success: function() {
-                alert(menu + ' ' + quantity);
+                alert(menu + ' ' + quantity + ' ' + notes);
             }
         });
     });

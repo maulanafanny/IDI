@@ -14,7 +14,7 @@
 
                 <div class="row">
                     <div class="col-4 mx-3">
-                        @foreach ($item as $id => $qty)
+                        @foreach ($item as $id => $detail)
                             <div class="card mb-4 shadows">
                                 <div class="card-body">
                                     <div class="row">
@@ -27,7 +27,7 @@
                                                 <p class="title-medium">Rp{{ number_format($menu[$id - 1]->price, 2, ',', '.') }}</p>
                                                 <div style="width: 160px" class="text-center align-middle m-0">
                                                     <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
-                                                    <span class="menu_quantity fs-4 fw-semibold">{{ $qty }}</span>
+                                                    <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}</span>
                                                     <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
                                                 </div>
                                             </div>
@@ -45,11 +45,11 @@
                                 <br>
                                 <div class="col-10">
                                     <div class="categories ms-5 text-success mb-4">
-                                        @foreach ($item as $id => $qty)
+                                        @foreach ($item as $id => $detail)
                                             <p class="fs-5">{{ $menu[$id - 1]->category }}</p>
                                             {{-- @foreach ($value as $item) --}}
                                                 <div class="sub-categories ms-4 text-green-regular">
-                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">Rp{{ number_format($menu[$id - 1]->price * $qty, 2, ',', '.') }}</span></p>
+                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">Rp{{ number_format($menu[$id - 1]->price * $detail['qty'], 2, ',', '.') }}</span></p>
                                                 </div>
                                             {{-- @endforeach --}}
                                         @endforeach

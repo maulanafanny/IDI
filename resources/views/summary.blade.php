@@ -18,10 +18,10 @@
                             <br>
                             <div class="col-11">
                                 <div class="categories ms-5 text-success mb-4">
-                                    @foreach ($item as $id => $qty)
+                                    @foreach ($item as $id => $detail)
                                         <p class="fs-5">{{ $menu[$id - 1]->category }}</p>
                                         <div class="sub-categories ms-4 text-green-regular">
-                                            <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">Rp{{ number_format($menu[$id - 1]->price * $qty, 2, ',', '.') }}</span></p>
+                                            <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">Rp{{ number_format($menu[$id - 1]->price * $detail['qty'], 2, ',', '.') }}</span></p>
                                         </div>
                                     @endforeach
                                 </div>
