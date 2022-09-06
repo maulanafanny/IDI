@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Seat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -20,6 +21,11 @@ class OrderController extends Controller
         $items = Session::get('order.item');
         $quantity = 0;
         $order_items = [];
+        $seats = explode(' ', Session::get('customer.seat'));
+
+        foreach ($seats as $seat) {
+            Seat::where('seat', $seat)->update(['status' => false]);
+        }
 
         foreach ($items as $id => $detail) {
             $quantity += $detail['qty'];

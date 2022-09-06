@@ -22,6 +22,6 @@ class LoginController extends Controller
         $request->session()->put('customer', $customer);
         $request->session()->put('order', $order);
 
-        return redirect('/');
+        return redirect('menu');
     }
 }
