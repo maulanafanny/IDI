@@ -7,6 +7,13 @@
 
         {{ Breadcrumbs::render('main') }}
 
+        @if (session()->has('alert'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session()->get('alert') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="card shadows bg-back-white">
             <div class="card-body p-5">
 
@@ -38,7 +45,8 @@
 
                         <div class="row mb-4">
                             @foreach ($seats as $seat)
-                                <button class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen' : 'bg-lightbrown' }} mx-3 rounded text-dark fs-4 btn-seat" {{ $seat->status ? '' : 'disabled' }} style="height:90px; width:90px">{{ $seat->seat }}</button>
+                                <button class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen text-dark' : 'bg-lightbrown text-light' }} mx-3 rounded fs-4 btn-seat"
+                                    {{ $seat->status ? '' : 'disabled' }} style="height:90px; width:90px">{{ $seat->seat }}</button>
                             @endforeach
                         </div>
 
@@ -46,13 +54,16 @@
 
                     <div class="col-4 offset-1">
                         <div class="mb-3">
-                            <div class="btn col btn-success bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Available</span>
+                            <div class="align-middle d-inline-block bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div>
+                            <span class="fw-semibold">Available</span>
                         </div>
                         <div class="mb-3">
-                            <div class="btn col btn-success bg-lightbrown me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Occupied</span>
+                            <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:40px; width:40px"></div>
+                            <span class="fw-semibold">Occupied</span>
                         </div>
                         <div class="mb-3">
-                            <div class="btn col btn-success bg-decor me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Your Choice</span>
+                            <div class="align-middle d-inline-block bg-decor me-3 rounded" style="height:40px; width:40px"></div>
+                            <span class="fw-semibold">Your Choice</span>
                         </div>
 
                         <br>
@@ -63,7 +74,7 @@
                             <h3 class="title-menu fs-3">Your Choice</h3>
                             <p class="fs-3 fw-light" id="seat-choice">
                                 @foreach ($choices as $choice)
-                                    {{ $choice . " " }}
+                                    {{ $choice . ' ' }}
                                 @endforeach
                             </p>
                         </div>
@@ -71,7 +82,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <form action="/addseat/1" method="post">
+                    <form action="/addseat" method="post">
                         @csrf
                         <input type="hidden" name="seat" id="seat-input" value="">
                         <button type="submit" class="btn btn-success rounded-pill float-end py-3 px-4">
@@ -86,11 +97,9 @@
     </div>
 
     <script>
-
         @foreach ($choices as $choice)
             $(".btn-seat:contains({{ $choice }})").toggleClass('bg-lightgreen text-dark bg-decor text-light');
         @endforeach
-
     </script>
 
 @endsection

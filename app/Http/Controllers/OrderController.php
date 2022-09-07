@@ -12,6 +12,10 @@ class OrderController extends Controller
 {
     function addSeat(Request $request)
     {
+        if ($request->seat === null) {
+            return redirect('seat')->with('alert', 'You haven\'t chosen for a seat yet');
+        }
+
         Session::put('customer.seat', $request->seat);
         return redirect('payment');
     }

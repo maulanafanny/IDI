@@ -34,5 +34,5 @@ Route::get('/success', [OrderController::class, 'store'])->name('success');
 
 // Store Route
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');
-Route::post('/addseat/{id}', [OrderController::class, 'addSeat'])->name('addSeat');
+Route::post('/addseat', [OrderController::class, 'addSeat'])->name('addSeat');
 Route::post('/sessionStore', [LoginController::class, 'loginCustomer'])->name('loginCustomer');

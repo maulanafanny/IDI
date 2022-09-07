@@ -38,6 +38,10 @@ class PageController extends Controller
     }
 
     function payment() {
+        if (Session::get('customer.seat') === 'dine-in') {
+            return redirect('seat')->with('alert', 'You haven\'t chosen for a seat yet');
+        }
+
         return view('payment', [
             'menu' => Menu::get(),
             'item' => Session::get('order.item'),

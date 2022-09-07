@@ -28,7 +28,7 @@ $(document).ready(function () {
                 notes: notes
             },
             success: function() {
-                alert(menu + ' ' + quantity + ' ' + notes);
+                alert('Berhasil menambahkan menu');
             }
         });
     });

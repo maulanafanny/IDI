@@ -36,7 +36,7 @@
                                                 <div class="col-6">
                                                     <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
                                                     <p class="text-desc mb-2">Lorem Ipsum refers to a dummy block of text that is often</p>
-                                                    <p class="fw-semibold title-medium">Rp{{ number_format($menu->price, 2, ',', '.') }}</p>
+                                                    <p class="fw-semibold title-medium">@rupiah($menu->price)</p>
                                                 </div>
                                             </div>
                                         </div>

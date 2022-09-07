@@ -10,7 +10,7 @@
         <div class="card shadows bg-back-white">
             <div class="card-body p-5">
 
-                <h3 class="title-menu pb-4">We welcomed everyone by heart.</h3>
+                <h3 class="title-menu pb-4">We welcome everyone by heart.</h3>
 
                 <div class="row">
                     <div class="col-4 mx-3">
@@ -24,7 +24,7 @@
                                         <div class="col-6">
                                             <div class="">
                                                 <h3 class="text-capitalize title-menu">{{ $menu[$id - 1]->name }}</h3>
-                                                <p class="title-medium">Rp{{ number_format($menu[$id - 1]->price, 2, ',', '.') }}</p>
+                                                <p class="title-medium">@rupiah($menu[$id - 1]->price)</p>
                                                 <div style="width: 160px" class="text-center align-middle m-0">
                                                     <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
                                                     <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}</span>
@@ -49,12 +49,12 @@
                                             <p class="fs-5">{{ $menu[$id - 1]->category }}</p>
                                             {{-- @foreach ($value as $item) --}}
                                                 <div class="sub-categories ms-4 text-green-regular">
-                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">Rp{{ number_format($menu[$id - 1]->price * $detail['qty'], 2, ',', '.') }}</span></p>
+                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">@rupiah($menu[$id - 1]->price * $detail['qty'])</span></p>
                                                 </div>
                                             {{-- @endforeach --}}
                                         @endforeach
                                     </div>
-                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">Rp{{ number_format($total, 2, ',', '.') }}</span></h4>
+                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">@rupiah($total)</span></h4>
                                 </div>
                             </div>
                         </div>
