@@ -28,6 +28,7 @@ Route::get('/cart', [PageController::class, 'cart'])->name('cart');
 Route::get('/seat', [PageController::class, 'seat'])->name('seat');
 Route::get('/payment', [PageController::class, 'payment'])->name('payment');
 Route::get('/summary', [PageController::class, 'summary'])->name('summary');
+Route::get('/history', [PageController::class, 'history'])->name('history');
 
 // Success & Store Route
 Route::get('/success', [OrderController::class, 'store'])->name('success');

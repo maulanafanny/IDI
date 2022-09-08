@@ -15,10 +15,6 @@ body {
     border-radius: 15%;
 }
 
-.fw-semibold {
-    font-weight: 600;
-}
-
 .modal-dialog {
     max-width: 550px;
 }
@@ -26,15 +22,6 @@ body {
 .btn-range {
     border-width: 2.8px !important;
     border-radius: 30px !important;
-}
-
-.bg-decor {
-    background-color: var(--green-dark) !important;
-}
-
-.bg-lightbrown {
-    background-color: var(--brown-light) !important;
-    border-color: var(--brown-light) !important;
 }
 
 .main-content {
@@ -51,6 +38,8 @@ body {
     background-color: white !important;
 }
 
+
+/* Text Style */
 .text-desc {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
@@ -75,10 +64,12 @@ body {
     color: var(--green-regular);
 }
 
-.shadows {
-    box-shadow: 0px 4px 4px 0px #00000008 !important;
+.text-optional {
+    opacity: 38%;
 }
 
+
+/* Background Color Style */
 .bg-back-white {
     background-color: #F8F8F8 !important;
 }
@@ -88,6 +79,17 @@ body {
     border-color: var(--green-light) !important;
 }
 
+.bg-decor {
+    background-color: var(--green-dark) !important;
+}
+
+.bg-lightbrown {
+    background-color: var(--brown-light) !important;
+    border-color: var(--brown-light) !important;
+}
+
+
+/* Breadcrumb Style */
 .title-breadcrumb {
     font-family: 'Besley', serif;
     font-weight: 400;
@@ -99,14 +101,14 @@ body {
 }
 
 .breadcrumb-item {
-    padding: 0.7rem !important;
+    padding: 0.7rem 1.75rem !important;
     background-color: var(--green-dark);
-    width: 150px;
     border-radius: 20px;
     text-align: center;
     border: 1px white solid;
     z-index: 1;
 }
+
 
 /* Payment Style */
 .btn-payment {
@@ -163,16 +165,26 @@ body {
 }
 
 .centered {
-    display: flex; 
-    position: absolute; 
-    top:0; 
-    bottom:0; 
-    right:0; 
-    left:0;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 @media (min-width: 768px) {
     .img-map {
         transform: rotate(90deg);
     }
+}
+
+
+/* Bootstrap Override */
+.shadows {
+    box-shadow: 0px 4px 4px 0px #00000008 !important;
+}
+
+.fw-semibold {
+    font-weight: 600;
 }

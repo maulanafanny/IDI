@@ -86,7 +86,10 @@
                     @endforeach
                 </div>
                 <div class="mb-5">
-                    <a href="/cart" class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
+                    <a href="/cart" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
+                        Keranjang
+                        <i class="fa-solid fs-3 fa-arrow-right align-middle ps-2"></i>
+                    </a>
                 </div>
                 <br>
                 <br>

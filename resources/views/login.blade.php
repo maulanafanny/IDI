@@ -24,11 +24,11 @@
                     @csrf
                     <img src="{{ asset('image/login.png') }}" alt="login-illustration" class="img-fluid mb-4 px-4">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name<span><small class="text-danger"> *</small></span></label>
+                        <label for="name" class="form-label">Nama<span><small class="text-danger"> *</small></span></label>
                         <input required aria-required="true" type="text" class="form-control" name="name" aria-label="name">
                     </div>
                     <div class="mb-4">
-                        <label for="phone" class="form-label">Phone</label>
+                        <label for="phone" class="form-label">No.Telepon<span class="text-optional"> (Opsional)</span></label>
                         <input type="text" class="form-control" name="phone" aria-label="phone">
                     </div>
                     <div class="form-check mb-3">
@@ -39,7 +39,7 @@
                         <input class="form-check-input" type="radio" value="dine-in" name="seat_option" checked>
                         <label class="form-check-label" for="dine-in">Dine-in</label>
                     </div>
-                    <input type="submit" class="btn btn-success w-100 py-3 fw-semibold" value="Get Started">
+                    <input type="submit" class="btn btn-success w-100 py-3 fw-semibold" value="Pesan Sekarang">
                 </form>
                 <br>
             </div>

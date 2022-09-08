@@ -11,9 +11,10 @@ use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 // Menu
 Breadcrumbs::for('main', function (BreadcrumbTrail $trail) {
     $trail->push('Menu', route('menu'));
-    $trail->push('Cart', route('cart'));
-    $trail->push('Seat', route('seat'));
-    $trail->push('Payment', route('payment'));
+    $trail->push('Keranjang', route('cart'));
+    $trail->push('Meja', route('seat'));
+    $trail->push('Pembayaran', route('payment'));
+    $trail->push('Riwayat', route('history'));
 });
 
 // Home
@@ -24,22 +25,28 @@ Breadcrumbs::for('menu', function (BreadcrumbTrail $trail) {
 // Home > Cart
 Breadcrumbs::for('cart', function (BreadcrumbTrail $trail) {
     $trail->parent('menu');
-    $trail->push('Cart', route('cart'));
+    $trail->push('Keranjang', route('cart'));
 });
 
 // Home > Cart > Seat
 Breadcrumbs::for('seat', function (BreadcrumbTrail $trail) {
     $trail->parent('cart');
-    $trail->push('Seat', route('seat'));
+    $trail->push('Meja', route('seat'));
 });
 
 // Home > Cart > Seat > Payment
 Breadcrumbs::for('payment', function (BreadcrumbTrail $trail) {
     $trail->parent('seat');
-    $trail->push('Payment', route('payment'));
+    $trail->push('Pembayaran', route('payment'));
 });
 
-// Home > Cart > Seat > Payment > Summary
+// Home > Cart > Seat > Payment
 Breadcrumbs::for('summary', function (BreadcrumbTrail $trail) {
     $trail->parent('payment');
+});
+
+// Home > Cart > Seat > Payment > History
+Breadcrumbs::for('history', function (BreadcrumbTrail $trail) {
+    $trail->parent('payment');
+    $trail->push('Riwayat', route('history'));
 });

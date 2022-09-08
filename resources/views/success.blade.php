@@ -21,8 +21,8 @@
 
                 <br><br>
     
-                <a href="#" class="btn btn-outline-success w-100 fw-bold py-2 my-2">See My Order</a>
-                <a href="/login" class="btn btn-outline-danger w-100 fw-bold py-2 my-2">Close</a>
+                <a href="/history" class="btn btn-outline-success w-100 fw-bold py-2 my-2">See My Order</a>
+                <a href="/menu" class="btn btn-outline-danger w-100 fw-bold py-2 my-2">Back to Menu</a>
 
                 <br>
                 <br>

@@ -59,6 +59,15 @@ class PageController extends Controller
         ]);
     }
 
+    function history() {
+        return view('history', [
+            'menu' => Menu::get(),
+            'item' => Session::get('order.item'),
+            'total' => Session::get('order.total'),
+            'seat' => Session::get('customer.seat')
+        ]);
+    }
+
     function login() {
         return view('login');
     }
