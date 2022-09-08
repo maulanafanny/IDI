@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Cart')
+@section('title', 'Payment')
 
 @section('content')
     <div class="container py-5">
@@ -20,16 +20,14 @@
                                 <br>
                                 <div class="col-11">
                                     <div class="categories ms-5 text-success mb-4">
-                                        @foreach ($payments as $order => $value)
-                                            <p class="fs-5">{{ $order }}</p>
-                                            @foreach ($value as $item)
+                                        @foreach ($item as $id => $detail)
+                                            <p class="fs-5">{{ $menu[$id - 1]->category }}</p>
                                                 <div class="sub-categories ms-4 text-green-regular">
-                                                    <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">Rp{{ number_format($item->menu->price, 2, ',', '.') }}</span></p>
+                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">@currency($menu[$id - 1]->price * $detail['qty'])</span></p>
                                                 </div>
-                                            @endforeach
                                         @endforeach
                                     </div>
-                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">Rp{{ number_format($order_customer->total, 2, ',', '.') }}</span></h4>
+                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">@currency($total)</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +37,7 @@
                         <div class="card shadows">
                             <div class="card-body px-5 py-3">
                                 <div class="col-11">
-                                    <h3 class="title-menu my-2">Seat<span class="float-end">{{ $order_customer->seat }}</span></h3>
+                                    <h3 class="title-menu my-2">Seat<span class="float-end">{{ $seat }}</span></h3>
                                 </div>
                             </div>
                         </div>

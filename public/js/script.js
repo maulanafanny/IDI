@@ -18,23 +18,24 @@ $(document).ready(function () {
     $('.submit').click(function() {
         const menu = this.previousElementSibling.value;
         const quantity = this.closest('.modal-footer').previousElementSibling.querySelector('.menu_quantity').innerText;
+        const notes = this.closest('.modal-footer').previousElementSibling.querySelector('.notes').value;
         $.ajax({
             url: "/add",
             type: "get",
             data: {
                 menu_id: menu,
-                quantity: quantity
+                quantity: quantity,
+                notes: notes
             },
             success: function() {
-                alert(menu + ' ' + quantity);
+                alert('Berhasil menambahkan menu');
             }
         });
     });
 
     $('.btn-seat').click(function (e) { 
         e.preventDefault();
-        $(this).toggleClass('bg-lightgreen text-dark');
-        $(this).toggleClass('bg-decor text-light');
+        $(this).toggleClass('bg-lightgreen text-dark bg-decor text-light');
 
         let selected = $('.btn-seat.bg-decor');
         let text = $('#seat-choice').text();

@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('customer_id')->nullable()->index();
-            $table->text('user_agent')->nullable();
+        Schema::create('seats', function (Blueprint $table) {
+            $table->id();
+            $table->string('seat');
+            $table->boolean('status')->default(true);
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('seats');
     }
 };

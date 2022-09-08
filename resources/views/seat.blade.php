@@ -7,6 +7,13 @@
 
         {{ Breadcrumbs::render('main') }}
 
+        @if (session()->has('alert'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session()->get('alert') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="card shadows bg-back-white">
             <div class="card-body p-5">
 
@@ -25,7 +32,9 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <img class="img-fluid" src="{{ asset('image/interior.png') }}" alt="">
+                                <div class="img-map">
+                                    <img class="img-fluid" src="{{ asset('image/interior.png') }}" alt="interior">
+                                </div>
                             </div>
                             <div class="modal-footer border-0"></div>
                         </div>
@@ -34,45 +43,29 @@
                 {{-- Modal End --}}
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-xl-6 col">
 
                         <div class="row mb-4">
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A2</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A3</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A4</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">A5</button>
-
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B2</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B3</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B4</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">B5</button>
-
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C2</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C3</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C4</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">C5</button>
-
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D1</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D2</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D3</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D4</button>
-                            <button class="btn btn-success mb-4 text-serif bg-lightgreen mx-3 rounded text-dark fs-4 btn-seat" style="height:90px; width:90px">D5</button>
+                            @foreach ($seats as $seat)
+                                <button class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen text-dark' : 'bg-lightbrown text-light' }} mx-3 rounded fs-4 btn-seat"
+                                    {{ $seat->status ? '' : 'disabled' }} style="height:90px; width:90px">{{ $seat->seat }}</button>
+                            @endforeach
                         </div>
 
                     </div>
 
-                    <div class="col-4 offset-1">
+                    <div class="col-4 offset-xl-1">
                         <div class="mb-3">
-                            <div class="btn col btn-success bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Non-Available</span>
+                            <div class="align-middle d-inline-block bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div>
+                            <span class="fw-semibold">Available</span>
                         </div>
                         <div class="mb-3">
-                            <div class="btn col btn-success bg-lightbrown me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Available</span>
+                            <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:40px; width:40px"></div>
+                            <span class="fw-semibold">Occupied</span>
                         </div>
                         <div class="mb-3">
-                            <div class="btn col btn-success bg-decor me-3 rounded" style="height:40px; width:40px"></div><span class="fw-semibold">Your Choice</span>
+                            <div class="align-middle d-inline-block bg-decor me-3 rounded" style="height:40px; width:40px"></div>
+                            <span class="fw-semibold">Your Choice</span>
                         </div>
 
                         <br>
@@ -81,17 +74,22 @@
 
                         <div>
                             <h3 class="title-menu fs-3">Your Choice</h3>
-                            <p class="fs-3 fw-light" id="seat-choice">{{ $order_customer->seat }}</p>
+                            <p class="fs-3 fw-light" id="seat-choice">
+                                @foreach ($choices as $choice)
+                                    {{ $choice . ' ' }}
+                                @endforeach
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-4">
-                    <form action="/addseat/1" method="post">
+                    <form action="/addseat" method="post">
                         @csrf
                         <input type="hidden" name="seat" id="seat-input" value="">
-                        <button type="submit" class="btn btn-success rounded-pill float-end py-3 px-4">
-                            <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
+                        <button type="submit" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
+                            Pembayaran
+                            <i class="fa-solid fs-3 fa-arrow-right align-middle ps-2"></i>
                         </button>
                     </form>
                 </div>
@@ -100,5 +98,11 @@
         </div>
 
     </div>
+
+    <script>
+        @foreach ($choices as $choice)
+            $(".btn-seat:contains({{ $choice }})").toggleClass('bg-lightgreen text-dark bg-decor text-light');
+        @endforeach
+    </script>
 
 @endsection

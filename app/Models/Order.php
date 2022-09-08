@@ -16,11 +16,12 @@ class Order extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'customer_name',
+        'customer_phone',
         'quantity',
         'total',
         'seat',
         'code',
-        'customer_id'
     ];
 
     public function orderItem()

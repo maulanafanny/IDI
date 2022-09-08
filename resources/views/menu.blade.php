@@ -10,9 +10,9 @@
         @dump($session)
 
         <div class="card shadows bg-back-white">
-            <div class="card-body px-5">
+            <div class="card-body px-md-5">
 
-                <div class="py-5">
+                <div class="py-5 text-nowrap overflow-auto">
                     <a href="#" class="btn rounded-pill btn-lg btn-green active px-4 mx-3">Coffee</a>
                     <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Non-Coffee</a>
                     <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Milk</a>
@@ -22,7 +22,7 @@
 
                 <div class="row">
                     @foreach ($menus as $menu)
-                        <div class="col-4 mb-5 px-4">
+                        <div class="col-lg-4 col-md-6 mb-5 px-4">
                             <div class="card shadows">
 
                                 <div class="card-body">
@@ -36,7 +36,7 @@
                                                 <div class="col-6">
                                                     <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
                                                     <p class="text-desc mb-2">Lorem Ipsum refers to a dummy block of text that is often</p>
-                                                    <p class="fw-semibold title-medium">Rp{{ number_format($menu->price, 2, ',', '.') }}</p>
+                                                    <p class="fw-semibold title-medium">@currency($menu->price)</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,6 +56,7 @@
                                                                 <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                             </div>
                                                             <div class="col-6">
+                                                                <h3 class="text-capitalize title-menu mb-3">{{ $menu->name }}</h3>
                                                                 <p class="text-desc">{{ $menu->desc }}</p>
                                                                 <div style="width: 180px" class="text-center align-middle">
                                                                     <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
@@ -65,7 +66,7 @@
                                                             </div>
                                                             <div class="col-12 pt-3">
                                                                 <div class="form-label fw-semibold text-secondary">Notes</div>
-                                                                <textarea name="notes" id="notes" class="form-control" style="resize: none" rows="4"></textarea>
+                                                                <textarea name="notes" class="form-control notes" style="resize: none" rows="4"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -85,7 +86,10 @@
                     @endforeach
                 </div>
                 <div class="mb-5">
-                    <a href="/cart" class="btn btn-success rounded-pill float-end py-3 px-4"><i class="fa-solid fs-3 fa-arrow-right align-middle"></i></a>
+                    <a href="/cart" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
+                        Keranjang
+                        <i class="fa-solid fs-3 fa-arrow-right align-middle ps-2"></i>
+                    </a>
                 </div>
                 <br>
                 <br>
