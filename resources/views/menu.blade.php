@@ -10,9 +10,9 @@
         @dump($session)
 
         <div class="card shadows bg-back-white">
-            <div class="card-body px-5">
+            <div class="card-body px-md-5">
 
-                <div class="py-5">
+                <div class="py-5 text-nowrap overflow-auto">
                     <a href="#" class="btn rounded-pill btn-lg btn-green active px-4 mx-3">Coffee</a>
                     <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Non-Coffee</a>
                     <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Milk</a>
@@ -22,7 +22,7 @@
 
                 <div class="row">
                     @foreach ($menus as $menu)
-                        <div class="col-4 mb-5 px-4">
+                        <div class="col-lg-4 col-md-6 mb-5 px-4">
                             <div class="card shadows">
 
                                 <div class="card-body">
@@ -36,7 +36,7 @@
                                                 <div class="col-6">
                                                     <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
                                                     <p class="text-desc mb-2">Lorem Ipsum refers to a dummy block of text that is often</p>
-                                                    <p class="fw-semibold title-medium">@rupiah($menu->price)</p>
+                                                    <p class="fw-semibold title-medium">@currency($menu->price)</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,6 +56,7 @@
                                                                 <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                                             </div>
                                                             <div class="col-6">
+                                                                <h3 class="text-capitalize title-menu mb-3">{{ $menu->name }}</h3>
                                                                 <p class="text-desc">{{ $menu->desc }}</p>
                                                                 <div style="width: 180px" class="text-center align-middle">
                                                                     <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>

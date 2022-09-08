@@ -170,3 +170,9 @@ body {
     right:0; 
     left:0;
 }
+
+@media (min-width: 768px) {
+    .img-map {
+        transform: rotate(90deg);
+    }
+}

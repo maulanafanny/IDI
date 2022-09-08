@@ -23,11 +23,11 @@
                                         @foreach ($item as $id => $detail)
                                             <p class="fs-5">{{ $menu[$id - 1]->category }}</p>
                                                 <div class="sub-categories ms-4 text-green-regular">
-                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">@rupiah($menu[$id - 1]->price * $detail['qty'])</span></p>
+                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">@currency($menu[$id - 1]->price * $detail['qty'])</span></p>
                                                 </div>
                                         @endforeach
                                     </div>
-                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">@rupiah($total)</span></h4>
+                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">@currency($total)</span></h4>
                                 </div>
                             </div>
                         </div>

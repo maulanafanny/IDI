@@ -32,7 +32,9 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <img class="img-fluid" src="{{ asset('image/interior.png') }}" alt="">
+                                <div class="img-map">
+                                    <img class="img-fluid" src="{{ asset('image/interior.png') }}" alt="interior">
+                                </div>
                             </div>
                             <div class="modal-footer border-0"></div>
                         </div>
@@ -41,7 +43,7 @@
                 {{-- Modal End --}}
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-xl-6 col">
 
                         <div class="row mb-4">
                             @foreach ($seats as $seat)
@@ -52,7 +54,7 @@
 
                     </div>
 
-                    <div class="col-4 offset-1">
+                    <div class="col-4 offset-xl-1">
                         <div class="mb-3">
                             <div class="align-middle d-inline-block bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div>
                             <span class="fw-semibold">Available</span>
