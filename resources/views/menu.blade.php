@@ -44,8 +44,9 @@
                                         </div>
 
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-outline-success fw-semibold w-100 py-3" data-bs-toggle="modal" data-bs-target="#modal-{{ $menu->id }}">
-                                            Add to Cart
+                                        <button type="button" class="btn btn-outline-success fw-semibold w-100 py-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#modal-{{ $menu->id }}">
+                                            <i class="fa-solid fa-plus fa-fw me-1"></i> 
+                                            <span class="text-serif">Tambah</span>
                                         </button>
 
                                         <!-- Modal -->
@@ -61,9 +62,9 @@
                                                                 <h3 class="text-capitalize title-menu mb-3">{{ $menu->name }}</h3>
                                                                 <p class="text-desc">{{ $menu->desc }}</p>
                                                                 <div style="width: 180px" class="text-center align-middle">
-                                                                    <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
+                                                                    <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
                                                                     <span class="menu_quantity fs-4 fw-semibold">1</span>
-                                                                    <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
+                                                                    <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 pt-3">
@@ -74,7 +75,10 @@
                                                     </div>
                                                     <div class="modal-footer border-0">
                                                         <input type="hidden" id="menu_id" value="{{ $menu->id }}">
-                                                        <input type="button" class="btn submit btn-success w-100 py-2 fw-semibold" value="Add to Cart">
+                                                        <button type="submit" class="btn submit btn-success w-100 py-2 fw-semibold">
+                                                            <i class="fa-solid fa-plus fa-fw me-1"></i> 
+                                                            Tambah
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -25,9 +25,9 @@
                                             <h3 class="text-capitalize title-menu">{{ $menu[$id - 1]->name }}</h3>
                                             <p class="title-medium">@currency($menu[$id - 1]->price)</p>
                                             <div style="width: 160px" class="text-center align-middle m-0">
-                                                <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
+                                                <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
                                                 <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}</span>
-                                                <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
+                                                <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
                                             </div>
                                         </div>
                                     </div>

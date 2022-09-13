@@ -199,13 +199,6 @@ body {
     left: 0;
 }
 
-@media (min-width: 768px) {
-    .img-map {
-        transform: rotate(90deg);
-        width: 100%;
-    }
-}
-
 
 /* Bootstrap Override */
 .shadows {

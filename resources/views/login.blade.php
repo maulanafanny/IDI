@@ -22,7 +22,7 @@
                 <br>
                 <form action="/sessionStore" method="post">
                     @csrf
-                    <img src="{{ asset('image/login.png') }}" alt="login-illustration" class="img-fluid mb-4 px-4">
+                    <img src="{{ asset('image/logo.png') }}" alt="login-logo" class="img-fluid mb-4 px-5 ms-2">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nama<span><small class="text-danger"> *</small></span></label>
                         <input required aria-required="true" type="text" class="form-control" name="name" aria-label="name">
