@@ -95,6 +95,11 @@ body {
     border-color: var(--brown-light) !important;
 }
 
+.bg-disabled {
+    background-color: #929291 !important;
+    border-color: #929291 !important;
+}
+
 
 /* Breadcrumb Style */
 .title-breadcrumb {
@@ -197,6 +202,7 @@ body {
 @media (min-width: 768px) {
     .img-map {
         transform: rotate(90deg);
+        width: 100%;
     }
 }
 

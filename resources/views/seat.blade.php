@@ -25,16 +25,15 @@
 
                 <!-- Modal -->
                 <div class="modal fade" id="modal-img" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content py-3 px-3">
                             <div class="modal-header">
                                 <h5 class="modal-title">Interior Sketch</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="img-map">
-                                    <img class="img-fluid" src="{{ asset('image/interior.png') }}" alt="interior">
-                                </div>
+                                <img class="img-fluid d-lg-block" src="{{ asset('image/interior_landscape.png') }}" alt="interior">
+                                <img class="img-fluid d-lg-none" src="{{ asset('image/interior.png') }}" alt="interior">
                             </div>
                             <div class="modal-footer border-0"></div>
                         </div>
@@ -47,7 +46,7 @@
 
                         <div class="row mb-4">
                             @foreach ($seats as $seat)
-                                <button class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen text-dark' : 'bg-lightbrown text-light' }} mx-3 rounded fs-4 btn-seat"
+                                <button class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen text-dark' : 'bg-disabled text-light' }} mx-3 rounded fs-4 btn-seat"
                                     {{ $seat->status ? '' : 'disabled' }} style="height:90px; width:90px">{{ $seat->seat }}</button>
                             @endforeach
                         </div>
@@ -60,7 +59,7 @@
                             <span class="fw-semibold">Available</span>
                         </div>
                         <div class="mb-3">
-                            <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:40px; width:40px"></div>
+                            <div class="align-middle d-inline-block bg-disabled me-3 rounded" style="height:40px; width:40px"></div>
                             <span class="fw-semibold">Occupied</span>
                         </div>
                         <div class="mb-3">
