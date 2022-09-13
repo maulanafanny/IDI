@@ -12,12 +12,14 @@
         <div class="card shadows bg-back-white">
             <div class="card-body px-md-5">
 
-                <div class="py-5 text-nowrap overflow-auto">
-                    <a href="#" class="btn rounded-pill btn-lg btn-green active px-4 mx-3">Coffee</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Non-Coffee</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Milk</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Snack</a>
-                    <a href="#" class="btn rounded-pill btn-lg btn-green px-4 mx-3">Main Course</a>
+                <div class="categories-wrap">
+                    <div class="pb-3 text-nowrap overflow-auto">
+                        <a href="#" class="btn rounded-pill btn-lg btn-green active px-4 me-4">Coffee</a>
+                        <a href="#" class="btn rounded-pill btn-lg btn-green px-4 me-4">Non-Coffee</a>
+                        <a href="#" class="btn rounded-pill btn-lg btn-green px-4 me-4">Milk</a>
+                        <a href="#" class="btn rounded-pill btn-lg btn-green px-4 me-4">Snack</a>
+                        <a href="#" class="btn rounded-pill btn-lg btn-green px-4 me-4">Main Course</a>
+                    </div>
                 </div>
 
                 <div class="row">

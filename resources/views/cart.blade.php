@@ -13,23 +13,21 @@
                 <h3 class="title-menu pb-4">We welcome everyone by heart.</h3>
 
                 <div class="row">
-                    <div class="col-4 mx-3">
+                    <div class="col-xl-4 col-lg-5 col-md-12">
                         @foreach ($item as $id => $detail)
                             <div class="card mb-4 shadows">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-6">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg col-md-3">
                                             <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
                                         </div>
-                                        <div class="col-6">
-                                            <div class="">
-                                                <h3 class="text-capitalize title-menu">{{ $menu[$id - 1]->name }}</h3>
-                                                <p class="title-medium">@currency($menu[$id - 1]->price)</p>
-                                                <div style="width: 160px" class="text-center align-middle m-0">
-                                                    <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
-                                                    <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}</span>
-                                                    <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
-                                                </div>
+                                        <div class="col">
+                                            <h3 class="text-capitalize title-menu">{{ $menu[$id - 1]->name }}</h3>
+                                            <p class="title-medium">@currency($menu[$id - 1]->price)</p>
+                                            <div style="width: 160px" class="text-center align-middle m-0">
+                                                <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fa-fw"></i></a>
+                                                <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}</span>
+                                                <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fa-fw"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -38,7 +36,7 @@
                         @endforeach
                     </div>
 
-                    <div class="col-7 ms-4">
+                    <div class="col-lg-7 col-12 ms-xl-4">
                         <div class="card shadows">
                             <div class="card-body p-5">
                                 <h3 class="title-menu">Report Payment</h3>

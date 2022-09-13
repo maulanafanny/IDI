@@ -13,7 +13,7 @@
 
                 <div class="row">
 
-                    <div class="col-6 pe-5">
+                    <div class="col-lg-6 col-md-12 pe-lg-5">
                         <div class="card shadows">
                             <div class="card-body p-5">
                                 <h3 class="title-menu fs-3">Total</h3>
@@ -34,7 +34,7 @@
 
                         <br>
 
-                        <div class="card shadows">
+                        <div class="card shadows mb-4">
                             <div class="card-body px-5 py-3">
                                 <div class="col-11">
                                     <h3 class="title-menu my-2">Seat<span class="float-end">{{ $seat }}</span></h3>
@@ -44,12 +44,12 @@
                     </div>
 
 
-                    <div class="col-6">
+                    <div class="col-lg-6 col-md-12">
                         <div class="card shadows">
                             <div class="card-body p-5">
                                 <h3 class="title-menu fs-3">Payment Method</h3>
                                 <br>
-                                <div class="col-9">
+                                <div class="col-xl-9 col-lg-12 col-9">
 
                                     <div class="row mb-2 align-items-center">
                                         <div class="col-2">
