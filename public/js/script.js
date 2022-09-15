@@ -14,26 +14,7 @@ $(document).ready(function () {
             menu.innerText = (quantity-1);
         } 
     });
-
-    $('.submit').click(function() {
-        const menu = this.previousElementSibling.value;
-        const quantity = this.closest('.modal-footer').previousElementSibling.querySelector('.menu_quantity').innerText;
-        const notes = this.closest('.modal-footer').previousElementSibling.querySelector('.notes').value;
-        $.ajax({
-            url: "/add",
-            type: "get",
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
-            data: {
-                menu_id: menu,
-                quantity: quantity,
-                notes: notes
-            },
-            success: function() {
-                alert('Berhasil menambahkan menu');
-            }
-        });
-    });
-
+    
     $('.btn-seat').click(function (e) { 
         e.preventDefault();
         $(this).toggleClass('bg-lightgreen text-dark bg-decor text-light');
@@ -55,6 +36,4 @@ $(document).ready(function () {
         $('#seat-choice').text(text);
         $('#seat-input').val(text);
     });
-
-    
 });

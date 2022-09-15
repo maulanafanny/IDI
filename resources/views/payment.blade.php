@@ -6,6 +6,12 @@
 
         {{ Breadcrumbs::render('main') }}
 
+        @if (session()->has('alert'))
+            @php
+                Alert::error('Oops...', session()->get('alert'));
+            @endphp
+        @endif
+
         <div class="card shadows bg-back-white">
             <div class="card-body p-5">
 

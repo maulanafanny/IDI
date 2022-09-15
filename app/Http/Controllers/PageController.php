@@ -19,6 +19,10 @@ class PageController extends Controller
 
     function cart() 
     {
+        if (Session::get('order.total') === 0) {
+            return redirect()->back()->with('alert', 'Kamu belum memilih menu');
+        }
+
         return view('cart', [
             'menu' => Menu::get(),
             'item' => Session::get('order.item'),
@@ -27,19 +31,35 @@ class PageController extends Controller
     }
 
     function seat() {
+        $choices = explode(' ', Session::get('customer.seat'));
+        $choicesText = '';
+
+        foreach ($choices as $choice) {
+            $choicesText = $choicesText . ' ' . $choice;
+        }
+
+        if (Session::get('order.total') === 0) {
+            return redirect()->back()->with('alert', 'Kamu belum memilih menu');
+        }
+
         if (Session::get('customer.seat') === 'take-away') {
             return redirect('payment');
         }
     
         return view('seat', [
-            'choices' => explode(' ', Session::get('customer.seat')),
+            'choices' => $choices,
+            'choicesText' => $choicesText,
             'seats' => Seat::all()
         ]);
     }
 
     function payment() {
+        if (Session::get('order.total') === 0) {
+            return redirect()->back()->with('alert', 'Kamu belum memilih menu');
+        }
+
         if (Session::get('customer.seat') === 'dine-in') {
-            return redirect('seat')->with('alert', 'You haven\'t chosen for a seat yet');
+            return redirect()->back()->with('alert', 'You haven\'t chosen for a seat yet');
         }
 
         return view('payment', [
@@ -60,6 +80,10 @@ class PageController extends Controller
     }
 
     function history() {
+        if (Session::get('customer.has_stored') === null) {
+            return redirect()->back()->with('alert', 'Kamu belum menyelesaikan pesanan');
+        }
+
         return view('history', [
             'menu' => Menu::get(),
             'item' => Session::get('order.item'),

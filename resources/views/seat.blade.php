@@ -8,10 +8,9 @@
         {{ Breadcrumbs::render('main') }}
 
         @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>{{ session()->get('alert') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            @php
+                Alert::error('Oops...',session()->get('alert'));
+            @endphp
         @endif
 
         <div class="card shadows bg-back-white">
@@ -73,11 +72,7 @@
 
                         <div>
                             <h3 class="title-menu fs-3">Your Choice</h3>
-                            <p class="fs-3 fw-light" id="seat-choice">
-                                @foreach ($choices as $choice)
-                                    {{ $choice . ' ' }}
-                                @endforeach
-                            </p>
+                            <p class="fs-3 fw-light" id="seat-choice">{{ $choicesText }}</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +80,7 @@
                 <div class="mb-4">
                     <form action="/addseat" method="post">
                         @csrf
-                        <input type="hidden" name="seat" id="seat-input" value="">
+                        <input type="hidden" name="seat" id="seat-input" value="{{ $choicesText }}">
                         <button type="submit" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
                             Pembayaran
                             <i class="fa-solid fs-3 fa-arrow-right align-middle ps-2"></i>

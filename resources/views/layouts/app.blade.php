@@ -16,10 +16,14 @@
 
 <body>
 
+@include('sweetalert::alert')
+
 <div class="bg-decor" id="bg-decor" style="height: 400px"></div>
 <div class="main-content">
     @yield('content')
 </div>
+
+@stack('js')
 
 </body>
 

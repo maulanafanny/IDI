@@ -11,7 +11,11 @@
 
         {{ Breadcrumbs::render('main') }}
 
-        @dump($session)
+        @if (session()->has('alert'))
+            @php
+                Alert::error('Oops...', session()->get('alert'));
+            @endphp
+        @endif
 
         <div class="card shadows bg-back-white">
             <div class="card-body px-md-5">
@@ -46,8 +50,9 @@
                                     </div>
 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-outline-success fw-semibold w-100 py-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#modal-{{ $menu->id }}">
-                                        <i class="fa-solid fa-plus fa-fw me-1"></i> 
+                                    <button type="button" class="btn btn-outline-success fw-semibold w-100 py-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal"
+                                        data-bs-target="#modal-{{ $menu->id }}">
+                                        <i class="fa-solid fa-plus fa-fw me-1"></i>
                                         <span class="text-serif">Tambah</span>
                                     </button>
 
@@ -78,7 +83,7 @@
                                                 <div class="modal-footer border-0">
                                                     <input type="hidden" id="menu_id" value="{{ $menu->id }}">
                                                     <button type="submit" class="btn submit btn-success w-100 py-2 fw-semibold">
-                                                        <i class="fa-solid fa-plus fa-fw me-1"></i> 
+                                                        <i class="fa-solid fa-plus fa-fw me-1"></i>
                                                         Tambah
                                                     </button>
                                                 </div>
@@ -104,3 +109,28 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script>
+        $('.submit').click(function() {
+            const menu = this.previousElementSibling.value;
+            const quantity = this.closest('.modal-footer').previousElementSibling.querySelector('.menu_quantity').innerText;
+            const notes = this.closest('.modal-footer').previousElementSibling.querySelector('.notes').value;
+            $.ajax({
+                url: "/add",
+                type: "get",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+                },
+                data: {
+                    menu_id: menu,
+                    quantity: quantity,
+                    notes: notes
+                },
+                success: function() {
+                    alert('Berhasil menambahkan menu');
+                }
+            });
+        });
+    </script>
+@endpush
