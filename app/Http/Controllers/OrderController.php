@@ -41,7 +41,7 @@ class OrderController extends Controller
             $order = Order::create([
                 'customer_name' => Session::get('customer.name'),
                 'customer_phone' => Session::get('customer.phone'),
-                'total' => Session::get('order.total'),
+                'total' => Session::get('order.total') + Session::get('order.total') * 11 / 100,
                 'quantity' => $quantity,
                 'seat' => Session::get('customer.seat')
             ]);
