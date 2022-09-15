@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="my-5">
-                    <a href="/seat" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
+                    <a href="/menu" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
                         Back to Menu
                         <i class="fa-solid fs-3 fa-arrow-right align-middle ps-2"></i>
                     </a>

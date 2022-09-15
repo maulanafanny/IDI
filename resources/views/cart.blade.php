@@ -45,11 +45,9 @@
                                     <div class="categories ms-5 text-success mb-4">
                                         @foreach ($item as $id => $detail)
                                             <p class="fs-5">{{ $menu[$id - 1]->category }}</p>
-                                            {{-- @foreach ($value as $item) --}}
-                                                <div class="sub-categories ms-4 text-green-regular">
-                                                    <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">@currency($menu[$id - 1]->price * $detail['qty'])</span></p>
-                                                </div>
-                                            {{-- @endforeach --}}
+                                            <div class="sub-categories ms-4 text-green-regular">
+                                                <p class="fs-5">{{ $menu[$id - 1]->name }}<span class="float-end fs-5">@currency($menu[$id - 1]->price * $detail['qty'])</span></p>
+                                            </div>
                                         @endforeach
                                     </div>
                                     <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">@currency($total)</span></h4>
