@@ -22,6 +22,7 @@ $(document).ready(function () {
         $.ajax({
             url: "/add",
             type: "get",
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
             data: {
                 menu_id: menu,
                 quantity: quantity,
