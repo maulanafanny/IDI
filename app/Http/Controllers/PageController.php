@@ -92,7 +92,9 @@ class PageController extends Controller
         ]);
     }
 
-    function login() {
+    function login(Request $request) {
+        $request->session()->flush();
+        $request->session()->regenerate();
         return view('login');
     }
 }
