@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
+    function index()
+    {
+        return view('landing');
+    }
+
     function menu()
     {
         return view('menu', [

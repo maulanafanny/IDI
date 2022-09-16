@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: var(--green-light) !important;
 }
 
@@ -210,6 +210,10 @@ body {
     font-weight: 600;
 }
 
+.fw-medium {
+    font-weight: 500;
+}
+
 
 /* Media Queries */
 @media (min-width: 320px) {
@@ -218,9 +222,7 @@ body {
     }
 }
 
-@media (min-width: 768px) {
-    
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 992px) {
     .breadcrumb-text {
@@ -238,9 +240,9 @@ body {
 }
 
 @media (min-width: 1200px) {
-
+    .landing-container {
+        max-width: 1140px !important;
+    }
 }
 
-@media (min-width: 1400px) {
-
-}
+@media (min-width: 1400px) {}

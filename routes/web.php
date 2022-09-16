@@ -21,7 +21,7 @@ use App\Http\Controllers\PageController;
 */
 
 // Page Route
-Route::get('/', [PageController::class, 'login']);
+Route::get('/', [PageController::class, 'index'])->name('landing');
 Route::get('/login', [PageController::class, 'login'])->name('login');
 Route::get('/menu', [PageController::class, 'menu'])->name('menu');
 Route::get('/cart', [PageController::class, 'cart'])->name('cart');
