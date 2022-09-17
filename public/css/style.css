@@ -12,6 +12,17 @@ body {
     background-color: var(--green-light) !important;
 }
 
+#title-best-seller::after {
+    position: relative;
+    display: inline-block;
+    left: 20px;
+    bottom: 10px;
+    content: '';
+    width: 60px;
+    height: 2px;
+    background-color: black;
+}
+
 #btn-save-changes {
     position: fixed;
     bottom: 20px;

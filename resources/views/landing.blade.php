@@ -55,22 +55,22 @@
 
     {{-- Quality --}}
     <section class="landing-container container my-5">
-        <div class="row justify-content-between bg-success m-0">
-            <div class="col py-4">
+        <div class="row justify-content-between bg-success m-0 px-4">
+            <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                <span class="fw-semibold text-light">Quality Grade A</span>
+                Quality Grade A
             </div>
-            <div class="col py-4">
+            <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                <span class="fw-semibold text-light">Quality Grade B</span>
+                Quality Grade B
             </div>
-            <div class="col py-4">
+            <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                <span class="fw-semibold text-light">Quality Grade C</span>
+                Quality Grade C
             </div>
-            <div class="col py-4">
+            <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                <span class="fw-semibold text-light">Quality Grade D</span>
+                Quality Grade D
             </div>
         </div>
     </section>
@@ -81,7 +81,7 @@
     <section class="w-100 bg-lightgreen">
         <br>
         <div class="container landing-container py-5">
-            <h2 class="fw-semibold pb-5">OUR BEST SELLER</h2>
+            <h2 class="fw-semibold pb-5" id="title-best-seller">OUR BEST SELLER</h2>
 
             <div class="row pb-4">
 
@@ -159,7 +159,7 @@
 
             <div class="row py-5 navbar-dark text-light">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-3 px-0">
                         <img src="{{ asset('image/logo.png') }}" class="mb-4 bg-light rounded ps-3 pe-1 py-1" width="120px" alt="logo">
                     </div>
                 </div>
