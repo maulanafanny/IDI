@@ -157,40 +157,40 @@
     <footer class="w-100 bg-success">
         <div class="container landing-container">
 
-            <div class="row py-5 text-light">
+            <div class="row py-5 navbar-dark text-light">
                 <div class="row">
                     <div class="col-3">
                         <img src="{{ asset('image/logo.png') }}" class="mb-4 bg-light rounded ps-3 pe-1 py-1" width="120px" alt="logo">
                     </div>
                 </div>
 
-                <div class="col-3">
+                <ul class="col-3 navbar-nav">
                     <h4 class="fw-bold mb-4">Contact Us</h4>
-                    <div class="d-flex align-items-center mb-3 fw-light">
+                    <li class="d-flex nav-item align-items-center mb-3 fw-light">
                         <i class="fa-solid fa-phone me-3 fs-4 fa-fw"></i>
-                        <span>0812-3226-0798</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-3 fw-light">
+                        <a href="#" class="nav-link py-0">0812-3226-0798</a>
+                    </li>
+                    <li class="d-flex nav-item align-items-center mb-3 fw-light">
                         <i class="fa-solid fa-envelope me-3 fs-4 fa-fw"></i>
-                        <span>Idicafee@gmail.com</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-3 fw-light">
+                        <a href="#" class="nav-link py-0">Idicafee@gmail.com</a>
+                    </li>
+                    <li class="d-flex nav-item align-items-center mb-3 fw-light">
                         <i class="fa-solid fa-location-dot me-3 fs-4 fa-fw"></i>
-                        <span>Jl. kalikalian no.04, Surabaya</span>
-                    </div>
-                </div>
+                        <a href="#" class="nav-link py-0">Jl. kalikalian no.04, Surabaya</a>
+                    </li>
+                </ul>
 
-                <div class="col-3 offset-md-1">
+                <ul class="col-3 offset-md-1 navbar-nav">
                     <h4 class="fw-bold mb-4">Information</h4>
-                    <div class="d-flex align-items-center mb-3 fw-light">
-                        <a href="#" class="nav-link">Best Seller</a>
-                    </div>
-                    <div class="d-flex align-items-center mb-3 fw-light">
-                        <a href="#" class="nav-link">Menu</a>
-                    </div>
-                    <div class="d-flex align-items-center mb-3 fw-light">
-                        <a href="#" class="nav-link">About Us</a>
-                    </div>
+                    <li class="d-flex nav-item mb-3 align-items-center fw-light">
+                        <a href="#" class="nav-link py-0">Best Seller</a>
+                    </li>
+                    <li class="d-flex nav-item mb-3 align-items-center fw-light">
+                        <a href="#" class="nav-link py-0">Menu</a>
+                    </li>
+                    <li class="d-flex nav-item mb-3 align-items-center fw-light">
+                        <a href="#" class="nav-link py-0">About Us</a>
+                    </li>
                 </div>
             </div>
 
