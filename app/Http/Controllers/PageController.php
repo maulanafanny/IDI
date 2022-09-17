@@ -18,7 +18,6 @@ class PageController extends Controller
     {
         return view('menu', [
             'menus' => Menu::all(),
-            'session' => Session::all()
         ]);
     }
 
@@ -32,6 +31,7 @@ class PageController extends Controller
             'menu' => Menu::get(),
             'item' => Session::get('order.item'),
             'total' => Session::get('order.total'),
+            'session' => Session::all()
         ]);
     }
 
@@ -64,7 +64,7 @@ class PageController extends Controller
         }
 
         if (Session::get('customer.seat') === 'dine-in') {
-            return redirect()->back()->with('alert', 'You haven\'t chosen for a seat yet');
+            return redirect('/seat')->with('alert', 'Kamu belum memilih seat');
         }
 
         return view('payment', [

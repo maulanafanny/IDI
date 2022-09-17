@@ -33,7 +33,8 @@ Route::get('/history', [PageController::class, 'history'])->name('history');
 // Success & Store Route
 Route::get('/success', [OrderController::class, 'store'])->name('success');
 
-// Store Route
+// CRUD Route
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');
+Route::post('/update', [OrderItemController::class, 'updateCart'])->name('updateCart');
 Route::post('/addseat', [OrderController::class, 'addSeat'])->name('addSeat');
 Route::post('/sessionStore', [LoginController::class, 'loginCustomer'])->name('loginCustomer');

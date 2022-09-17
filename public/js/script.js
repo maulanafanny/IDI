@@ -6,6 +6,7 @@ $(document).ready(function () {
         let quantity = parseInt(menu.innerText);
         menu.innerText = (quantity+1);
     });
+
     $('.btn-min').click(function (e) { 
         e.preventDefault();
         const menu = this.nextElementSibling;
@@ -15,25 +16,4 @@ $(document).ready(function () {
         } 
     });
     
-    $('.btn-seat').click(function (e) { 
-        e.preventDefault();
-        $(this).toggleClass('bg-lightgreen text-dark bg-decor text-light');
-
-        let selected = $('.btn-seat.bg-decor');
-        let text = $('#seat-choice').text();
-
-        $.each(selected, function (index, value) {
-            if (index == 0) {
-                text = '';
-            }
-            text += ' ' + value.innerText;
-        });
-
-        if (selected[0] == undefined) {
-            text = '';
-        }
-
-        $('#seat-choice').text(text);
-        $('#seat-input').val(text);
-    });
 });

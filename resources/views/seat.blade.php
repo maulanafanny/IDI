@@ -9,7 +9,7 @@
 
         @if (session()->has('alert'))
             @php
-                Alert::error('Oops...',session()->get('alert'));
+                Alert::error('Oops...', session()->get('alert'));
             @endphp
         @endif
 
@@ -93,10 +93,36 @@
 
     </div>
 
+@endsection
+
+@push('js')
     <script>
         @foreach ($choices as $choice)
             $(".btn-seat:contains({{ $choice }})").toggleClass('bg-lightgreen text-dark bg-decor text-light');
         @endforeach
+        
+        $(document).ready(function () {
+            $('.btn-seat').click(function(e) {
+                e.preventDefault();
+                $(this).toggleClass('bg-lightgreen text-dark bg-decor text-light');
+    
+                let selected = $('.btn-seat.bg-decor');
+                let text = $('#seat-choice').text();
+    
+                $.each(selected, function(index, value) {
+                    if (index == 0) {
+                        text = '';
+                    }
+                    text += ' ' + value.innerText;
+                });
+    
+                if (selected[0] == undefined) {
+                    text = '';
+                }
+    
+                $('#seat-choice').text(text);
+                $('#seat-input').val(text);
+            });
+        });
     </script>
-
-@endsection
+@endpush

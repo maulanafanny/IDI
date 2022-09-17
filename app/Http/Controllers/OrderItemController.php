@@ -27,4 +27,16 @@ class OrderItemController extends Controller
             Session::put("order.item.{$request->menu_id}.notes", $request->notes);
         }
     }
+
+    function updateCart(Request $request)
+    {
+        Session::put('order.total', 0);
+        foreach ($request->changes as $key => $change) {
+            Session::put("order.item.{$key}.qty", $change);
+            $price = Menu::find($key)->price;
+            Session::increment('order.total', $price * $change);
+        }
+
+        return redirect()->back()->with('data', $request->changes);
+    }
 }
