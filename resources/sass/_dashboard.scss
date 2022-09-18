@@ -1,0 +1,132 @@
+//=========== Common style  ==============//
+
+//main common style
+.dash.active {
+    margin-left: 0px !important;
+}
+
+.dash {
+    margin-left: 250px;
+    transition: margin 0.5s;
+    min-height: 100vh;
+}
+
+//=========== header navbar ==============//
+
+#header-navbar {
+
+    //aside toggle
+    #aside-toggle-btn {
+        color: #293042;
+        cursor: pointer;
+    }
+
+    //user dropdown
+    .user-dropdown {
+        .dropdown-menu {
+            right: 0 !important;
+            left: auto !important;
+        }
+    }
+}
+
+//=========== aside nav ==============//
+
+//aside nav active class toggle on click
+#aside-nav.active {
+    width: 0px !important;
+}
+
+//aside nav
+#aside-nav {
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 250px;
+    transition: width 0.5s;
+    height: 100vh;
+    overflow-x: hidden;
+
+    .nav-link {
+        font-size: .825rem;
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 1rem 1.5rem;
+        color: black;
+        white-space: nowrap;
+        letter-spacing: 0.3px;
+
+        svg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    .aside-brand {
+        padding: 0 1.725rem;
+        display: block;
+        color: #fff;
+        fill: #fff;
+        cursor: pointer;
+        white-space: nowrap;
+
+        svg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    .active {
+        background-color: #066047; // dark-green
+        color: white; // aside bg
+    }
+
+    .dropdown-caret-svg {
+        svg {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    .dropdown-caret-svg.rotate-svg svg {
+        transform: rotate(90deg);
+    }
+
+    .aside-dropdown-menu a {
+        padding-left: 58px;
+    }
+
+    .aside-badge {
+        background: #DB2777;
+        padding: 0px 7px;
+        border-radius: 10px;
+        color: white !important;
+    }
+
+}
+
+//=========== responsive media  ==============//
+@media(min-width:300px) and (max-width:1023.98px) {
+    .dash {
+        margin-left: 0px !important;
+    }
+
+    #aside-nav {
+        top: 100px !important;
+    }
+
+    .dash {
+        overflow: hidden;
+    }
+
+    //responsive left nav on mobile
+    #header-navbar {
+        position: fixed !important;
+    }
+
+    #main {
+        margin-top: 60px !important;
+    }
+}

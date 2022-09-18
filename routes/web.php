@@ -1,13 +1,11 @@
 <?php
 
-use App\Models\Menu;
-use App\Models\Seat;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +31,11 @@ Route::get('/history', [PageController::class, 'history'])->name('history');
 // Success & Store Route
 Route::get('/success', [OrderController::class, 'store'])->name('success');
 
-// CRUD Route
+// Order CRUD Route
 Route::get('/add', [OrderItemController::class, 'addCart'])->name('addCart');
 Route::post('/update', [OrderItemController::class, 'updateCart'])->name('updateCart');
 Route::post('/addseat', [OrderController::class, 'addSeat'])->name('addSeat');
 Route::post('/sessionStore', [LoginController::class, 'loginCustomer'])->name('loginCustomer');
+
+// Admin Page
+Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard');
