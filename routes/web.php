@@ -38,4 +38,11 @@ Route::post('/addseat', [OrderController::class, 'addSeat'])->name('addSeat');
 Route::post('/sessionStore', [LoginController::class, 'loginCustomer'])->name('loginCustomer');
 
 // Admin Page
-Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard');
+Route::prefix('dash')->group(function () {
+    Route::get('', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('order', [DashboardController::class, 'order'])->name('dash.order');
+    Route::get('menu', [DashboardController::class, 'menu'])->name('dash.menu');
+    Route::get('seat', [DashboardController::class, 'seat'])->name('dash.seat');
+});
+
+Route::post('/updateseat', [DashboardController::class, 'updateSeat'])->name('updateSeat');

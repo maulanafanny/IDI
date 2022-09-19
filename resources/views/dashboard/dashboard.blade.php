@@ -1,5 +1,5 @@
 @extends('layouts.dash')
 
 @section('content')
-    <h1>Test</h1>
+    <h1>IDI` Dashboard</h1>
 @endsection

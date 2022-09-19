@@ -26,19 +26,25 @@
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
                 <li class="nav-item mx-3 mb-3">
-                    <a class="nav-link shadow-sm active" href="#">
+                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}" href="/dash">
                         <i class="fa-solid fa-fw fa-house fs-5" style="vertical-align: middle;"></i>
                         <span class="ms-2 fs-6 align-middle">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item mx-3 mb-3">
-                    <a class="nav-link shadow-sm" href="#">
+                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'dash.order' ? 'active' : '' }}" href="/dash/order">
+                        <i class="fa-solid fa-fw fa-receipt fs-5" style="vertical-align: middle;"></i>
+                        <span class="ms-2 fs-6 align-middle">Order</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-3 mb-3">
+                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'dash.menu' ? 'active' : '' }}" href="/dash/menu">
                         <i class="fa-solid fa-fw fa-border-all fs-5" style="vertical-align: middle;"></i>
                         <span class="ms-2 fs-6 align-middle">Menu</span>
                     </a>
                 </li>
                 <li class="nav-item mx-3 mb-3">
-                    <a class="nav-link shadow-sm" href="#">
+                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'dash.seat' ? 'active' : '' }}" href="/dash/seat">
                         <i class="fa-solid fa-fw fa-chair fs-5" style="vertical-align: middle;"></i>
                         <span class="ms-2 fs-6 align-middle">Seat</span>
                     </a>
@@ -113,5 +119,7 @@
 
     </section>
     <!-- === /wrapper section === -->
+
+    @stack('js')
 </body>
 </html>

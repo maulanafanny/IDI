@@ -7,6 +7,10 @@
     --grey: #929291;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--green-light) !important;
