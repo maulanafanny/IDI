@@ -11,7 +11,9 @@ class PageController extends Controller
 {
     function index()
     {
-        return view('landing');
+        return view('landing', [
+            'bestSeller' => Menu::inRandomOrder()->take(4)->get()
+        ]);
     }
 
     function menu()

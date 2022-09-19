@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\Seat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -20,7 +21,9 @@ class DashboardController extends Controller
 
     function menu()
     {
-        return view('dashboard.menu');
+        return view('dashboard.menu', [
+            'menus' => Menu::all()
+        ]);
     }
 
     function seat()

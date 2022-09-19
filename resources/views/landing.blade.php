@@ -85,49 +85,18 @@
 
             <div class="row pb-4">
 
-                <div class="col-3">
-                    <div class="card bg-success text-light">
-                        <img src="{{ asset('image/coffee.png') }}" class="card-img-top" alt="menu">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 fw-semibold">Mousse</h5>
-                            <p class="fw-light">Lorem Ipsum refers to a dummy block of text that is often used in</p>
-                            <a href="#" class="btn btn-light mb-3">See Details ››</a>
+                @foreach ($bestSeller as $best)
+                    <div class="col-3">
+                        <div class="card bg-success text-light" style="height: 475px">
+                            <img src="{{ asset($best->img) }}" class="card-img-top" alt="menu">
+                            <div class="card-body position-relative">
+                                <h5 class="card-title mb-3 fw-semibold">{{ $best->name }}</h5>
+                                <p class="fw-light">{{ $best->desc }}</p>
+                                <a href="#" class="btn btn-light mb-3 position-absolute" style="bottom: 10px">See Details ››</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card bg-success text-light">
-                        <img src="{{ asset('image/coffee.png') }}" class="card-img-top" alt="menu">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 fw-semibold">Cupcake</h5>
-                            <p class="fw-light">Lorem Ipsum refers to a dummy block of text that is often used in</p>
-                            <a href="#" class="btn btn-light mb-3">See Details ››</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card bg-success text-light">
-                        <img src="{{ asset('image/coffee.png') }}" class="card-img-top" alt="menu">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 fw-semibold">Soft Cake</h5>
-                            <p class="fw-light">Lorem Ipsum refers to a dummy block of text that is often used in</p>
-                            <a href="#" class="btn btn-light mb-3">See Details ››</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card bg-success text-light">
-                        <img src="{{ asset('image/coffee.png') }}" class="card-img-top" alt="menu">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 fw-semibold">Custard</h5>
-                            <p class="fw-light">Lorem Ipsum refers to a dummy block of text that is often used in</p>
-                            <a href="#" class="btn btn-light mb-3">See Details ››</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
 
@@ -191,8 +160,8 @@
                     <li class="d-flex nav-item mb-3 align-items-center fw-light">
                         <a href="#" class="nav-link py-0">About Us</a>
                     </li>
-                </div>
             </div>
+        </div>
 
         </div>
 

@@ -18,7 +18,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-lg col-md-3">
-                                            <img class="img-fluid image-menu" src="{{ asset('image/coffee.png') }}" alt="coffee-menu">
+                                            <img class="img-fluid image-menu" src="{{ asset($menu[$id - 1]->img) }}" alt="coffee-menu">
                                         </div>
                                         <div class="col">
                                             <h3 class="text-capitalize title-menu">{{ $menu[$id - 1]->name }}</h3>
