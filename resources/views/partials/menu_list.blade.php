@@ -7,11 +7,11 @@
                     <div>
                         <div class="row">
                             <div class="col-6">
-                                <img class="img-fluid image-menu" src="{{ asset($menu->img) }}" alt="coffee-menu">
+                                <img class="img-fluid image-menu mb-3" src="{{ asset($menu->img) }}" alt="coffee-menu">
                             </div>
                             <div class="col-6">
-                                <h3 class="text-capitalize title-menu">{{ $menu->name }}</h3>
-                                <p class="text-desc mb-2">{{ $menu->desc }}</p>
+                                <h3 class="text-capitalize title-menu title-ellipsis">{{ $menu->name }}</h3>
+                                <p class="text-desc mb-2 menu-desc">{{ $menu->desc }}</p>
                                 <p class="fw-semibold title-medium">@currency($menu->price)</p>
                             </div>
                         </div>
