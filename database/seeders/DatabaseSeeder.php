@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Potato Fries',
                 'category' => 'Snack',
-                'desc' => 'Kentang goreng ditaburi dengan parsley dan cocolan saus sambal sertas mayones.',
+                'desc' => 'Kentang goreng ditaburi dengan parsley dan cocolan saus sambal serta mayones.',
                 'img' => 'image/fries.png',
                 'price' => 15000
             ],
@@ -128,21 +128,21 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Mendoan Set',
                 'category' => 'Snack',
-                'desc' => 'Set cireng goreng aneka rasa, 3 cireng original, 3 cireng keju, 3 cireng rujak.',
+                'desc' => 'Tempe yang digoreng dengan minyak panas menghasilkan rasa yang crispy dengan bumbu kecap cabai.',
                 'img' => 'image/mendoan-set.png',
                 'price' => 10000
             ],
             [
                 'name' => 'Sate Taichan',
                 'category' => 'Snack',
-                'desc' => 'Set cireng goreng aneka rasa, 3 cireng original, 3 cireng keju, 3 cireng rujak.',
+                'desc' => 'Sate ayam yang digoreng menjadikan ayam yang juicy dengan sambal racikan rahasia.',
                 'img' => 'image/sate-taichan.png',
                 'price' => 15000
             ],
             [
                 'name' => 'Tahu Crispy',
                 'category' => 'Snack',
-                'desc' => 'Set cireng goreng aneka rasa, 3 cireng original, 3 cireng keju, 3 cireng rujak.',
+                'desc' => 'Tahu yang digoreng dengan tepung crispy.',
                 'img' => 'image/tahu-crispy.png',
                 'price' => 10000
             ],

@@ -23,7 +23,21 @@ class PageController extends Controller
         ]);
     }
 
-    function cart() 
+    function menuList(Request $request)
+    {
+        if ($request->search == '') {
+            $menus = Menu::all();
+        } else {
+            $menus = Menu::where('category', $request->search)->get();
+        }
+
+        return view('partials.menu_list', [
+            'request' => $request->search,
+            'menus' => $menus
+        ]);
+    }
+
+    function cart()
     {
         if (Session::get('order.total') === 0) {
             return redirect()->back()->with('alert', 'Kamu belum memilih menu');
@@ -37,7 +51,8 @@ class PageController extends Controller
         ]);
     }
 
-    function seat() {
+    function seat()
+    {
         $choices = explode(' ', Session::get('customer.seat'));
         $choicesText = '';
 
@@ -52,7 +67,7 @@ class PageController extends Controller
         if (Session::get('customer.seat') === 'take-away') {
             return redirect('payment');
         }
-    
+
         return view('seat', [
             'choices' => $choices,
             'choicesText' => $choicesText,
@@ -60,7 +75,8 @@ class PageController extends Controller
         ]);
     }
 
-    function payment() {
+    function payment()
+    {
         if (Session::get('order.total') === 0) {
             return redirect()->back()->with('alert', 'Kamu belum memilih menu');
         }
@@ -77,7 +93,8 @@ class PageController extends Controller
         ]);
     }
 
-    function summary() {
+    function summary()
+    {
         return view('summary', [
             'menu' => Menu::get(),
             'item' => Session::get('order.item'),
@@ -86,7 +103,8 @@ class PageController extends Controller
         ]);
     }
 
-    function history() {
+    function history()
+    {
         if (Session::get('customer.has_stored') === null) {
             return redirect()->back()->with('alert', 'Kamu belum menyelesaikan pesanan');
         }
@@ -99,7 +117,8 @@ class PageController extends Controller
         ]);
     }
 
-    function login(Request $request) {
+    function login(Request $request)
+    {
         $request->session()->flush();
         $request->session()->regenerate();
         return view('login');

@@ -46,3 +46,4 @@ Route::prefix('dash')->group(function () {
 });
 
 Route::post('/updateseat', [DashboardController::class, 'updateSeat'])->name('updateSeat');
+Route::get('list', [PageController::class, 'menuList'])->name('list');
