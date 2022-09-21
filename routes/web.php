@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderItemController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\{
+    LoginController,
+    OrderController,
+    OrderItemController,
+    PageController,
+    DashboardController,
+    MenuController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +44,7 @@ Route::post('/sessionStore', [LoginController::class, 'loginCustomer'])->name('l
 Route::prefix('dash')->group(function () {
     Route::get('', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('order', [DashboardController::class, 'order'])->name('dash.order');
-    Route::get('menu', [DashboardController::class, 'menu'])->name('dash.menu');
+    Route::resource('menu', MenuController::class, ['except'=> ['show']]);
     Route::get('seat', [DashboardController::class, 'seat'])->name('dash.seat');
 });
 

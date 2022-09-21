@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
 use App\Models\Seat;
+use App\Models\Order;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class DashboardController extends Controller
 {
@@ -16,13 +15,8 @@ class DashboardController extends Controller
 
     function order()
     {
-        return view('dashboard.order');
-    }
-
-    function menu()
-    {
-        return view('dashboard.menu', [
-            'menus' => Menu::all()
+        return view('dashboard.order', [
+            'orders' => Order::all()
         ]);
     }
 
@@ -47,6 +41,6 @@ class DashboardController extends Controller
             }
         }
 
-        return redirect()->back()->with($request->seat);
+        return redirect()->back();
     }
 }

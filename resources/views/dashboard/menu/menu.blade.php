@@ -21,7 +21,7 @@
                             <td>@currency($menu->price)</td>
                             <td>{{ $menu->category }}</td>
                             <td class="text-center">
-                                <a href="#"><i class="fa-solid fa-pen mx-1"></i></a>
+                                <a href="#"><i class="fa-solid fa-pen mx-1" style="color: #599584"></i></a>
                                 <input type="checkbox" class="form-check-input mx-1" name="best-seller">
                             </td>
                         </tr>
