@@ -39,8 +39,10 @@
 
                                         <h3 class="title-menu pb-4 fs-3">Payment Summary</h3>
 
-                                        <div class="card shadows">
-                                            <div class="card-body p-5 pb-4">
+                                        <div class="card shadows card-order">
+                                            <div class="card-body px-5 p-4">
+                                                <h5>{{ $order->customer_name }}#{{ $order->id }}</h5>
+                                                <br>
                                                 <div class="col-11">
                                                     <div class="categories text-success mb-4">
                                                         @foreach ($order->orderItem as $item)
@@ -61,26 +63,27 @@
                                         <form action="/update/{{ $order->id }}" method="POST">
                                             @csrf
                                             <label for="code" class="form-label fw-semibold mb-1"><small>Queue</small></label>
-                                            <div class="card shadows mb-4">
+                                            <div class="card shadows mb-3">
                                                 <div class="card-body py-3">
                                                     <input required aria-required="true" type="text" class="w-100 queue-input border-0" name="code" aria-label="code" value="{{ $order->code }}">
                                                 </div>
                                             </div>
 
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" value="true" name="status" {{ $order->status ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="pending">Pending</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" value="false" name="status" {{ $order->status ? '' : 'checked' }}>
-                                                <label class="form-check-label" for="completed">Selesai</label>
-                                            </div>
-    
                                             <div class="modal-footer border-0">
-                                                <button type="button" class="btn btn-green py-2">
+                                                <div class="col me-auto">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="true" name="status" {{ $order->status ? 'checked' : '' }}>
+                                                        <label class="form-check-label" for="pending">Pending</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="false" name="status" {{ $order->status ? '' : 'checked' }}>
+                                                        <label class="form-check-label" for="completed">Selesai</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" onclick="js:window.print()" class="btn btn-green py-2">
                                                     Print
                                                 </button>
-                                                <button type="submit" class="btn submit btn-success py-2">
+                                                <button type="submit" class="btn submit btn-success py-2 text-serif">
                                                     Edit
                                                 </button>
                                             </div>

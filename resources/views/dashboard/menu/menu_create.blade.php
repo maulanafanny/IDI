@@ -12,7 +12,7 @@
                     <div class="col-lg-6 col-12">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
-                            <input required aria-required="true" type="text" class="form-control" name="name" aria-label="name">
+                            <input aria-autocomplete="none" required aria-required="true" type="text" class="form-control" name="name" aria-label="name">
                         </div>
 
                         <div class="mb-4">
@@ -27,7 +27,7 @@
 
                         <div class="mb-4">
                             <label for="price" class="form-label">Harga</label>
-                            <input required aria-required="true" type="text" class="form-control" name="price" aria-label="price">
+                            <input aria-autocomplete="none" required aria-required="true" type="text" class="form-control" name="price" aria-label="price">
                         </div>
 
                         <div class="mb-4">

@@ -326,3 +326,16 @@ body {
 }
 
 @media (min-width: 1400px) {}
+
+
+@media print {
+    /* on modal open bootstrap adds class "modal-open" to body, so you can handle that case and hide body */
+    body.modal-open {
+        visibility: hidden;
+    }
+
+    body.modal-open .modal .modal-header,
+    body.modal-open .modal .card-order {
+        visibility: visible; /* make visible modal body and header */
+    }
+}
