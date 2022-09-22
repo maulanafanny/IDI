@@ -44,6 +44,10 @@ body {
     height: fit-content;
 }
 
+.queue-input:focus-visible {
+    outline: none;
+}
+
 .categories-wrap {
     padding-top: 3rem;
     padding-bottom: 2rem;

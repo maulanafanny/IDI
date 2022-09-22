@@ -25,12 +25,74 @@
                             <td>{{ $order->code }}</td>
                             <td>{{ $order->status ? 'pending' : 'selesai' }}</td>
                             <td class="text-center">
-                                <a href="#"><i class="fa-solid fa-pen mx-1" style="color: #599584"></i></a>
-                                <input type="checkbox" class="form-check-input mx-1" name="best-seller">
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-{{ $order->id }}">
+                                    <i class="fa-solid fa-pen mx-1"></i>
+                                </button>
                             </td>
                         </tr>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal-{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-4 pb-0 bg-back-white">
+                                    <div class="modal-body">
+
+                                        <h3 class="title-menu pb-4 fs-3">Payment Summary</h3>
+
+                                        <div class="card shadows">
+                                            <div class="card-body p-5 pb-4">
+                                                <div class="col-11">
+                                                    <div class="categories text-success mb-4">
+                                                        @foreach ($order->orderItem as $item)
+                                                            <p class="fs-5">{{ $item->menu->category }}</p>
+                                                            <div class="sub-categories ms-4 text-green-regular">
+                                                                <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">@currency($item->menu->price * $item->quantity)</span></p>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <h4 class="fw-semibold mt-5 text-serif">Total<span class="float-end fs-5">@currency($order->total)</span></h4>
+                                                    <h5 class="fw-semibold mt-4 text-serif">Seat<span class="float-end fs-5">{{ $order->seat }}</span></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <form action="/update/{{ $order->id }}" method="POST">
+                                            @csrf
+                                            <label for="code" class="form-label fw-semibold mb-1"><small>Queue</small></label>
+                                            <div class="card shadows mb-4">
+                                                <div class="card-body py-3">
+                                                    <input required aria-required="true" type="text" class="w-100 queue-input border-0" name="code" aria-label="code" value="{{ $order->code }}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" value="true" name="status" {{ $order->status ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="pending">Pending</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" value="false" name="status" {{ $order->status ? '' : 'checked' }}>
+                                                <label class="form-check-label" for="completed">Selesai</label>
+                                            </div>
+    
+                                            <div class="modal-footer border-0">
+                                                <button type="button" class="btn btn-green py-2">
+                                                    Print
+                                                </button>
+                                                <button type="submit" class="btn submit btn-success py-2">
+                                                    Edit
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Modal End --}}
                     @endforeach
                 </tbody>
+
             </table>
         </div>
     </div>

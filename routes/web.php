@@ -52,3 +52,4 @@ Route::prefix('dash')->group(function () {
 Route::post('/updateseat', [DashboardController::class, 'updateSeat'])->name('updateSeat');
 Route::get('list', [PageController::class, 'menuList'])->name('list');
 Route::post('dropzone-store', [DropzoneController::class, 'store'])->name('dropzone.store');
+Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');

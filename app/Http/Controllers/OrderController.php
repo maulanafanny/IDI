@@ -20,6 +20,16 @@ class OrderController extends Controller
         return redirect('payment');
     }
 
+    function update(Request $request, $id)
+    {
+        Order::where('id', $id)->update([
+            'code' => $request->code,
+            'status' => $request->status == 'true' ? true : false
+        ]);
+
+        return redirect('dash/order');
+    }
+
     function store()
     {
         if (Session::get('customer.has_stored')) {

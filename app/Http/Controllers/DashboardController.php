@@ -16,7 +16,7 @@ class DashboardController extends Controller
     function order()
     {
         return view('dashboard.order', [
-            'orders' => Order::all()
+            'orders' => Order::with('orderItem.menu')->get(),
         ]);
     }
 
