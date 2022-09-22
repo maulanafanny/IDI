@@ -53,3 +53,4 @@ Route::post('/updateseat', [DashboardController::class, 'updateSeat'])->name('up
 Route::get('list', [PageController::class, 'menuList'])->name('list');
 Route::post('dropzone-store', [DropzoneController::class, 'store'])->name('dropzone.store');
 Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');
+Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');

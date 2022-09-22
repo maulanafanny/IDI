@@ -143,7 +143,7 @@
 
                 </div>
                 <div class="my-4">
-                    <a href="/success" class="btn btn-success rounded-pill float-end py-3 px-4">
+                    <a href="/barcode" class="btn btn-success rounded-pill float-end py-3 px-4">
                         <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
                     </a>
                 </div>
@@ -154,3 +154,17 @@
 
     </div>
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function () {
+            
+            $('.btn-payment').click(function (e) { 
+                e.preventDefault();
+                $('.btn-payment').removeClass('active');
+                $(this).toggleClass('active');
+            });
+
+        });
+    </script>
+@endpush

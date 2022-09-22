@@ -41,7 +41,7 @@ Breadcrumbs::for('payment', function (BreadcrumbTrail $trail) {
 });
 
 // Home > Cart > Seat > Payment
-Breadcrumbs::for('summary', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('barcode', function (BreadcrumbTrail $trail) {
     $trail->parent('payment');
 });
 

@@ -23,10 +23,8 @@
                                         <div class="col">
                                             <h3 class="text-capitalize title-menu">{{ $menu[$id - 1]->name }}</h3>
                                             <p class="title-medium">@currency($menu[$id - 1]->price)</p>
-                                            <div style="width: 160px" class="text-center align-middle m-0">
-                                                <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
-                                                <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}</span>
-                                                <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
+                                            <div class="align-middle m-0">
+                                                <span class="menu_quantity fs-4 fw-semibold">{{ $detail['qty'] }}x</span>
                                             </div>
                                         </div>
                                     </div>
@@ -52,6 +50,10 @@
                                         @endforeach
                                     </div>
                                     <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">@currency($total)</span></h4>
+                                    <div class="sub-categories ms-4">
+                                        <p class="fs-5">TAX (11%)<span class="float-end fs-5">@currency($total * 11 / 100)</span></p>
+                                    </div>
+                                    <h4 class="fw-semibold mt-3">Total<span class="float-end fs-5">@currency($total + ($total * 11 / 100 ) )</span></h4>
                                 </div>
                             </div>
                         </div>

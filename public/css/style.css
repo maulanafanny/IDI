@@ -222,6 +222,7 @@ body {
 .btn-payment.active {
     border-color: transparent !important;
     color: var(--green-dark) !important;
+    opacity: 1;
 }
 
 .payment-line {

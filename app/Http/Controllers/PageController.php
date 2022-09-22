@@ -93,6 +93,24 @@ class PageController extends Controller
         ]);
     }
 
+    function barcode()
+    {
+        if (Session::get('order.total') === 0) {
+            return redirect()->back()->with('alert', 'Kamu belum memilih menu');
+        }
+
+        if (Session::get('customer.seat') === 'dine-in') {
+            return redirect('/seat')->with('alert', 'Kamu belum memilih seat');
+        }
+
+        return view('barcode', [
+            'menu' => Menu::get(),
+            'item' => Session::get('order.item'),
+            'total' => Session::get('order.total'),
+            'seat' => Session::get('customer.seat')
+        ]);
+    }
+
     function summary()
     {
         return view('summary', [
