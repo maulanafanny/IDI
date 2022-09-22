@@ -37,6 +37,13 @@ body {
     transition: 0.3s linear;
 }
 
+.dropzone {
+    border-style: dotted !important;
+    border-radius: 10px;
+    color: var(--grey);
+    height: fit-content;
+}
+
 .categories-wrap {
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -69,6 +76,25 @@ body {
 .btn-green.active {
     background-color: var(--green-dark) !important;
     color: white !important;
+}
+
+.btn-outline-primary {
+    border: none !important;
+    color: #165EA2 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: transparent !important;
+    color: darkblue !important;
+}
+
+.btn-outline-danger.btn-delete {
+    border: none !important;
+}
+
+.btn-outline-danger.btn-delete:hover {
+    background-color: transparent !important;
+    color: darkred !important;
 }
 
 
@@ -209,6 +235,15 @@ body {
 .form-label {
     font-weight: 600 !important;
     color: var(--grey) !important;
+}
+
+.form-select {
+    color: var(--grey) !important;
+    padding: .75rem .75rem !important;
+    line-height: 1.5;
+    border: 1.75px solid var(--grey) !important;
+    appearance: none;
+    border-radius: 10px !important;
 }
 
 .form-check-label {

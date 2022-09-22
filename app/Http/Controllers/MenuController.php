@@ -15,7 +15,7 @@ class MenuController extends Controller
     public function index()
     {
         return view('dashboard.menu.menu', [
-            'menus' => Menu::all()
+            'menus' => Menu::orderBy('best_seller', 'desc')->get()
         ]);
     }
 
@@ -37,7 +37,16 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated_data = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'img' => 'required',
+            'price' => 'required',
+            'desc' => 'required',
+        ]);
+
+        Menu::create($validated_data);
+        return redirect('dash/menu');
     }
 
     /**
@@ -48,7 +57,9 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.menu.menu_edit', [
+            'menu' => Menu::where('id', $id)->first()
+        ]);
     }
 
     /**
@@ -60,7 +71,16 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated_data = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'img' => 'required',
+            'price' => 'required',
+            'desc' => 'required',
+        ]);
+
+        Menu::where('id', $id)->update($validated_data);
+        return redirect('dash/menu');
     }
 
     /**
@@ -71,6 +91,8 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Menu::destroy($id);
+
+        return redirect('/dash/menu');
     }
 }

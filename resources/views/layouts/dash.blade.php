@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item mx-3 mb-3">
-                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'dash.menu' ? 'active' : '' }}" href="/dash/menu">
+                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'menu.index' ? 'active' : '' }}" href="/dash/menu">
                         <i class="fa-solid fa-fw fa-border-all fs-5" style="vertical-align: middle;"></i>
                         <span class="ms-2 fs-6 align-middle">Menu</span>
                     </a>

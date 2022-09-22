@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('price');
             $table->text('desc');
             $table->boolean('status')->default(true);
+            $table->boolean('best_seller')->default(false);
             $table->timestamps();
         });
     }
