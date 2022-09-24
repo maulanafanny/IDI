@@ -10,20 +10,15 @@ class DashboardController extends Controller
 {
     function index()
     {
-        return view('dashboard.dashboard');
+        return view('dashboard.seat', [
+            'seats' => Seat::all(),
+        ]);
     }
 
     function order()
     {
         return view('dashboard.order', [
-            'orders' => Order::with('orderItem.menu')->get(),
-        ]);
-    }
-
-    function seat()
-    {
-        return view('dashboard.seat', [
-            'seats' => Seat::all(),
+            'orders' => Order::with('orderItem.menu')->orderBy('created_at', 'desc')->get(),
         ]);
     }
 

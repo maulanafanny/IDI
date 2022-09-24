@@ -16,6 +16,14 @@ body {
     background-color: var(--green-light) !important;
 }
 
+#view-all {
+    color: #212529;
+}
+
+#view-all:hover {
+    color: #51504E;
+}
+
 #title-best-seller::after {
     position: relative;
     display: inline-block;

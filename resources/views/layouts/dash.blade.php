@@ -43,12 +43,6 @@
                         <span class="ms-2 fs-6 align-middle">Menu</span>
                     </a>
                 </li>
-                <li class="nav-item mx-3 mb-3">
-                    <a class="nav-link shadow-sm {{ Route::currentRouteName() == 'dash.seat' ? 'active' : '' }}" href="/dash/seat">
-                        <i class="fa-solid fa-fw fa-chair fs-5" style="vertical-align: middle;"></i>
-                        <span class="ms-2 fs-6 align-middle">Seat</span>
-                    </a>
-                </li>
             </ul>
             <!-- /aside nav ul list -->
         </aside>

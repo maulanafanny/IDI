@@ -12,6 +12,7 @@
                         <th>Seat</th>
                         <th>Code</th>
                         <th>Status</th>
+                        <th>Waktu Dibuat</th>
                         <th class="text-center" data-orderable="false">Action</th>
                     </tr>
                 </thead>
@@ -23,7 +24,8 @@
                             <td>@currency($order->total)</td>
                             <td>{{ $order->seat }}</td>
                             <td>{{ $order->code }}</td>
-                            <td>{{ $order->status ? 'pending' : 'selesai' }}</td>
+                            <td>{{ $order->status ? 'proses' : 'selesai' }}</td>
+                            <td>{{ $order->created_at }}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-{{ $order->id }}">
                                     <i class="fa-solid fa-pen mx-1"></i>
@@ -73,7 +75,7 @@
                                                 <div class="col me-auto">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" value="true" name="status" {{ $order->status ? 'checked' : '' }}>
-                                                        <label class="form-check-label" for="pending">Pending</label>
+                                                        <label class="form-check-label" for="proses">Proses</label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" value="false" name="status" {{ $order->status ? '' : 'checked' }}>

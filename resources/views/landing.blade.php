@@ -81,7 +81,11 @@
     <section class="w-100 bg-lightgreen">
         <br>
         <div class="container landing-container py-5">
-            <h2 class="fw-semibold pb-5" id="title-best-seller">OUR BEST SELLER</h2>
+
+            <div class="pb-5">
+                <span><h2 class="fw-semibold d-inline" id="title-best-seller">OUR BEST SELLER</h2></span>
+                <span class="d-inline float-end"><a href="/display-menu" id="view-all">View All</a></span>
+            </div>
 
             <div class="row pb-4">
 
@@ -92,7 +96,7 @@
                             <div class="card-body position-relative">
                                 <h5 class="card-title mb-3 fw-semibold">{{ $best->name }}</h5>
                                 <p class="fw-light">{{ $best->desc }}</p>
-                                <a href="#" class="btn btn-light mb-3 position-absolute" style="bottom: 10px">See Details ››</a>
+                                <a href="#" class="btn btn-light mb-3 position-absolute" style="bottom: 10px">See details ››</a>
                             </div>
                         </div>
                     </div>
@@ -126,43 +130,57 @@
     <footer class="w-100 bg-success">
         <div class="container landing-container">
 
-            <div class="row py-5 navbar-dark text-light">
-                <div class="row">
-                    <div class="col-3 px-0">
-                        <img src="{{ asset('image/logo.png') }}" class="mb-4 bg-light rounded ps-3 pe-1 py-1" width="120px" alt="logo">
-                    </div>
+            <div class="row py-5 navbar-dark text-light justify-content-between align-items-center">
+                <div class="col-2 px-0">
+                    <img src="{{ asset('image/logo.png') }}" class="mb-4 bg-light rounded ps-3 pe-1 py-1" width="120px" alt="logo">
                 </div>
 
-                <ul class="col-3 navbar-nav">
+                <ul class="col-lg-3 col navbar-nav">
                     <h4 class="fw-bold mb-4">Contact Us</h4>
-                    <li class="d-flex nav-item align-items-center mb-3 fw-light">
-                        <i class="fa-solid fa-phone me-3 fs-4 fa-fw"></i>
+                    <li class="d-flex nav-item align-items-center mb-3">
+                        <i class="fa-solid fa-phone me-3 fs-5 fa-fw"></i>
                         <a href="#" class="nav-link py-0">0812-3226-0798</a>
                     </li>
-                    <li class="d-flex nav-item align-items-center mb-3 fw-light">
-                        <i class="fa-solid fa-envelope me-3 fs-4 fa-fw"></i>
+                    <li class="d-flex nav-item align-items-center mb-3">
+                        <i class="fa-solid fa-envelope me-3 fs-5 fa-fw"></i>
                         <a href="#" class="nav-link py-0">Idicafee@gmail.com</a>
                     </li>
-                    <li class="d-flex nav-item align-items-center mb-3 fw-light">
-                        <i class="fa-solid fa-location-dot me-3 fs-4 fa-fw"></i>
+                    <li class="d-flex nav-item align-items-center mb-3">
+                        <i class="fa-solid fa-location-dot me-3 fs-5 fa-fw"></i>
                         <a href="#" class="nav-link py-0">Jl. kalikalian no.04, Surabaya</a>
                     </li>
                 </ul>
 
-                <ul class="col-3 offset-md-1 navbar-nav">
+                <ul class="col-lg-2 col navbar-nav">
                     <h4 class="fw-bold mb-4">Information</h4>
-                    <li class="d-flex nav-item mb-3 align-items-center fw-light">
+                    <li class="d-flex nav-item mb-3 align-items-center">
                         <a href="#" class="nav-link py-0">Best Seller</a>
                     </li>
-                    <li class="d-flex nav-item mb-3 align-items-center fw-light">
+                    <li class="d-flex nav-item mb-3 align-items-center">
                         <a href="#" class="nav-link py-0">Menu</a>
                     </li>
-                    <li class="d-flex nav-item mb-3 align-items-center fw-light">
+                    <li class="d-flex nav-item mb-3 align-items-center">
                         <a href="#" class="nav-link py-0">About Us</a>
                     </li>
+                </ul>
+
+                <ul class="col-lg-2 col navbar-nav">
+                    <h4 class="fw-bold mb-4">Kategori</h4>
+                    <li class="d-flex nav-item mb-3 align-items-center">
+                        <a href="#" class="nav-link py-0">Coffee</a>
+                    </li>
+                    <li class="d-flex nav-item mb-3 align-items-center">
+                        <a href="#" class="nav-link py-0">Non-Coffee</a>
+                    </li>
+                    <li class="d-flex nav-item mb-3 align-items-center">
+                        <a href="#" class="nav-link py-0">Snack</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
+        <div class="footer-copyright text-center py-4 bg-light">
+            Copyright © 2022 IDI’ Coffee. All rights reserved.
         </div>
 
     </footer>

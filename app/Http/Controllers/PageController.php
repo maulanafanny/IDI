@@ -16,6 +16,13 @@ class PageController extends Controller
         ]);
     }
 
+    function displayMenu()
+    {
+        return view('display_menu', [
+            'menus' => Menu::all(),
+        ]);
+    }
+
     function menu()
     {
         return view('menu', [
@@ -32,6 +39,20 @@ class PageController extends Controller
         }
 
         return view('partials.menu_list', [
+            'request' => $request->search,
+            'menus' => $menus
+        ]);
+    }
+
+    function displayMenuList(Request $request)
+    {
+        if ($request->search == '') {
+            $menus = Menu::all();
+        } else {
+            $menus = Menu::where('category', $request->search)->get();
+        }
+
+        return view('partials.display_menu_list', [
             'request' => $request->search,
             'menus' => $menus
         ]);

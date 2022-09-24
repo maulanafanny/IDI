@@ -24,6 +24,8 @@ use App\Http\Controllers\{
 
 // Page Route
 Route::get('/', [PageController::class, 'index'])->name('landing');
+Route::get('/display-menu', [PageController::class, 'displayMenu'])->name('landing.menu');
+
 Route::get('/login', [PageController::class, 'login'])->name('login');
 Route::get('/menu', [PageController::class, 'menu'])->name('menu');
 Route::get('/cart', [PageController::class, 'cart'])->name('cart');
@@ -46,11 +48,11 @@ Route::prefix('dash')->group(function () {
     Route::get('', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('order', [DashboardController::class, 'order'])->name('dash.order');
     Route::resource('menu', MenuController::class, ['except'=> ['show']]);
-    Route::get('seat', [DashboardController::class, 'seat'])->name('dash.seat');
 });
 
 Route::post('/updateseat', [DashboardController::class, 'updateSeat'])->name('updateSeat');
 Route::get('list', [PageController::class, 'menuList'])->name('list');
+Route::get('display-list', [PageController::class, 'displayMenuList'])->name('displayList');
 Route::post('dropzone-store', [DropzoneController::class, 'store'])->name('dropzone.store');
 Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');
 Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');
