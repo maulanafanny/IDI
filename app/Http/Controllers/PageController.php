@@ -16,10 +16,11 @@ class PageController extends Controller
         ]);
     }
 
-    function displayMenu()
+    function displayMenu(Request $request)
     {
         return view('display_menu', [
             'menus' => Menu::all(),
+            'request' => $request->category
         ]);
     }
 
@@ -48,6 +49,8 @@ class PageController extends Controller
     {
         if ($request->search == '') {
             $menus = Menu::all();
+        } elseif ($request->search == 'Best Seller' || $request->search == 'best seller') {
+            $menus = Menu::where('best_seller', true)->get();
         } else {
             $menus = Menu::where('category', $request->search)->get();
         }

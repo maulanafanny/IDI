@@ -154,10 +154,10 @@
                 <ul class="col-lg-2 col navbar-nav">
                     <h4 class="fw-bold mb-4">Information</h4>
                     <li class="d-flex nav-item mb-3 align-items-center">
-                        <a href="#" class="nav-link py-0">Best Seller</a>
+                        <a href="/display-menu?category=best%20seller" class="nav-link py-0">Best Seller</a>
                     </li>
                     <li class="d-flex nav-item mb-3 align-items-center">
-                        <a href="#" class="nav-link py-0">Menu</a>
+                        <a href="/display-menu" class="nav-link py-0">Menu</a>
                     </li>
                     <li class="d-flex nav-item mb-3 align-items-center">
                         <a href="#" class="nav-link py-0">About Us</a>
@@ -167,13 +167,13 @@
                 <ul class="col-lg-2 col navbar-nav">
                     <h4 class="fw-bold mb-4">Kategori</h4>
                     <li class="d-flex nav-item mb-3 align-items-center">
-                        <a href="#" class="nav-link py-0">Coffee</a>
+                        <a href="/display-menu?category=coffee" class="nav-link py-0">Coffee</a>
                     </li>
                     <li class="d-flex nav-item mb-3 align-items-center">
-                        <a href="#" class="nav-link py-0">Non-Coffee</a>
+                        <a href="/display-menu?category=non-coffee" class="nav-link py-0">Non-Coffee</a>
                     </li>
                     <li class="d-flex nav-item mb-3 align-items-center">
-                        <a href="#" class="nav-link py-0">Snack</a>
+                        <a href="/display-menu?category=snack" class="nav-link py-0">Snack</a>
                     </li>
                 </ul>
             </div>

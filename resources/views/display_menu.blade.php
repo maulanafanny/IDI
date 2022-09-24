@@ -23,6 +23,7 @@
                 <button type="button" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Coffee</button>
                 <button type="button" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Non-Coffee</button>
                 <button type="button" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Snack</button>
+                <button type="button" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Best Seller</button>
             </div>
         </div>
 
@@ -33,7 +34,14 @@
     </div>
 
     <script>
-        loadData();
+        @if ($request)
+            loadData('{{ $request }}');
+            $(".btn-categories").filter(function() {
+                return $(this).text().toLowerCase() === "{{ $request }}";
+            }).toggleClass('active');
+        @else
+            loadData();
+        @endif
 
         function loadData(query) {
             $.ajax({
