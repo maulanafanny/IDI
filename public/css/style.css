@@ -303,6 +303,15 @@ body {
     font-weight: 500;
 }
 
+/* Splide Override */
+.splide__pagination__page {
+    background: var(--green-regular) !important;
+}
+
+.splide__pagination__page.is-active {
+    background: var(--green-dark) !important;
+}
+
 
 /* Media Queries */
 @media (min-width: 320px) {

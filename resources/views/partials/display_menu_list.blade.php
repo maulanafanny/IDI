@@ -3,7 +3,7 @@
         <div class="col-lg-3 col-md-6 mb-5 px-4">
             <div class="card shadows" style="border-radius: 25px">
 
-                <img class="card-img-top" src="{{ asset($menu->img) }}" alt="menu-image">
+                <img class="card-img-top" src="{{ asset($menu->img) }}" alt="menu-image" style="border-radius: 25px 25px 0 0">
                 {{-- <img class="card-img-top" src="{{ Str::substr($menu->img, 0, strpos($menu->img, ".")) . '-alt.png' }}" alt="menu-image"> --}}
                 <div class="card-body">
                     <div class="row align-items-end mb-3 px-4">

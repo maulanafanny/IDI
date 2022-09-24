@@ -12,7 +12,7 @@ class PageController extends Controller
     function index()
     {
         return view('landing', [
-            'bestSeller' => Menu::inRandomOrder()->where('best_seller', true)->take(4)->get()
+            'bestSeller' => Menu::inRandomOrder()->where('best_seller', true)->get()
         ]);
     }
 
