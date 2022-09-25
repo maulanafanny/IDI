@@ -8,7 +8,8 @@ use App\Http\Controllers\{
     PageController,
     DashboardController,
     MenuController,
-    DropzoneController
+    DropzoneController,
+    NewOrderController
 };
 
 /*
@@ -56,3 +57,5 @@ Route::get('display-list', [PageController::class, 'displayMenuList'])->name('di
 Route::post('dropzone-store', [DropzoneController::class, 'store'])->name('dropzone.store');
 Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');
 Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');
+
+Route::get('new-order', [NewOrderController::class, 'index'])->name('neworder');
