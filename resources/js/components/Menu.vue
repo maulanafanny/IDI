@@ -106,19 +106,30 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
+
 export default {
     data() {
         return {
-            menus: [],
             category: 'all'
         }
     },
     mounted() {
-        axios.get('/api/menu').then((response) => {
-            this.menus = response.data
-        })
+        return this.$store.dispatch('fetchMenus');
+    },
+    computed: {
+        ...mapGetters([
+            'getAllMenus'
+        ]),
+        menus() {
+            return this.$store.state.menus;
+        }
     },
     methods: {
+        ...mapActions([
+            'fetchMenus'
+        ]),
         currency(curr) {
             return 'Rp' + curr.toLocaleString('id-ID')
         },
