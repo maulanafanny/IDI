@@ -6,10 +6,16 @@ import router from "./router";
 import store from "./store";
 
 const app = createApp({});
+app.mixin({
+    methods: {
+        currency(curr) {
+            return 'Rp' + curr.toLocaleString('id-ID')
+        },
+    }
+})
 
-/* Import Your Component Here */
-// import ExampleComponent from "./components/ExampleComponent.vue";
-// app.component("example-component", ExampleComponent);
+import Breadcrumb from "./components/Breadcrumb.vue";
+app.component("breadcrumb", Breadcrumb);
 
 app.use(store);
 app.use(router);

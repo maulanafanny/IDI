@@ -55,9 +55,9 @@
                                                             <h3 class="text-capitalize title-menu mb-3">{{ menu.name }}</h3>
                                                             <p class="text-desc">{{ menu.desc }}</p>
                                                             <div style="width: 180px" class="text-center align-middle">
-                                                                <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
-                                                                <span class="menu_quantity fs-4 fw-semibold">1</span>
-                                                                <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
+                                                                <a @click="updateQuantity(-1)" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
+                                                                <span class="menu_quantity fs-4 fw-semibold" v-text="quantity"></span>
+                                                                <a @click="updateQuantity(1)" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 pt-3">
@@ -112,7 +112,8 @@ import { mapActions } from "vuex";
 export default {
     data() {
         return {
-            category: 'all'
+            category: 'all',
+            quantity: 1
         }
     },
     mounted() {
@@ -130,9 +131,6 @@ export default {
         ...mapActions([
             'fetchMenus'
         ]),
-        currency(curr) {
-            return 'Rp' + curr.toLocaleString('id-ID')
-        },
         toggleCategory(query) {
             if (this.category == query) {
                 this.category = 'all';
@@ -140,6 +138,11 @@ export default {
                 this.category = query;
             }
         },
+        updateQuantity(qty) {
+            if (this.quantity > 0 || qty == 1) {
+               this.quantity += qty;
+            }
+        }
     },
 }
 </script>
