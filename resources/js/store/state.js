@@ -1,5 +1,6 @@
 const state = {
     menus: [],
+    seats: [],
     order: {
         items: [
             {

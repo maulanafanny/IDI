@@ -8,6 +8,15 @@ const actions = {
             console.log(error);
         }
     },
+    async fetchSeats({ commit }) {
+        try {
+            const data = await axios.get("/api/seat");
+            commit("SET_SEATS", data.data);
+        } catch (error) {
+            alert(error);
+            console.log(error);
+        }
+    },
     async fetchOrder({ commit }) {
         try {
             const data = await axios.get("/api/order");

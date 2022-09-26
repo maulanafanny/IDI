@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SeatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('menu', [MenuController::class, 'getAll']);
 Route::get('menu/{id}', [MenuController::class, 'getOne']);
+
+Route::get('seat', [SeatController::class, 'getAll']);
