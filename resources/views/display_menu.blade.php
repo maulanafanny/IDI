@@ -1,5 +1,5 @@
 @extends('layouts.land')
-@section('name', 'All Menu')
+@section('title', 'All Menu')
 
 @section('content')
 

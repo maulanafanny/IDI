@@ -55,9 +55,9 @@
                                                             <h3 class="text-capitalize title-menu mb-3">{{ menu.name }}</h3>
                                                             <p class="text-desc">{{ menu.desc }}</p>
                                                             <div style="width: 180px" class="text-center align-middle">
-                                                                <a @click="updateQuantity(-1)" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
+                                                                <a @click="updateQuantity(-1)" style="padding: 5px 10px" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus"></i></a>
                                                                 <span class="menu_quantity fs-4 fw-semibold" v-text="quantity"></span>
-                                                                <a @click="updateQuantity(1)" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
+                                                                <a @click="updateQuantity(1)" style="padding: 5px 10px" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus"></i></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 pt-3">

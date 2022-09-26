@@ -53,9 +53,7 @@
                             <span class="fw-semibold">Your Choice</span>
                         </div>
 
-                        <br>
-                        <br>
-                        <br>
+                        <br><br><br>
 
                         <div>
                             <h3 class="title-menu fs-3">Your Choice</h3>
