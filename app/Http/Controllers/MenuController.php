@@ -95,4 +95,10 @@ class MenuController extends Controller
 
         return redirect('/dash/menu');
     }
+
+    function getAll()
+    {
+        $menus = Menu::all();
+        return response()->json($menus);
+    }
 }

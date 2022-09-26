@@ -6,8 +6,10 @@ import router from "./router";
 
 const app = createApp({});
 
-import ExampleComponent from "./components/ExampleComponent.vue";
-app.component("example-component", ExampleComponent);
+
+/* Import Your Component Here */
+// import ExampleComponent from "./components/ExampleComponent.vue";
+// app.component("example-component", ExampleComponent);
 
 
 app.use(router);
