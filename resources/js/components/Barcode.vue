@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="my-4">
-                    <router-link to="/new-order/success" class="btn btn-success rounded-pill float-end py-3 px-4">
+                    <router-link to="/new-order/success#success-card" class="btn btn-success rounded-pill float-end py-3 px-4">
                         <i class="fa-solid fs-3 fa-arrow-right align-middle"></i>
                     </router-link>
                 </div>
@@ -31,3 +31,32 @@
 
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            time: 900,
+        }
+    },
+    mounted() {
+        var time = this.time;
+        var timer = setInterval(function () {
+            var seconds = time % 60;
+            var minutes = Math.floor(time / 60);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            $('#timer').text(minutes + ':' + seconds);
+            time--;
+            if (time < 0) {
+                clearInterval(timer);
+            }
+        }, 1000)
+    },
+    methods: {
+        
+    }
+}
+</script>
