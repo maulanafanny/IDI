@@ -5,7 +5,7 @@
             <div class="card-body p-5">
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn rounded btn-green rounded-pill border-0 py-3 mb-5" data-bs-toggle="modal" data-bs-target="#modal-img">
+                <button type="button" class="btn btn-success rounded btn-green rounded-pill border-0 py-3 mb-5" data-bs-toggle="modal" data-bs-target="#modal-img">
                     <i class="fa-solid fa-lg mx-2 fa-image fa-fw"></i>
                     <span class="me-2">Click to see sketch</span>
                 </button>
@@ -33,7 +33,7 @@
 
                         <div class="row mb-4">
                             <!-- Foreach Start -->
-                            <button @click="toggleActive($event)" v-for="seat in seats" :class="!seat.status ? 'bg-disabled text-light' : ''" :disabled="!seat.status" class="btn btn-green mb-4 text-serif mx-3 rounded fs-4 btn-seat" style="height:90px; width:90px">{{ seat.seat }}</button>
+                            <button @click="toggleActive($event)" v-for="seat in seats" :class="!seat.status ? 'bg-disabled text-light' : ''" :disabled="!seat.status" class="btn btn-success border-0 btn-green mb-4 text-serif mx-3 rounded fs-4 btn-seat" style="height:90px; width:90px">{{ seat.seat }}</button>
                             <!-- Foreach End -->
                         </div>
 
