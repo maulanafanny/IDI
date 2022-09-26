@@ -8,9 +8,9 @@
                 <!-- Categories -->
                 <div class="categories-wrap">
                     <div class="pb-3 text-nowrap overflow-auto">
-                        <button type="button" @click="toggleCategory('Coffee')" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Coffee</button>
-                        <button type="button" @click="toggleCategory('Non-Coffee')" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Non-Coffee</button>
-                        <button type="button" @click="toggleCategory('Snack')" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Snack</button>
+                        <button type="button" :class="(category == 'Coffee' ? 'active' : '')" @click="toggleCategory('Coffee')" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Coffee</button>
+                        <button type="button" :class="(category == 'Non-Coffee' ? 'active' : '')" @click="toggleCategory('Non-Coffee')" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Non-Coffee</button>
+                        <button type="button" :class="(category == 'Snack' ? 'active' : '')" @click="toggleCategory('Snack')" class="btn btn-categories rounded-pill btn-lg btn-green px-4 me-4">Snack</button>
                     </div>
                 </div>
 

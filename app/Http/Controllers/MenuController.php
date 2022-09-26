@@ -98,7 +98,7 @@ class MenuController extends Controller
 
     function getAll()
     {
-        $menus = Menu::all();
+        $menus = Menu::orderBy('best_seller', 'desc')->get();
         return response()->json($menus);
     }
 }
