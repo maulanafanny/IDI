@@ -50,7 +50,7 @@
                                         <div v-if="menus.length > 0" v-for="item in order.items">
                                             <p class="fs-5">{{ getMenu(item.id).category }}</p>
                                             <div class="sub-categories ms-4 text-green-regular">
-                                                <p class="fs-5">{{ getMenu(item.id).name }}<span class="float-end fs-5">{{ currency(getMenu(item.id).price) }}</span></p>
+                                                <p class="fs-5">{{ getMenu(item.id).name }}<span class="float-end fs-5">{{ currency(getMenu(item.id).price * item.qty) }}</span></p>
                                                 <div v-if="(item.notes != null)">
                                                     <p class="fs-6 mb-0" style="margin-top: -16px"><small>Notes :</small></p>
                                                     <p class="fs-6 text-dark"><small>{{ item.notes }}</small></p>

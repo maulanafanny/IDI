@@ -36,27 +36,32 @@
 export default {
     data() {
         return {
-            time: 900,
+            time: 0,
         }
     },
     mounted() {
-        var time = this.time;
-        var timer = setInterval(function () {
-            var seconds = time % 60;
-            var minutes = Math.floor(time / 60);
-
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-
-            $('#timer').text(minutes + ':' + seconds);
-            time--;
-            if (time < 0) {
-                clearInterval(timer);
-            }
-        }, 1000)
+        this.setTimer(900);
     },
     methods: {
-        
-    }
+        setTimer(time) {
+            const timer = setInterval(function () {
+                var seconds = time % 60;
+                var minutes = Math.floor(time / 60);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                $('#timer').text(minutes + ':' + seconds);
+                time--;
+                if (time < 0) {
+                    clearInterval(timer);
+                }
+            }, 1000)
+            this.time = timer;
+        }
+    },
+    beforeUnmount () {
+      clearInterval(this.time)
+   }
 }
 </script>
