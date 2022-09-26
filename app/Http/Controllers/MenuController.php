@@ -101,4 +101,10 @@ class MenuController extends Controller
         $menus = Menu::orderBy('best_seller', 'desc')->get();
         return response()->json($menus);
     }
+
+    function getOne($id)
+    {
+        $menus = Menu::where('id', $id)->get();
+        return response()->json($menus);
+    }
 }

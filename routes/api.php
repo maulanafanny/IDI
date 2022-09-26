@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('menu', [MenuController::class, 'getAll']);
+Route::get('menu/{id}', [MenuController::class, 'getOne']);

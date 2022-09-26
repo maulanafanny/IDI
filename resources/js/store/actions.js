@@ -8,6 +8,15 @@ const actions = {
             console.log(error);
         }
     },
+    async fetchOrder({ commit }) {
+        try {
+            const data = await axios.get("/api/order");
+            commit("SET_ORDER", data.data);
+        } catch (error) {
+            alert(error);
+            console.log(error);
+        }
+    },
 };
 
 export default actions;

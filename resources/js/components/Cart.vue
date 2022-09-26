@@ -11,19 +11,19 @@
                         <form action="/update" method="POST">
 
                             <!-- Foreach Start -->
-                            <div class="card mb-4 shadows">
+                            <div v-if="menus.length > 0" v-for="item in order.items" class="card mb-4 shadows">
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-lg col-md-3">
-                                            <img class="img-fluid image-menu" src="{{  }}" alt="coffee-menu">
+                                            <img class="img-fluid image-menu" :src="'/' + getMenu(item.id).img" alt="coffee-menu">
                                         </div>
                                         <div class="col">
-                                            <h3 class="text-capitalize title-menu">{{  }}</h3>
-                                            <p class="title-medium">{{  }}</p>
+                                            <h3 class="text-capitalize title-menu">{{ getMenu(item.id).name }}</h3>
+                                            <p class="title-medium">{{ currency(getMenu(item.id).price) }}</p>
                                             <div style="width: 160px" class="text-center align-middle m-0">
-                                                <a class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
-                                                <span class="menu_quantity fs-4 fw-semibold">{{  }}</span>
-                                                <a class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
+                                                <a @click="updateQuantity(-1, $event)" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus fs-6"></i></a>
+                                                <span class="menu_quantity fs-4 fw-semibold">{{ item.qty }}</span>
+                                                <a @click="updateQuantity(1, $event)" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus fs-6"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -45,14 +45,22 @@
                                 <br>
                                 <div class="col-10">
                                     <div class="categories ms-5 text-success mb-4">
+
                                         <!-- Foreach Start -->
-                                        <p class="fs-5">{{  }}</p>
-                                        <div class="sub-categories ms-4 text-green-regular">
-                                            <p class="fs-5">{{  }}<span class="float-end fs-5">{{  }}</span></p>
+                                        <div v-if="menus.length > 0" v-for="item in order.items">
+                                            <p class="fs-5">{{ getMenu(item.id).category }}</p>
+                                            <div class="sub-categories ms-4 text-green-regular">
+                                                <p class="fs-5">{{ getMenu(item.id).name }}<span class="float-end fs-5">{{ currency(getMenu(item.id).price) }}</span></p>
+                                                <div v-if="(item.notes != null)">
+                                                    <p class="fs-6 mb-0" style="margin-top: -16px"><small>Notes :</small></p>
+                                                    <p class="fs-6 text-dark"><small>{{ item.notes }}</small></p>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- Foreach End -->
+
                                     </div>
-                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">{{  }}</span></h4>
+                                    <h4 class="fw-semibold mt-5">Subtotal<span class="float-end fs-5">{{ currency(order.subtotal) }}</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -70,3 +78,40 @@
 
     </div>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
+
+export default {
+    mounted() {
+        this.$store.dispatch('fetchMenus');
+        // this.$store.dispatch('fetchOrder');
+    },
+    computed: {
+        ...mapGetters([
+            'getOrder',
+            'getMenus',
+            'getMenu'
+        ]),
+        menus() {
+            return this.$store.state.menus;
+        },
+        order() {
+            return this.$store.state.order;
+        }
+    },
+    methods: {
+        ...mapActions([
+            'fetchOrder',
+            'fetchMenus'
+        ]),
+        updateQuantity(qty, event) {
+            if (this.quantity > 0 || qty == 1) {
+               this.quantity += qty;
+            }
+            console.log(event);
+        }
+    },
+}
+</script>

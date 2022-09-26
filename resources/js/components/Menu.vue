@@ -117,11 +117,11 @@ export default {
         }
     },
     mounted() {
-        return this.$store.dispatch('fetchMenus');
+        this.$store.dispatch('fetchMenus');
     },
     computed: {
         ...mapGetters([
-            'getAllMenus'
+            'getMenus'
         ]),
         menus() {
             return this.$store.state.menus;

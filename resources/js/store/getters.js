@@ -1,5 +1,7 @@
 const getters = {
-    getAllMenus: (state) => state.menus,
+    getMenus: (state) => state.menus,
+    getMenu: (state) => (id) => state.menus.find(menu => menu.id === id),
+    getOrder: (state) => state.order
 };
 
 export default getters;
