@@ -14,8 +14,8 @@ const routes = [
     { path: "/new-order/seat", component: Seat },
     {
         path: "/new-order/payment",
-        component: Payment,
         children: [
+            { path: "", component: Payment },
             { path: "barcode", component: Barcode },
             { path: "success", component: Success },
         ],

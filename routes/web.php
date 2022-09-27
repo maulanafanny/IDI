@@ -59,3 +59,4 @@ Route::post('update/{id}', [OrderController::class, 'update'])->name('order.upda
 Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');
 
 Route::get('/new-order/{any}', [NewOrderController::class, 'index'])->name('neworder');
+Route::get('/new-order/{any}/{nest}', [NewOrderController::class, 'index'])->name('neworder.nested');
