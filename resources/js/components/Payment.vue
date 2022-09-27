@@ -140,7 +140,7 @@
 
                 </div>
                 <div class="my-4">
-                    <router-link to="/new-order/barcode" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
+                    <router-link to="/new-order/payment/barcode" class="btn btn-success rounded-pill float-end py-3 px-4 text-serif fs-5">
                         Barcode
                         <i class="fa-solid fs-3 fa-arrow-right align-middle ps-2"></i>
                     </router-link>

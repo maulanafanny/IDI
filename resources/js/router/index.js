@@ -12,14 +12,21 @@ const routes = [
     { path: "/new-order/menu", component: Menu },
     { path: "/new-order/cart", component: Cart },
     { path: "/new-order/seat", component: Seat },
-    { path: "/new-order/payment", component: Payment },
-    { path: "/new-order/barcode", component: Barcode },
-    { path: "/new-order/success", component: Success },
+    {
+        path: "/new-order/payment",
+        component: Payment,
+        children: [
+            { path: "barcode", component: Barcode },
+            { path: "success", component: Success },
+        ],
+    },
+
     { path: "/new-order/history", component: History },
 ];
 
 const router = createRouter({
     history: createWebHistory(),
+    linkActiveClass: "active",
     routes,
 });
 
