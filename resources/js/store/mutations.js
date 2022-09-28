@@ -10,9 +10,19 @@ const mutations = {
     },
     PUSH_ORDER(state, payload) {
         state.order.items.push(payload);
+        state.order.subtotal = state.order.items.reduce((total, item) => {
+            return total + item.qty * state.menus[item.id].price
+        }, 0)
     },
     UPDATE_ORDER(state, payload) {
-        state.order.items = state.order.items.map(item => item.id === payload.id ? payload : item)
+        if (payload.qty === 0) {
+            state.order.items = state.order.items.filter(item => item.id !== payload.id)
+        } else {
+            state.order.items = state.order.items.map(item => item.id === payload.id ? payload : item)
+        }
+        state.order.subtotal = state.order.items.reduce((total, item) => {
+            return total + item.qty * state.menus[item.id].price
+        }, 0)
     }
 };
 

@@ -14,7 +14,7 @@ const state = {
                 notes: null,
             },
         ],
-        subtotal: 33000,
+        subtotal: 135000,
         seat: ['A1', 'B2'],
     },
 };

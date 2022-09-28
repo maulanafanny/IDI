@@ -11,7 +11,7 @@
                         <form action="/update" method="POST">
 
                             <!-- Foreach Start -->
-                            <div v-if="menus.length > 0" v-for="item in order.items" class="card mb-4 shadows">
+                            <div v-if="menus.length > 0" v-for="(item, index) in order.items" :key="item.id" class="card mb-4 shadows">
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-lg col-md-3">
@@ -21,9 +21,9 @@
                                             <h3 class="text-capitalize title-menu">{{ getMenu(item.id).name }}</h3>
                                             <p class="title-medium">{{ currency(getMenu(item.id).price) }}</p>
                                             <div style="width: 160px" class="text-center align-middle m-0">
-                                                <a @click="updateQuantity(-1, $event)" style="padding: 5px 10px" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus"></i></a>
+                                                <a @click="updateQuantity(-1, index)" style="padding: 5px 10px" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus"></i></a>
                                                 <span class="menu_quantity fs-4 fw-semibold">{{ item.qty }}</span>
-                                                <a @click="updateQuantity(1, $event)" style="padding: 5px 10px" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus"></i></a>
+                                                <a @click="updateQuantity(1, index)" style="padding: 5px 10px" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,6 @@ import { mapActions } from "vuex";
 export default {
     mounted() {
         this.$store.dispatch('fetchMenus');
-        // this.$store.dispatch('fetchOrder');
     },
     computed: {
         ...mapGetters([
@@ -106,11 +105,12 @@ export default {
             'fetchOrder',
             'fetchMenus'
         ]),
-        updateQuantity(qty, event) {
-            if (this.quantity > 0 || qty == 1) {
-               this.quantity += qty;
+        updateQuantity(qty, index) {
+            if (this.$store.state.order.items[index].qty > 0 || qty == 1) {
+                let newData = JSON.parse(JSON.stringify(this.getOrder.items[index]));
+                newData.qty += qty;
+                this.$store.dispatch('updateOrder', newData)
             }
-            console.log(event);
         }
     },
 }
