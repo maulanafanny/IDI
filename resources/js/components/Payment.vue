@@ -164,8 +164,11 @@ export default {
         }
     },
     mounted() {
+        if (!this.$store.state.order.seat.length > 0) {
+            this.$router.back()
+            swal("Oops...", "Kamu belum memilih seat.", "error");
+        }
         this.$store.dispatch('fetchMenus');
-        // this.$store.dispatch('fetchOrder');
     },
     computed: {
         ...mapGetters([

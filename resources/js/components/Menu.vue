@@ -79,6 +79,10 @@ export default {
         };
     },
     mounted() {
+        if (this.$store.state.order.customer_name == null) {
+            // this.$router.back()
+            swal("Oops...", "Kamu harus login terlebih dahulu.", "error");
+        }
         this.$store.dispatch("fetchMenus");
     },
     computed: {

@@ -78,14 +78,14 @@ function storeItem() {
             qty: state.quantity,
             notes: state.notes
         })
-        alert('Menu berhasil diperbarui')
+        toastr["success"]("Menu berhasil diperbarui", "Success")
     } else {
         store.dispatch("pushOrder", {
             id: props.menu.id,
             qty: state.quantity,
             notes: state.notes
         })
-        alert('Menu berhasil ditambahkan')
+        toastr["success"]("Menu berhasil ditambahkan", "Success")
     }
     state.modal_state.hide()
 }

@@ -1,6 +1,14 @@
 const state = {
     menus: [],
     seats: [],
+    /* order: {
+        customer_name: 'fanny maulana',
+        customer_phone: null,
+        items: [],
+        subtotal: 0,
+        seat: [],
+        isStored: false,
+    }, */
     order: {
         customer_name: 'fanny maulana',
         customer_phone: null,

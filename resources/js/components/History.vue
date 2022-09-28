@@ -81,8 +81,11 @@ import { mapActions } from "vuex";
 
 export default {
     mounted() {
+        if (!this.$store.state.order.isStored) {
+            this.$router.back()
+            swal("Oops...", "Kamu belum menyelesaikan pesanan.", "error");
+        }
         this.$store.dispatch('fetchMenus');
-        // this.$store.dispatch('fetchOrder');
     },
     computed: {
         ...mapGetters([

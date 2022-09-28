@@ -92,6 +92,10 @@ import { mapActions } from "vuex";
 
 export default {
     mounted() {
+        if (!this.$store.state.order.items.length > 0) {
+            this.$router.back()
+            swal("Oops...", "Kamu belum memilih menu.", "error");
+        }
         this.$store.dispatch('fetchSeats');
     },
     computed: {
