@@ -40,6 +40,10 @@ export default {
         }
     },
     mounted() {
+        if (this.$store.state.order.isStored) {
+            console.log('redirect to success');
+            this.$router.push('/new-order/payment/success')
+        }
         this.setTimer(900);
     },
     methods: {
