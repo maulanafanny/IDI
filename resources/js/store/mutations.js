@@ -11,7 +11,7 @@ const mutations = {
     PUSH_ORDER(state, payload) {
         state.order.items.push(payload);
         state.order.subtotal = state.order.items.reduce((total, item) => {
-            return total + item.qty * state.menus[item.id].price
+            return total + item.qty * state.menus.find(menu => menu.id === item.id).price
         }, 0)
     },
     UPDATE_ORDER(state, payload) {
@@ -21,7 +21,7 @@ const mutations = {
             state.order.items = state.order.items.map(item => item.id === payload.id ? payload : item)
         }
         state.order.subtotal = state.order.items.reduce((total, item) => {
-            return total + item.qty * state.menus[item.id].price
+            return total + item.qty * state.menus.find(menu => menu.id === item.id).price
         }, 0)
     },
     ORDER_STORED(state) {

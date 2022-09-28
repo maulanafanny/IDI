@@ -160,7 +160,7 @@ import { mapActions } from "vuex";
 export default {
     data() {
         return {
-            paymentMethod: '',
+            paymentMethod: 'qris',
         }
     },
     mounted() {

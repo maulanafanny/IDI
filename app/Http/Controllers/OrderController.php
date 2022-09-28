@@ -74,6 +74,10 @@ class OrderController extends Controller
         $data = $request->json()->all();
         $seat = implode(' ', $data['seat']);
 
+        foreach ($data['seat'] as $seat) {
+            Seat::where('seat', $seat)->update(['status' => false]);
+        }
+
         $store = Order::create([
             'customer_name' => $data['customer_name'],
             'customer_phone' => $data['customer_phone'],
