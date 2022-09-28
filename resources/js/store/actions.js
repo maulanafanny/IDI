@@ -31,6 +31,20 @@ const actions = {
     },
     updateOrder({commit}, item) {
         commit("UPDATE_ORDER", item)
+    },
+    saveOrder(context, order) {
+        try {
+            axios.post('/api/order', order).then(result => {
+                context.dispatch('fetchSeats')
+            })
+        } catch (error) {
+            alert(error);
+            console.log(error);
+        }
+       
+    },
+    orderStored({commit}) {
+        commit("ORDER_STORED")
     }
 };
 

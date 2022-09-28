@@ -23,6 +23,9 @@ const mutations = {
         state.order.subtotal = state.order.items.reduce((total, item) => {
             return total + item.qty * state.menus[item.id].price
         }, 0)
+    },
+    ORDER_STORED(state) {
+        state.order.isStored = true
     }
 };
 

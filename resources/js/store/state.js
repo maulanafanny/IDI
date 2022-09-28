@@ -2,6 +2,8 @@ const state = {
     menus: [],
     seats: [],
     order: {
+        customer_name: 'fanny maulana',
+        customer_phone: null,
         items: [
             {
                 id: 1,
@@ -16,6 +18,7 @@ const state = {
         ],
         subtotal: 135000,
         seat: ['A1', 'B2'],
+        isStored: false,
     },
 };
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SeatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,5 @@ Route::get('menu', [MenuController::class, 'getAll']);
 Route::get('menu/{id}', [MenuController::class, 'getOne']);
 
 Route::get('seat', [SeatController::class, 'getAll']);
+
+Route::post('order', [OrderController::class, 'storeOrder']);

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('customer_name');
             $table->string('customer_phone')->nullable();
-            $table->integer('quantity');
             $table->integer('total');
             $table->string('seat')->nullable();
             $table->string('code')->nullable();
