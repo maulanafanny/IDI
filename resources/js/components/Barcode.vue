@@ -12,10 +12,10 @@
                         Sisa waktu pembayaran Anda
                         <span id="timer"></span>
                     </div>
-                    <h5 class="text-serif fw-semibold text-success">IDI`COFFEE</h5>
+                    <h5 class="text-serif fw-semibold text-success">IDI' COFFEE</h5>
                     <h6>{{  }}</h6>
                     <img class="py-4" :src="'/image/qrcode.png'" alt="barcode">
-                    <button class="btn btn-success py-3 px-4 w-100">Unduh QRIS</button>
+                    <button class="btn btn-success py-3 px-4 w-100">Unduh Barcode</button>
                 </div>
 
                 <div class="my-4">

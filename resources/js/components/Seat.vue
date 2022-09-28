@@ -95,6 +95,9 @@ export default {
         if (!this.$store.state.order.items.length > 0) {
             this.$router.back()
             swal("Oops...", "Kamu belum memilih menu.", "error");
+        } else if (this.$store.state.order.seat_option == 'take-away') {
+            this.$router.back()
+            swal("Oops...", "Kamu memilih take-away.", "error");
         }
         this.$store.dispatch('fetchSeats');
     },

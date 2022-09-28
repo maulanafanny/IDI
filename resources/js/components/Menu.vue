@@ -80,7 +80,7 @@ export default {
     },
     mounted() {
         if (this.$store.state.order.customer_name == null) {
-            // this.$router.back()
+            this.$router.push('/new-order/login')
             swal("Oops...", "Kamu harus login terlebih dahulu.", "error");
         }
         this.$store.dispatch("fetchMenus");

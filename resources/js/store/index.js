@@ -5,7 +5,7 @@ import actions from "./actions";
 import mutations from "./mutations";
 
 const store = createStore({
-    strict: true,
+    // strict: true,
     state,
     getters,
     actions,
