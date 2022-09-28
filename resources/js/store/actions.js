@@ -26,6 +26,12 @@ const actions = {
             console.log(error);
         }
     },
+    pushOrder({ commit }, item) {
+        commit("PUSH_ORDER", item)
+    },
+    updateOrder({commit}, item) {
+        commit("UPDATE_ORDER", item)
+    }
 };
 
 export default actions;

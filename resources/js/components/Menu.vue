@@ -34,38 +34,10 @@
                                         </div>
                                     </div>
 
-                                    <menu-modal :id="'modal_menu_' + menu.id" :ariaLabel="'modal_menu_' + menu.id">
+                                    <menu-modal :menu="menu">
                                         <template #button>
                                             <i class="fa-solid fa-plus fa-fw me-1"></i>
                                             <span class="text-serif">Tambah</span>
-                                        </template>
-
-                                        <template #body>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <img class="img-fluid image-menu" :src="'/' + menu.img" alt="menu-img">
-                                                </div>
-                                                <div class="col-6">
-                                                    <h3 class="text-capitalize title-menu mb-3">{{ menu.name }}</h3>
-                                                    <p class="text-desc">{{ menu.desc }}</p>
-                                                    <div style="width: 180px" class="text-center align-middle">
-                                                        <a @click="updateQuantity(-1)" style="padding: 5px 10px" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus"></i></a>
-                                                        <span class="menu_quantity fs-4 fw-semibold" v-text="quantity"></span>
-                                                        <a @click="updateQuantity(1)" style="padding: 5px 10px" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 pt-3">
-                                                    <div class="form-label fw-semibold text-secondary">Notes</div>
-                                                    <textarea name="notes" class="form-control notes" style="resize: none" rows="4"></textarea>
-                                                </div>
-                                            </div>
-                                        </template>
-
-                                        <template #footer>
-                                            <button type="submit" class="btn submit btn-success w-100 py-2 fw-semibold">
-                                                <i class="fa-solid fa-plus fa-fw me-1"></i>
-                                                Tambah
-                                            </button>
                                         </template>
                                     </menu-modal>
 
@@ -99,6 +71,7 @@ import { mapActions } from "vuex";
 import MenuModal from "./MenuModal.vue";
 
 export default {
+    components: { MenuModal },
     data() {
         return {
             category: "all",
@@ -128,12 +101,6 @@ export default {
                 this.category = query;
             }
         },
-        updateQuantity(qty) {
-            if (this.quantity > 0 || qty == 1) {
-                this.quantity += qty;
-            }
-        }
     },
-    components: { MenuModal }
 }
 </script>
