@@ -33,7 +33,18 @@
 
                         <div class="row mb-4">
                             <!-- Foreach Start -->
-                            <button @click="toggleActive($event)" v-for="seat in seats" :class="!seat.status ? 'bg-disabled text-light' : ''" :disabled="!seat.status" class="btn btn-success border-0 btn-green mb-4 text-serif mx-3 rounded fs-4 btn-seat" style="height:90px; width:90px">{{ seat.seat }}</button>
+                            <button @click="toggleActive($event)" 
+                                    v-for="seat in seats" 
+                                    :class="[
+                                        (!seat.status ? 'bg-disabled text-light' : ''),
+                                        (order.seat.includes(seat.seat) ? 'active' : '')
+                                    ]
+                                    " 
+                                    :disabled="!seat.status" 
+                                    class="btn btn-success border-0 btn-green mb-4 text-serif mx-3 rounded fs-4 btn-seat" 
+                                    style="height:90px; width:90px">
+                                {{ seat.seat }}
+                            </button>
                             <!-- Foreach End -->
                         </div>
 
@@ -80,11 +91,6 @@ import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 
 export default {
-    data() {
-        return {
-            selected: []
-        }
-    },
     mounted() {
         this.$store.dispatch('fetchSeats');
     },
@@ -99,7 +105,7 @@ export default {
             return this.$store.state.seats;
         },
         choice() {
-            return this.selected.join(", ");
+            return this.order.seat.join(", ");
         }
     },
     methods: {
@@ -108,10 +114,10 @@ export default {
         ]),
         toggleActive(event) {
             event.target.classList.toggle('active');
-            if (this.selected.includes(event.target.innerText)) {
-                this.selected = this.selected.filter(item => item != event.target.innerText)
+            if (this.order.seat.includes(event.target.innerText)) {
+                this.order.seat = this.order.seat.filter(item => item != event.target.innerText)
             } else {
-                this.selected.push(event.target.innerText)
+                this.order.seat.push(event.target.innerText)
             }
         },
     },
