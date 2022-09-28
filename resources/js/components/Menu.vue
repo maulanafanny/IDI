@@ -34,52 +34,40 @@
                                         </div>
                                     </div>
 
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-outline-success fw-semibold w-100 py-3" data-bs-toggle="modal" :data-bs-target="'#modal-' + menu.id">
-                                        <i class="fa-solid fa-plus fa-fw me-1"></i>
-                                        <span class="text-serif">Tambah</span>
-                                    </button>
+                                    <menu-modal :id="'modal_menu_' + menu.id" :ariaLabel="'modal_menu_' + menu.id">
+                                        <template #button>
+                                            <i class="fa-solid fa-plus fa-fw me-1"></i>
+                                            <span class="text-serif">Tambah</span>
+                                        </template>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade mt-5" :id="'modal-' + menu.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content py-3 px-3">
-
-                                                <div class="modal-body">
-
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <img class="img-fluid image-menu" :src="'/' + menu.img" alt="menu-img">
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <h3 class="text-capitalize title-menu mb-3">{{ menu.name }}</h3>
-                                                            <p class="text-desc">{{ menu.desc }}</p>
-                                                            <div style="width: 180px" class="text-center align-middle">
-                                                                <a @click="updateQuantity(-1)" style="padding: 5px 10px" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus"></i></a>
-                                                                <span class="menu_quantity fs-4 fw-semibold" v-text="quantity"></span>
-                                                                <a @click="updateQuantity(1)" style="padding: 5px 10px" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 pt-3">
-                                                            <div class="form-label fw-semibold text-secondary">Notes</div>
-                                                            <textarea name="notes" class="form-control notes" style="resize: none" rows="4"></textarea>
-                                                        </div>
+                                        <template #body>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img class="img-fluid image-menu" :src="'/' + menu.img" alt="menu-img">
+                                                </div>
+                                                <div class="col-6">
+                                                    <h3 class="text-capitalize title-menu mb-3">{{ menu.name }}</h3>
+                                                    <p class="text-desc">{{ menu.desc }}</p>
+                                                    <div style="width: 180px" class="text-center align-middle">
+                                                        <a @click="updateQuantity(-1)" style="padding: 5px 10px" class="btn btn-min btn-outline-success btn-range float-start"><i class="fa-solid fa-minus"></i></a>
+                                                        <span class="menu_quantity fs-4 fw-semibold" v-text="quantity"></span>
+                                                        <a @click="updateQuantity(1)" style="padding: 5px 10px" class="btn btn-plus btn-outline-success btn-range float-end"><i class="fa-solid fa-plus"></i></a>
                                                     </div>
-
                                                 </div>
-
-                                                <div class="modal-footer border-0">
-                                                    <input type="hidden" id="menu_id" value="{{ menu.id }}">
-                                                    <button type="submit" class="btn submit btn-success w-100 py-2 fw-semibold">
-                                                        <i class="fa-solid fa-plus fa-fw me-1"></i>
-                                                        Tambah
-                                                    </button>
+                                                <div class="col-12 pt-3">
+                                                    <div class="form-label fw-semibold text-secondary">Notes</div>
+                                                    <textarea name="notes" class="form-control notes" style="resize: none" rows="4"></textarea>
                                                 </div>
-
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- Modal End -->
+                                        </template>
+
+                                        <template #footer>
+                                            <button type="submit" class="btn submit btn-success w-100 py-2 fw-semibold">
+                                                <i class="fa-solid fa-plus fa-fw me-1"></i>
+                                                Tambah
+                                            </button>
+                                        </template>
+                                    </menu-modal>
 
                                 </div>
                             </div>
@@ -108,20 +96,21 @@
 <script>
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
+import MenuModal from "./MenuModal.vue";
 
 export default {
     data() {
         return {
-            category: 'all',
+            category: "all",
             quantity: 1
-        }
+        };
     },
     mounted() {
-        this.$store.dispatch('fetchMenus');
+        this.$store.dispatch("fetchMenus");
     },
     computed: {
         ...mapGetters([
-            'getMenus'
+            "getMenus"
         ]),
         menus() {
             return this.$store.state.menus;
@@ -129,20 +118,22 @@ export default {
     },
     methods: {
         ...mapActions([
-            'fetchMenus'
+            "fetchMenus"
         ]),
         toggleCategory(query) {
             if (this.category == query) {
-                this.category = 'all';
-            } else {
+                this.category = "all";
+            }
+            else {
                 this.category = query;
             }
         },
         updateQuantity(qty) {
             if (this.quantity > 0 || qty == 1) {
-               this.quantity += qty;
+                this.quantity += qty;
             }
         }
     },
+    components: { MenuModal }
 }
 </script>
