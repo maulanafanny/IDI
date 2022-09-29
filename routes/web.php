@@ -55,4 +55,5 @@ Route::get('list', [PageController::class, 'menuList'])->name('list');
 Route::get('display-list', [PageController::class, 'displayMenuList'])->name('displayList');
 Route::post('dropzone-store', [DropzoneController::class, 'store'])->name('dropzone.store');
 Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');
+Route::delete('order/destroy/{id}', [DashboardController::class, 'orderDestroy'])->name('order.destroy');
 Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');

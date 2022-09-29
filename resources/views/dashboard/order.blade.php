@@ -26,8 +26,14 @@
                             <td>{{ $order->code }}</td>
                             <td>{{ $order->status ? 'proses' : 'selesai' }}</td>
                             <td>{{ $order->created_at }}</td>
-                            <td class="text-center">
-                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-{{ $order->id }}">
+                            <td class="text-center d-flex align-items-center justify-content-center">
+                                <form method="POST" action="{{ route('order.destroy', $order->id) }}">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button class="btn btn-outline-danger btn-delete px-0 mx-1" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                                <button type="button" class="btn btn-outline-primary px-1" data-bs-toggle="modal" data-bs-target="#modal-{{ $order->id }}">
                                     <i class="fa-solid fa-pen mx-1"></i>
                                 </button>
                             </td>
@@ -35,7 +41,7 @@
 
                         <!-- Modal -->
                         <div class="modal fade" id="modal-{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content p-4 pb-0 bg-back-white">
                                     <div class="modal-body">
 
@@ -47,11 +53,17 @@
                                                 <br>
                                                 <div class="col-11">
                                                     <div class="categories text-success mb-4">
-                                                        @foreach ($order->orderItem as $item)
-                                                            <p class="fs-5">{{ $item->menu->category }}</p>
-                                                            <div class="sub-categories ms-4 text-green-regular">
-                                                                <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">@currency($item->menu->price * $item->quantity)</span></p>
-                                                            </div>
+                                                        @foreach ($order->orderItem->groupBy('menu.category') as $category => $items)
+                                                            <p class="fs-5">{{ $category }}</p>
+                                                            @foreach ($items as $item)
+                                                                <div class="sub-categories ms-4 text-green-regular">
+                                                                    <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">@currency($item->menu->price)</span></p>
+                                                                    @if ($item->notes != '')
+                                                                        <p class="fs-6 mb-0" style="margin-top: -16px"><small>Notes :</small></p>
+                                                                        <p class="fs-6 text-dark"><small>{{ $item->notes }}</small></p>
+                                                                    @endif
+                                                                </div>
+                                                            @endforeach
                                                         @endforeach
                                                     </div>
                                                     <h4 class="fw-semibold mt-5 text-serif">Total<span class="float-end fs-5">@currency($order->total)</span></h4>
