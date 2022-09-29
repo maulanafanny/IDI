@@ -49,6 +49,7 @@
 @push('js')
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -82,6 +83,23 @@
                 }
                 $('#check-value').val(JSON.stringify(checkbox))
             }
+
+            $('.btn-delete').on('click', function(e) {
+                var form = $(this).closest("form");
+                e.preventDefault();
+                swal({
+                        title: 'Are you sure?',
+                        text: 'Once deleted, you will not be able to recover this!',
+                        icon: 'warning',
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            form.submit();
+                        }
+                    });
+            });
         });
     </script>
 @endpush
