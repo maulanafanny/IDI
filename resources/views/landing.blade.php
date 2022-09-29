@@ -4,8 +4,21 @@
 @section('content')
 
     {{-- Hero Start --}}
-    <section class="landing-container container mt-5">
-        <img class="img-fluid" src="{{ asset('image/hero-coffee.png') }}" alt="hero-coffee" style="filter: brightness(50%)">
+    <section id="image-carousel" class="splide landing-container container mt-5" aria-label="Hero Images">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide position-relative">
+                    <a href="#best-seller" class="btn btn-lg btn-light position-absolute" style="z-index: 1000; bottom:24%; left:7%">Lihat menu</a>
+                    <img src="{{ asset('image/hero-best.jpg') }}" alt="hero-1">
+                </li>
+                <li class="splide__slide">
+                    <img src="{{ asset('image/hero-open.jpg') }}" alt="hero-2">
+                </li>
+                <li class="splide__slide">
+                    <img src="{{ asset('image/hero-coffee.png') }}" alt="hero-3">
+                </li>
+            </ul>
+        </div>
     </section>
     {{-- Hero End --}}
 
@@ -34,7 +47,7 @@
     <br><br>
 
     {{-- Best Seller --}}
-    <section class="w-100 bg-lightgreen">
+    <section class="w-100 bg-lightgreen" id="best-seller">
         <br>
         <div class="container landing-container py-5">
 
@@ -45,17 +58,17 @@
                 <span class="d-inline float-end"><a href="/display-menu" id="view-all">View All</a></span>
             </div>
 
-            <div class="splide">
+            <div class="splide" id="menu-slide">
                 <div class="splide__track">
                     <div class="splide__list">
 
                         @foreach ($bestSeller as $best)
-                            <div class="splide__slide card bg-success text-light" style="height: 475px">
+                            <div class="splide__slide card bg-success text-light">
                                 <img src="{{ asset($best->img) }}" class="card-img-top" alt="menu">
-                                <div class="card-body">
+                                <div class="card-body position-relative">
                                     <h5 class="card-title mb-3 fw-semibold">{{ $best->name }}</h5>
                                     <p class="fw-light">{{ $best->desc }}</p>
-                                    <a href="#" class="btn btn-light mb-3">See details ››</a>
+                                    <a href="#" class="btn btn-light mb-3 position-absolute bottom-0">See details ››</a>
                                 </div>
                             </div>
                         @endforeach
@@ -97,7 +110,7 @@
 @push('js')
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.2/dist/js/splide.min.js"></script>
     <script>
-        var splide = new Splide('.splide', {
+        new Splide('#menu-slide', {
             autoplay: true,
             arrows: false,
             rewind: true,
@@ -106,8 +119,15 @@
             focus: 0,
             omitEnd: true,
             gap: '1rem',
-        });
+            height: '475px',
+        }).mount();
 
-        splide.mount();
+        new Splide('#image-carousel', {
+            autoplay: true,
+            rewind: true,
+            interval: 3500,
+            focus: 0,
+            omitEnd: true,
+        }).mount();
     </script>
 @endpush

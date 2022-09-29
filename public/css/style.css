@@ -16,6 +16,19 @@ body {
     background-color: var(--green-light) !important;
 }
 
+.splide__slide img {
+    width: 100%;
+    height: auto;
+}
+
+.splide__arrow--prev {
+    margin-left: 10px;
+}
+
+.splide__arrow--next {
+    margin-right: 10px;
+}
+
 #view-all {
     color: #212529;
 }
@@ -347,6 +360,7 @@ body {
 
 
 @media print {
+
     /* on modal open bootstrap adds class "modal-open" to body, so you can handle that case and hide body */
     body.modal-open {
         visibility: hidden;
@@ -354,6 +368,7 @@ body {
 
     body.modal-open .modal .modal-header,
     body.modal-open .modal .card-order {
-        visibility: visible; /* make visible modal body and header */
+        visibility: visible;
+        /* make visible modal body and header */
     }
 }
