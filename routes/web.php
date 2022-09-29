@@ -57,3 +57,4 @@ Route::post('dropzone-store', [DropzoneController::class, 'store'])->name('dropz
 Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');
 Route::delete('order/destroy/{id}', [DashboardController::class, 'orderDestroy'])->name('order.destroy');
 Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');
+Route::get('toggleBest', [MenuController::class, 'toggleBest'])->name('menu.best');

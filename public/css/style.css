@@ -39,7 +39,7 @@ body {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 10000;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s linear;
