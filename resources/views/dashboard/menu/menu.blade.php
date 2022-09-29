@@ -29,7 +29,7 @@
                                     <button class="btn btn-outline-danger btn-delete px-0 mx-1" type="submit"><i class="fa-solid fa-trash"></i></button>
                                 </form>
                                 <a class="btn btn-outline-primary px-0 mx-1" href="{{ route('menu.edit', $menu->id) }}"><i class="fa-solid fa-pen"></i></a>
-                                <input type="checkbox" {{ $menu->best_seller ? 'checked' : '' }} class="form-check-input mx-1" name="best-seller">
+                                <input id="{{ $menu->id }}" type="checkbox" {{ $menu->best_seller ? 'checked' : '' }} class="form-check-input mx-1 my-0 check-best" name="best-seller">
                             </td>
                         </tr>
                     @endforeach
@@ -37,15 +37,69 @@
             </table>
         </div>
     </div>
+    <form action="/toggleBest">
+        @csrf
+        <input type="hidden" id="check-value" name="bests" value="">
+        <button type="submit" class="btn btn-success rounded-pill py-3 px-4 text-serif fs-5" id="btn-save-changes">
+            Save Changes
+        </button>
+    </form>
 @endsection
 
 @push('js')
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         $(document).ready(function() {
             $('#menu-table').DataTable();
+
+            let checkbox = []
+
+            $('.check-best').change(function(e) {
+                e.preventDefault();
+                $('#btn-save-changes').css('visibility', 'visible');
+                $('#btn-save-changes').css('opacity', 1);
+                if ($(this).is(':checked')) {
+                    changeState($(this).attr('id'), true)
+                } else {
+                    changeState($(this).attr('id'), false)
+                }
+            });
+
+            function changeState(id, value) {
+                if (checkbox.findIndex(item => item.id === id) > -1) {
+                    const newValue = {
+                        id: id,
+                        value: value
+                    }
+                    checkbox = checkbox.map(item => item.id === id ? newValue : item)
+                } else {
+                    checkbox.push({
+                        id,
+                        value
+                    })
+                }
+                $('#check-value').val(JSON.stringify(checkbox))
+            }
+
+            $('.btn-delete').on('click', function(e) {
+                var form = $(this).closest("form");
+                e.preventDefault();
+                swal({
+                        title: 'Are you sure?',
+                        text: 'Once deleted, you will not be able to recover this!',
+                        icon: 'warning',
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            form.submit();
+                        }
+                    });
+            });
         });
     </script>
 @endpush

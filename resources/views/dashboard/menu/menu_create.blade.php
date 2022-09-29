@@ -36,8 +36,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-12" style="padding-top: 33px">
-                        <div class="dropzone" id="menu-dropzone"></div>
+                    <div class="col-lg-6 col-12 mb-4" style="padding-top: 33px">
+                        <div class="dropzone h-100" id="menu-dropzone"></div>
                     </div>
                 </div>
 

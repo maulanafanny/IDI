@@ -22,6 +22,13 @@ class DashboardController extends Controller
         ]);
     }
 
+    function orderDestroy($id)
+    {
+        Order::destroy($id);
+
+        return redirect('/dash/order');
+    }
+
     function updateSeat(Request $request)
     {
         if ($request->seat) {

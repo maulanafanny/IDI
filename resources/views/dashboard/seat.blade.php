@@ -15,7 +15,7 @@
 
                         <div class="row mb-4">
                             @foreach ($seats as $seat)
-                                <button class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen text-dark' : 'bg-disabled text-light' }} mx-3 rounded fs-4 btn-seat"
+                                <button {{ $seat->status ? 'disabled' : '' }} class="btn btn-success mb-4 text-serif {{ $seat->status ? 'bg-lightgreen text-dark' : 'bg-disabled text-light' }} mx-3 rounded fs-4 btn-seat"
                                     style="height:90px; width:90px">
                                     {{ $seat->seat }}
                                 </button>

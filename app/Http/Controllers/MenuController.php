@@ -107,4 +107,17 @@ class MenuController extends Controller
         $menus = Menu::where('id', $id)->get();
         return response()->json($menus);
     }
+
+    function toggleBest(Request $request)
+    {
+        $bests = json_decode($request->bests);
+
+        foreach ($bests as $best) {
+            Menu::where('id', $best->id)->update([
+                'best_seller' => $best->value
+            ]);
+        }
+
+        return redirect('/dash/menu');
+    }
 }
