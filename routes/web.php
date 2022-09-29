@@ -8,7 +8,8 @@ use App\Http\Controllers\{
     PageController,
     DashboardController,
     MenuController,
-    DropzoneController
+    DropzoneController,
+    NewOrderController
 };
 
 /*
@@ -58,3 +59,7 @@ Route::post('update/{id}', [OrderController::class, 'update'])->name('order.upda
 Route::delete('order/destroy/{id}', [DashboardController::class, 'orderDestroy'])->name('order.destroy');
 Route::get('barcode', [PageController::class, 'barcode'])->name('barcode');
 Route::get('toggleBest', [MenuController::class, 'toggleBest'])->name('menu.best');
+
+Route::get('/new-order', [NewOrderController::class, 'index'])->name('neworder.root');
+Route::get('/new-order/{any}', [NewOrderController::class, 'index'])->name('neworder');
+Route::get('/new-order/{any}/{nest}', [NewOrderController::class, 'index'])->name('neworder.nested');

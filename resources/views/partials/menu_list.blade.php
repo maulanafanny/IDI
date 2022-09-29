@@ -4,16 +4,14 @@
             <div class="card shadows">
 
                 <div class="card-body">
-                    <div>
-                        <div class="row">
-                            <div class="col-6">
-                                <img class="img-fluid image-menu mb-3" src="{{ asset($menu->img) }}" alt="coffee-menu">
-                            </div>
-                            <div class="col-6">
-                                <h3 class="text-capitalize title-menu title-ellipsis">{{ $menu->name }}</h3>
-                                <p class="text-desc mb-2 menu-desc">{{ $menu->desc }}</p>
-                                <p class="fw-semibold title-medium">@currency($menu->price)</p>
-                            </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="img-fluid image-menu mb-3" src="{{ asset($menu->img) }}" alt="coffee-menu">
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-capitalize title-menu title-ellipsis">{{ $menu->name }}</h3>
+                            <p class="text-desc mb-2 menu-desc">{{ $menu->desc }}</p>
+                            <p class="fw-semibold title-medium">@currency($menu->price)</p>
                         </div>
                     </div>
 
@@ -67,20 +65,20 @@
 </div>
 
 <script>
-    $('.btn-plus').click(function (e) { 
+    $('.btn-plus').click(function(e) {
         e.preventDefault();
         const menu = this.previousElementSibling;
         let quantity = parseInt(menu.innerText);
-        menu.innerText = (quantity+1);
+        menu.innerText = (quantity + 1);
     });
 
-    $('.btn-min').click(function (e) { 
+    $('.btn-min').click(function(e) {
         e.preventDefault();
         const menu = this.nextElementSibling;
         let quantity = parseInt(menu.innerText);
         if (quantity > 0) {
-            menu.innerText = (quantity-1);
-        } 
+            menu.innerText = (quantity - 1);
+        }
     });
 
     $('.submit').click(function() {

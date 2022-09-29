@@ -36,26 +36,20 @@ class OrderController extends Controller
             return view('success');
         } else {
             $items = Session::get('order.item');
-            $quantity = 0;
             $order_items = [];
             $seats = explode(' ', Session::get('customer.seat'));
-    
+
             foreach ($seats as $seat) {
                 Seat::where('seat', $seat)->update(['status' => false]);
             }
-    
-            foreach ($items as $id => $detail) {
-                $quantity += $detail['qty'];
-            }
-    
+
             $order = Order::create([
                 'customer_name' => Session::get('customer.name'),
                 'customer_phone' => Session::get('customer.phone'),
                 'total' => Session::get('order.total') + Session::get('order.total') * 11 / 100,
-                'quantity' => $quantity,
                 'seat' => Session::get('customer.seat')
             ]);
-    
+
             foreach ($items as $id => $detail) {
                 array_push($order_items, [
                     'order_id' => $order->id,
@@ -64,14 +58,40 @@ class OrderController extends Controller
                     'notes' => $detail['notes']
                 ]);
             }
-    
+
             foreach ($order_items as $item) {
                 OrderItem::create($item);
             }
-    
+
             Session::put('customer.has_stored', true);
-    
+
             return view('success');
+        }
+    }
+
+    function storeOrder(Request $request)
+    {
+        $data = $request->json()->all();
+        $seat = implode(' ', $data['seat']);
+
+        foreach ($data['seat'] as $seat) {
+            Seat::where('seat', $seat)->update(['status' => false]);
+        }
+
+        $store = Order::create([
+            'customer_name' => $data['customer_name'],
+            'customer_phone' => $data['customer_phone'],
+            'total' => $data['subtotal'] + ($data['subtotal'] * 11 / 100),
+            'seat' => $seat
+        ]);
+
+        foreach ($data['items'] as $item) {
+            OrderItem::create([
+                'order_id' => $store['id'],
+                'menu_id' => $item['id'],
+                'quantity' => $item['qty'],
+                'notes' => $item['notes'],
+            ]);
         }
     }
 }

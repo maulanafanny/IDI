@@ -96,6 +96,18 @@ class MenuController extends Controller
         return redirect('/dash/menu');
     }
 
+    function getAll()
+    {
+        $menus = Menu::orderBy('best_seller', 'desc')->get();
+        return response()->json($menus);
+    }
+
+    function getOne($id)
+    {
+        $menus = Menu::where('id', $id)->get();
+        return response()->json($menus);
+    }
+
     function toggleBest(Request $request)
     {
         $bests = json_decode($request->bests);

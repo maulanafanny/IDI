@@ -27,19 +27,19 @@
         <div class="row justify-content-between bg-success m-0 px-4">
             <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                Quality Grade A
+                Cashless Payment
             </div>
             <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                Quality Grade B
+                Best Quality
             </div>
             <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                Quality Grade C
+                Seat Reservation
             </div>
             <div class="w-auto py-4 fw-semibold text-light">
                 <div class="align-middle d-inline-block bg-lightbrown me-3 rounded" style="height:50px; width:50px"></div>
-                Quality Grade D
+                Pet Friendly
             </div>
         </div>
     </section>
@@ -91,11 +91,9 @@
         <div class="container landing-container py-5 text-center text-light">
             <h3 class="fw-semibold pb-4">IDI’ COFFE</h3>
             <p class="col-9 mx-auto" style="line-height: 2.5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor metus et elit mollis,
-                vel scelerisque neque suscipit. Duis commodo a elit ut suscipit. Sed aliquam dui at eros sagittis,
-                at dictum libero vestibulum. Fusce vel tellus lobortis, faucibus urna ultricies, rutrum nisl. Nunc
-                aliquet tempor ante vitae rhoncus. Vestibulum quis mollis est. Aliquam gravida suscipit orci vel
-                finibus. Ut non eros sed velit pellentesque vehicula.
+                IDI’ Coffee Shop adalah sebuah cafe  yang menggunakan Website untuk proses pemesanan 
+                dan transaksi pembayaran. IDI’ coffee sendiri memiliki arti “kita” dalam bahasa bugis. 
+                Konsep dari cafe ini kami menggunakan gabungan latar belakang nusantara dan western
             </p>
         </div>
         <br>

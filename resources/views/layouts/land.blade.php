@@ -39,7 +39,7 @@
                         <a class="nav-link" href="#">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-4">
-                        <a class="nav-link btn btn-light text-success px-4 fw-semibold" href="/login">Pesan Sekarang</a>
+                        <a class="nav-link btn btn-light text-success px-4 fw-semibold" href="/new-order/login">Pesan Sekarang</a>
                     </li>
                 </ul>
             </div>

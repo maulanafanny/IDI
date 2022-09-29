@@ -57,7 +57,7 @@
                                                             <p class="fs-5">{{ $category }}</p>
                                                             @foreach ($items as $item)
                                                                 <div class="sub-categories ms-4 text-green-regular">
-                                                                    <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">@currency($item->menu->price)</span></p>
+                                                                    <p class="fs-5">{{ $item->menu->name }}<span class="float-end fs-5">@currency($item->menu->price * $item->quantity)</span></p>
                                                                     @if ($item->notes != '')
                                                                         <p class="fs-6 mb-0" style="margin-top: -16px"><small>Notes :</small></p>
                                                                         <p class="fs-6 text-dark"><small>{{ $item->notes }}</small></p>
