@@ -1,17 +1,18 @@
 <template>
-    <div class="container py-5">
+    <div class="container-md container-sm py-sm-5 pb-5">
 
         <div class="card shadows bg-back-white">
-            <div class="card-body p-5">
+            <div class="card-body p-md-5 p-4">
 
-                <h3 class="title-menu pb-4 fs-3">Payment Summary</h3>
+                <h1 class="text-serif mb-4 pb-3 d-md-none d-block">Payment</h1>
+                <h3 class="title-menu pb-4 fs-3 d-md-block d-none">Payment Summary</h3>
 
                 <div class="row">
 
-                    <div class="col-lg-6 col-md-12 pe-xl-5">
+                    <div class="col-lg-6 col-12 pe-xl-5">
                         <div class="card shadows">
-                            <div class="card-body p-5">
-                                <div class="col-11">
+                            <div class="card-body p-md-5 p-4 mx-2">
+                                <div class="col-md-11">
                                     <div class="categories text-success mb-4">
 
                                         <!-- Foreach Start -->
@@ -40,8 +41,8 @@
                         <br>
 
                         <div class="card shadows mb-4">
-                            <div class="card-body px-5 py-3">
-                                <div class="col-11">
+                            <div class="card-body px-md-5 p-4 mx-2 py-3">
+                                <div class="col-md-11">
                                     <h3 class="title-menu my-2">Seat<span class="float-end">{{ order.seat.join(", ") }}</span></h3>
                                 </div>
                             </div>
@@ -51,7 +52,7 @@
 
                     <div class="col-lg-6 col-md-12">
                         <div class="card shadows">
-                            <div class="card-body p-5">
+                            <div class="card-body p-md-5 p-4 mx-2">
                                 <h3 class="title-menu fs-3">Payment Method</h3>
                                 <br>
                                 <div class="col-xl-9 col-12">
@@ -194,3 +195,12 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.container-sm {
+    padding: 0;
+}
+.title-menu {
+    font-size: 20px;
+}
+</style>

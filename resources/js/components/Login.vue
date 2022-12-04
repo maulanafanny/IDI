@@ -1,7 +1,7 @@
 <template>
-    <div class="col-5 mx-auto m-5">
+    <div class="col-md-5 col-12 mx-auto m-5 container px-md-0 px-4">
         <div class="card">
-            <div class="card-body p-5 mx-auto w-75">
+            <div class="card-body p-5 mx-auto">
                 <br>
                 <img :src="'/image/logo.png'" alt="login-logo" class="img-fluid mb-4 px-5 ms-2">
                 <div class="mb-3">
@@ -44,3 +44,17 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+.card-body {
+    width: 100%;
+}
+
+@media (min-width: 991.9px) {
+    .card-body {
+        width: 75%;
+    }
+}
+
+</style>

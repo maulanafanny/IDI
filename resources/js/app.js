@@ -15,7 +15,9 @@ app.mixin({
 })
 
 import Breadcrumb from "./components/Breadcrumb.vue";
-app.component("breadcrumb", Breadcrumb);
+import Dock from "./components/Dock.vue";
+app.component("breadcrumb-component", Breadcrumb);
+app.component("dock-component", Dock);
 
 app.use(store);
 app.use(router);

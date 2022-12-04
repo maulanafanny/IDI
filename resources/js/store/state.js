@@ -26,7 +26,7 @@ const state = {
             },
         ],
         subtotal: 135000,
-        seat_option: null,
+        seat_option: 'dine-in',
         seat: ['A1', 'B2'],
         isStored: false,
     }, */

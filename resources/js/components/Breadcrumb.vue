@@ -46,3 +46,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .breadcrumb-item.active {
+        transition: .5s;
+    }
+</style>

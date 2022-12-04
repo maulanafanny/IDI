@@ -1,11 +1,13 @@
 <template>
-    <div class="container py-5">
+    <div class="container-md container-sm py-sm-5 pb-5">
 
         <div class="card shadows bg-back-white">
-            <div class="card-body p-5">
+            <div class="card-body p-md-5 p-4">
+
+                <h1 class="text-serif mb-4 pb-3 d-md-none d-block">Seat</h1>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success rounded btn-green rounded-pill border-0 py-3 mb-5" data-bs-toggle="modal" data-bs-target="#modal-img">
+                <button type="button" class="btn btn-success rounded btn-green rounded-pill border-0 py-3 mb-md-5 mb-4" data-bs-toggle="modal" data-bs-target="#modal-img">
                     <i class="fa-solid fa-lg mx-2 fa-image fa-fw"></i>
                     <span class="me-2">Click to see sketch</span>
                 </button>
@@ -29,20 +31,15 @@
                 <!-- Modal End -->
 
                 <div class="row">
-                    <div class="col-xl-6 col">
+                    <div class="col-xl-6 col mb-md-1 mb-3">
 
-                        <div class="row mb-4">
+                        <div class="row mb-4 justify-content-md-start justify-content-center">
                             <!-- Foreach Start -->
-                            <button @click="toggleActive($event)" 
-                                    v-for="seat in seats" 
-                                    :class="[
-                                        (!seat.status ? 'bg-disabled text-light' : ''),
-                                        (order.seat.includes(seat.seat) ? 'active' : '')
-                                    ]
-                                    " 
-                                    :disabled="!seat.status" 
-                                    class="btn btn-success border-0 btn-green mb-4 text-serif mx-3 rounded fs-4 btn-seat" 
-                                    style="height:90px; width:90px">
+                            <button @click="toggleActive($event)" v-for="seat in seats" :class="[
+                                (!seat.status ? 'bg-disabled text-light' : ''),
+                                (order.seat.includes(seat.seat) ? 'active' : '')
+                            ]
+                            " :disabled="!seat.status" class="btn btn-success border-0 btn-green mb-4 text-serif mx-3 rounded fs-4 btn-seat">
                                 {{ seat.seat }}
                             </button>
                             <!-- Foreach End -->
@@ -50,25 +47,35 @@
 
                     </div>
 
-                    <div class="col-4 offset-xl-1">
-                        <div class="mb-3">
-                            <div class="align-middle d-inline-block bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div>
-                            <span class="fw-semibold">Available</span>
-                        </div>
-                        <div class="mb-3">
-                            <div class="align-middle d-inline-block bg-disabled me-3 rounded" style="height:40px; width:40px"></div>
-                            <span class="fw-semibold">Occupied</span>
-                        </div>
-                        <div class="mb-3">
-                            <div class="align-middle d-inline-block bg-decor me-3 rounded" style="height:40px; width:40px"></div>
-                            <span class="fw-semibold">Your Choice</span>
-                        </div>
+                    <div class="w-100 d-md-none d-block"></div>
 
-                        <br><br><br>
+                    <div class="col-md-4 col offset-xl-1">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div class="align-middle d-inline-block bg-lightgreen me-3 rounded" style="height:40px; width:40px"></div>
+                                    <span class="fw-semibold">Available</span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="align-middle d-inline-block bg-disabled me-3 rounded" style="height:40px; width:40px"></div>
+                                    <span class="fw-semibold">Occupied</span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="align-middle d-inline-block bg-decor me-3 rounded" style="height:40px; width:40px"></div>
+                                    <span class="fw-semibold">Your Choice</span>
+                                </div>
+                            </div>
 
-                        <div>
-                            <h3 class="title-menu fs-3">Your Choice</h3>
-                            <p class="fs-3 fw-light" id="seat-choice">{{ choice }}</p>
+                            <div class="w-100 d-md-block d-none"></div>
+
+                            <br><br><br>
+
+                            <div class="col-6">
+                                <div>
+                                    <h3 class="title-menu fs-3">Your Choice</h3>
+                                    <p class="fs-3 fw-light" id="seat-choice">{{ choice }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,3 +137,23 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.container-sm {
+    padding: 0;
+}
+
+.btn-seat {
+    height: 90px;
+    width: 90px;
+}
+
+@media (max-width: 991.9px) {
+    .btn-seat {
+        height: 80px;
+        width: 80px;
+        font-size: 20px !important;
+        margin: 5px !important;
+    }
+}
+</style>

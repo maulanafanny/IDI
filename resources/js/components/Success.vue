@@ -1,8 +1,8 @@
 <template>
 
-    <div class="container py-5" id="success-card">
+    <div class="container-md container-sm py-sm-5" id="success-card">
 
-        <div class="card shadows bg-back-white m-auto text-center w-50">
+        <div class="card shadows bg-back-white m-auto text-center pb-md-0 pb-5">
             <div class="card-body p-5">
 
                 <div class="col-8 mx-auto">
@@ -51,3 +51,19 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.container-sm {
+    padding: 0;
+}
+
+.card {
+    width: 45%;
+}
+
+@media (max-width: 991.9px) {
+    .card {
+        width: 100%;
+    }
+}
+</style>

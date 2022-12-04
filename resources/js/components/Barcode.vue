@@ -1,8 +1,8 @@
 <template>
-    <div class="container py-5">
+    <div class="container py-sm-5 pt-3 pb-5 mb-5">
 
-        <div class="card shadows bg-back-white mx-auto w-50">
-            <div class="card-body p-5">
+        <div class="card shadows bg-back-white mx-auto">
+            <div class="card-body p-md-5 px-5 py-4">
 
                 <h3 class="title-menu pb-4 fw-bold">QRCode</h3>
 
@@ -13,7 +13,7 @@
                         <span id="timer"></span>
                     </div>
                     <h5 class="text-serif fw-semibold text-success">IDI' COFFEE</h5>
-                    <h6>{{  }}</h6>
+                    <h6>{{ currency(order.subtotal + order.subtotal * 11 / 100) }}</h6>
                     <img class="py-4" :src="'/image/qrcode.png'" alt="barcode">
                     <button class="btn btn-success py-3 px-4 w-100">Unduh Barcode</button>
                 </div>
@@ -46,6 +46,11 @@ export default {
         }
         this.setTimer(900);
     },
+    computed: {
+        order() {
+            return this.$store.state.order
+        }
+    },
     methods: {
         setTimer(time) {
             const timer = setInterval(function () {
@@ -64,8 +69,20 @@ export default {
             this.time = timer;
         }
     },
-    beforeUnmount () {
-      clearInterval(this.time)
-   }
+    beforeUnmount() {
+        clearInterval(this.time)
+    }
 }
 </script>
+
+<style scoped>
+.card {
+    width: 50%;
+}
+
+@media (max-width: 991.9px) {
+    .card {
+        width: 90%;
+    }
+}
+</style>

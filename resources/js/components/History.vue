@@ -1,10 +1,11 @@
 <template>
-    <div class="container py-5">
+    <div class="container-md container-sm py-sm-5 pb-5">
 
         <div class="card shadows bg-back-white">
-            <div class="card-body p-5">
+            <div class="card-body p-md-5 p-4">
 
-                <h3 class="title-menu pb-4 fs-3">My Order</h3>
+                <h1 class="text-serif mb-4 pb-3 d-md-none d-block">My Order</h1>
+                <h3 class="title-menu pb-4 fs-3 d-md-block d-none">My Order</h3>
 
                 <div class="row">
 
@@ -13,7 +14,7 @@
                         <div v-if="menus.length > 0" v-for="item in order.items" class="card mb-4 shadows">
                             <div class="card-body">
                                 <div class="row align-items-center">
-                                    <div class="col-lg col-md-3">
+                                    <div class="col-lg col-md-3 col-4">
                                         <img class="img-fluid image-menu" :src="'/' + getMenu(item.id).img" alt="coffee-menu">
                                     </div>
                                     <div class="col">
@@ -31,11 +32,11 @@
 
                     <div class="col-lg-7 col-12 ms-xl-4">
                         <div class="card shadows">
-                            <div class="card-body p-5">
+                            <div class="card-body p-md-5 p-4 mx-2">
                                 <h3 class="title-menu">Report Payment</h3>
                                 <br>
-                                <div class="col-10">
-                                    <div class="categories ms-5 text-success mb-4">
+                                <div class="col-md-10">
+                                    <div class="categories ms-md-5 text-success mb-4">
 
                                         <!-- Foreach Start -->
                                         <div v-if="menus.length > 0" v-for="item in order.items">
@@ -108,3 +109,16 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+@media (max-width: 425px) {
+    .title-menu {
+        font-size: 20px;
+    }
+
+}
+
+.container-sm {
+    padding: 0;
+}
+</style>
